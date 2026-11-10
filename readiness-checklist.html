@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Security Questionnaire Readiness Checklist | Clyvara</title>
+<meta name="description" content="Free one-page checklist: the 35 pieces of evidence customers, cyber insurers, and funders ask for in security questionnaires — and how to have them ready.">
+<link rel="canonical" href="https://clyvara.io/readiness-checklist">
+<meta property="og:title" content="The Security Questionnaire Readiness Checklist | Clyvara">
+<meta property="og:description" content="The evidence customers, insurers, and funders actually ask for — and how to have it ready before they ask.">
+<meta property="og:type" content="article">
+<meta name="author" content="Rodger Lutalo">
+<meta property="og:image" content="https://clyvara.io/clyvara-og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Security Questionnaire Readiness Checklist | Clyvara">
+<meta name="twitter:description" content="The evidence customers, insurers, and funders actually ask for — and how to have it ready before they ask.">
+<meta name="twitter:image" content="https://clyvara.io/clyvara-og-image.png">
+<style>
+  :root {
+    --navy: #0b1220;
+    --navy2: #16203a;
+    --gold: #d9a441;
+    --ink: #1c2331;
+    --body: #3a4360;
+    --muted: #8b93a3;
+    --line: #e2e6ee;
+    --panel: #f7f8fb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+  a { text-decoration: none; }
+  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav.site {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(11,18,32,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #232d47;
+  }
+  nav.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1080px; gap: 16px; }
+  nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
+  nav.site .brand span { color: var(--gold); }
+  nav.site .links { display: flex; gap: 24px; align-items: center; }
+  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
+  nav.site .links a:hover { color: #fff; }
+  nav.site .cta {
+    background: var(--gold); color: var(--navy) !important; font-weight: 700;
+    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
+  }
+  @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff;
+    padding: 96px 0 88px 0;
+  }
+  header.hero .wrap { max-width: 1080px; }
+  .eyebrow {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+  }
+  header.hero h1 {
+    font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem); line-height: 1.1; margin: 0 0 22px 0; font-weight: 900; max-width: 15ch;
+    letter-spacing: -0.015em;
+  }
+  header.hero .sub {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; color: #c3cbdb; max-width: 580px; margin-bottom: 38px;
+  }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 15px;
+    padding: 15px 25px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; text-align: center;
+  }
+  .btn-secondary {
+    color: #fff; font-weight: 600; font-size: 15px; border: 1px solid #3a4560;
+    padding: 14px 23px; border-radius: 4px; line-height: 1.3; text-align: center;
+  }
+  .filesize { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+
+  /* GATE FORM */
+  .gate-form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .gate-form input[type=email] {
+    background: #ffffff; border: 1px solid #3a4560; border-radius: 4px;
+    padding: 14px 15px; font-size: 16px; color: var(--ink); min-width: 260px; flex: 1;
+  }
+  .gate-form input[type=email]::placeholder { color: #8b93a3; }
+  .gate-form button.btn-primary { border: none; cursor: pointer; }
+  .gate-form .hp { position: absolute; left: -9999px; opacity: 0; }
+  .gate-note { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; color: var(--muted); margin-top: 12px; }
+  .gate-note.dark { color: var(--muted); }
+  .gate-error {
+    display: none; background: rgba(181,73,59,0.12); border: 1px solid rgba(181,73,59,0.4);
+    color: #f2b8ae; font-size: 13.5px; padding: 12px 15px; border-radius: 4px; margin-top: 14px; max-width: 480px; line-height: 1.5;
+  }
+  .gate-error.show { display: block; }
+  .gate-form button.btn-primary[disabled] { opacity: 0.65; cursor: not-allowed; }
+
+  /* SECTION helpers */
+  section { padding: 92px 0; }
+  section.alt { background: var(--panel); }
+  .kicker {
+    font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8C5F16; margin-bottom: 14px;
+  }
+  h2 { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.25rem); font-weight: 900; color: var(--navy); margin: 0 0 20px 0; letter-spacing: -0.012em; line-height: 1.18; }
+  .lede { font-size: 17px; line-height: 1.62; color: var(--body); max-width: 640px; margin-bottom: 36px; }
+
+  /* PIPELINE */
+  .pipeline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 22px 0; margin: 26px 0 48px 0; }
+  .pipe-cell { text-align: center; width: 100px; }
+  .pipe-letter {
+    width: 58px; height: 58px; margin: 0 auto 10px auto; border-radius: 50%;
+    background: var(--navy); color: var(--gold); font-family: monospace; font-weight: 800; font-size: 21px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pipe-name { font-size: 12.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; }
+  @media (max-width: 640px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase-card { border-top: 3px solid var(--gold); padding-top: 18px; }
+  .phase-card .h { display: flex; align-items: center; gap: 11px; margin-bottom: 9px; }
+  .phase-card .badge {
+    font-family: monospace; font-weight: 800; font-size: 12.5px; color: #fff; background: var(--navy);
+    border-radius: 3px; padding: 3px 9px;
+  }
+  .phase-card .name { font-weight: 800; font-size: 19px; color: var(--navy); }
+  .phase-card p { font-size: 15.5px; line-height: 1.6; color: var(--body); margin: 0; }
+
+  /* STATS */
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0 8px 0; }
+  .stat { flex: 1; min-width: 180px; border: 1px solid var(--line); border-radius: 6px; padding: 24px; }
+  .stat .num { font-size: 36px; font-weight: 900; color: var(--navy); line-height: 1; }
+  .stat .cap { font-size: 14px; line-height: 1.5; color: var(--body); margin-top: 10px; }
+  .stat .src { font-family: monospace; font-size: 11.5px; color: #5F6A7D; margin-top: 10px; }
+
+  /* CHECK LIST */
+  .check-q { display: flex; gap: 15px; margin-bottom: 26px; align-items: flex-start; }
+  .check-q .box { width: 18px; height: 18px; border: 2px solid var(--navy); border-radius: 3px; flex-shrink: 0; margin-top: 3px; }
+  .check-q .tag { font-family: monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8C5F16; margin-bottom: 4px; }
+  .check-q .q { font-size: 16px; line-height: 1.5; color: var(--ink); }
+
+  /* WHY */
+  .why-row { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 14px; }
+  .why-col { flex: 1; min-width: 220px; border-top: 3px solid var(--gold); padding-top: 16px; }
+  .why-col .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+  .why-col .d { font-size: 14.5px; line-height: 1.6; color: var(--body); }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff; text-align: center; padding: 92px 0;
+  }
+  .final-cta h2 { color: #fff; }
+  .final-cta .lede { color: #c3cbdb; margin: 0 auto 36px auto; }
+  .final-cta .btn-row { justify-content: center; }
+
+  footer.site {
+    background: var(--navy); color: var(--muted); padding: 40px 0; font-size: 13.5px; line-height: 1.6;
+  }
+  footer.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.site a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <div class="brand">CLYVARA <span>Cyber Risk &amp; Compliance Advisory</span></div>
+    <div class="links">
+      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+      <a href="https://clyvara.io/#services">Services</a>
+      <a href="https://clyvara.io/#insights">Insights</a>
+      <a class="cta" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Free Checklist · Questionnaire Readiness</div>
+    <h1>Could you answer a security questionnaire today?</h1>
+    <div class="sub">Most small businesses find out about their security gaps from someone else — a customer running vendor due diligence, a cyber insurer at renewal, a funder reviewing a grant. This free one-page checklist lists the 35 pieces of evidence they actually ask for, across the eight areas every questionnaire covers, so you can see exactly where you stand before they ask.</div>
+    <form id="get-checklist" class="gate-form" action="https://formspree.io/f/xppazdko" method="POST">
+      <input type="email" name="email" placeholder="you@company.com" required>
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="New Readiness Checklist download">
+      <button type="submit" class="btn-primary" id="get-checklist-btn">&#8595; Get the free checklist (PDF)</button>
+    </form>
+    <div class="gate-error" id="get-checklist-error">Something went wrong sending your request. Please try again, or email <a href="mailto:Info@clyvara.io" style="color:#f2b8ae; text-decoration:underline;">Info@clyvara.io</a> directly.</div>
+    <div class="gate-note">1 page · takes 30 seconds · no spam, just the checklist</div>
+    <div class="btn-row" style="margin-top:16px;">
+      <a class="btn-secondary" href="#inside">See what's inside</a>
+    </div>
+  </div>
+</header>
+
+<section id="inside">
+  <div class="wrap">
+    <div class="kicker">What's Inside</div>
+    <h2>Eight areas. Thirty-five pieces of evidence.</h2>
+    <p class="lede">Every item on the checklist is phrased as evidence — something you could produce within one business day if a customer, insurer, or funder asked for it tomorrow.</p>
+    <div class="phase-grid">
+      <div class="phase-card"><div class="h"><span class="badge">1</span><span class="name">Know what you have</span></div><p>Your device and software inventory, who administers each system, and a map of where customer or patient data actually lives.</p></div><div class="phase-card"><div class="h"><span class="badge">2</span><span class="name">Control who gets in</span></div><p>MFA, named accounts with no shared logins, your admin list, and proof that leavers lose access the day they leave.</p></div><div class="phase-card"><div class="h"><span class="badge">3</span><span class="name">Keep systems defended</span></div><p>Patching records, endpoint protection coverage, and recent vulnerability results you can hand over, not describe.</p></div><div class="phase-card"><div class="h"><span class="badge">4</span><span class="name">Back up — and prove recovery</span></div><p>A backup schedule is a claim. A dated restore test is evidence. Questionnaires increasingly ask for the second one.</p></div><div class="phase-card"><div class="h"><span class="badge">5</span><span class="name">Be ready for an incident</span></div><p>A written response plan, the first phone calls listed, and notes showing the plan has been walked through at least once.</p></div><div class="phase-card"><div class="h"><span class="badge">6</span><span class="name">Govern it on paper</span></div><p>A signed security policy, a current risk assessment, a risk register with owners, and findings shown closed — not just opened.</p></div><div class="phase-card"><div class="h"><span class="badge">7</span><span class="name">Prepare your people</span></div><p>Training records, phishing-awareness results, and signed acceptable-use acknowledgments for the whole team.</p></div><div class="phase-card"><div class="h"><span class="badge">8</span><span class="name">Manage your vendors</span></div><p>Which vendors can touch your systems or data, the agreements you hold with them, and the reviews you have on file.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">How To Use It</div>
+    <h2>Ten honest minutes, once a quarter.</h2>
+    <p class="lede">Print it or keep it on screen. Work down the list and tick only what you could actually produce within one business day — not what you believe is probably in place.</p>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Step one</div><div class="q">Tick what you could produce within one business day.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Step two</div><div class="q">The unticked boxes are your real exposure — roughly in the order a questionnaire will find them.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Step three</div><div class="q">Treat the unticked list as your work plan, and re-run the checklist each quarter to watch it shrink.</div></div></div>
+    <a class="btn-secondary" style="color:var(--navy); border-color:var(--navy); margin-top:6px; display:inline-block;" href="#get-checklist">Get the checklist &#8594;</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Why Clyvara</div>
+    <h2>Depth a generalist can't offer. Access an enterprise firm won't give you.</h2>
+    <div class="why-row">
+      <div class="why-col"><div class="t">Research-Backed</div><div class="d">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail.</div></div>
+      <div class="why-col"><div class="t">Focused</div><div class="d">Clyvara doesn't sell IT support or general consulting. Cybersecurity advisory is the entire practice.</div></div>
+      <div class="why-col"><div class="t">Accessible</div><div class="d">Direct access to a credentialed principal consultant — not a junior analyst routed through account layers.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold);">Start Here</div>
+    <h2>Start with the checklist. Then close the gaps.</h2>
+    <p class="lede">If the checklist leaves boxes unticked, Clyvara's Risk &amp; Readiness Assessment turns them into a documented risk register and a remediation roadmap — the evidence pack behind every future questionnaire.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="#get-checklist">&#8595; Get the checklist</a>
+      <a class="btn-secondary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>&copy; 2026 Clyvara LLC · Dallas&ndash;Fort Worth, Texas</div>
+    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a></div>
+  </div>
+</footer>
+<script>
+(function () {
+  var PDF_URL = 'https://clyvara.io/security-questionnaire-readiness-checklist.pdf';
+  var form = document.getElementById('get-checklist');
+  var btn = document.getElementById('get-checklist-btn');
+  var errorBox = document.getElementById('get-checklist-error');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorBox.classList.remove('show');
+    var honeypot = form.querySelector('input[name="_gotcha"]');
+    if (honeypot && honeypot.value) return;
+    var originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          window.location.href = PDF_URL;
+        } else {
+          return response.json().then(function (data) {
+            throw new Error((data && data.error) || 'Submission was rejected.');
+          });
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+        errorBox.classList.add('show');
+      });
+  });
+})();
+</script>
+</body>
+</html>

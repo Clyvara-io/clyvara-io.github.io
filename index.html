@@ -3,297 +3,1494 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Security Questionnaire Readiness Checklist | Clyvara</title>
-<meta name="description" content="Free one-page checklist: the 35 pieces of evidence customers, cyber insurers, and funders ask for in security questionnaires — and how to have them ready.">
-<link rel="canonical" href="https://clyvara.io/readiness-checklist">
-<meta property="og:title" content="The Security Questionnaire Readiness Checklist | Clyvara">
-<meta property="og:description" content="The evidence customers, insurers, and funders actually ask for — and how to have it ready before they ask.">
-<meta property="og:type" content="article">
-<meta name="author" content="Rodger Lutalo">
+<title>Clyvara | Helping Small Businesses Reduce Cyber Risk</title>
+<meta name="description" content="Helping small businesses identify cyber risks, strengthen security, and protect what they've built.">
+<link rel="canonical" href="https://clyvara.io/">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph / LinkedIn / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clyvara.io/">
+<meta property="og:title" content="Clyvara | Helping Small Businesses Reduce Cyber Risk">
+<meta property="og:description" content="Helping small businesses identify cyber risks, strengthen security, and protect what they've built.">
 <meta property="og:image" content="https://clyvara.io/clyvara-og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Clyvara">
+
+<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Security Questionnaire Readiness Checklist | Clyvara">
-<meta name="twitter:description" content="The evidence customers, insurers, and funders actually ask for — and how to have it ready before they ask.">
+<meta name="twitter:title" content="Clyvara | Helping Small Businesses Reduce Cyber Risk">
+<meta name="twitter:description" content="Helping small businesses identify cyber risks, strengthen security, and protect what they've built.">
 <meta name="twitter:image" content="https://clyvara.io/clyvara-og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,760&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0b1220;
-    --navy2: #16203a;
-    --gold: #d9a441;
-    --ink: #1c2331;
-    --body: #3a4360;
-    --muted: #8b93a3;
-    --line: #e2e6ee;
-    --panel: #f7f8fb;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    color: var(--ink);
-    background: #ffffff;
-    line-height: 1.6;
-  }
-  a { text-decoration: none; }
-  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
 
-  /* NAV */
-  nav.site {
-    position: sticky; top: 0; z-index: 20;
-    background: rgba(11,18,32,0.96);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid #232d47;
-  }
-  nav.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1080px; gap: 16px; }
-  nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
-  nav.site .brand span { color: var(--gold); }
-  nav.site .links { display: flex; gap: 24px; align-items: center; }
-  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
-  nav.site .links a:hover { color: #fff; }
-  nav.site .cta {
-    background: var(--gold); color: var(--navy) !important; font-weight: 700;
-    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
-  }
-  @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --ink:#1A1B19;
+  --ink-soft:#242621;
+  --ink-softer:#2E312B;
+  --paper:#F1EFE8;
+  --paper-white:#FBFAF7;
+  --copper:#B4854A;
+  --copper-light:#D8B686;
+  --copper-deep:#8C6537;
+  --slate:#585F5A;
+  --slate-light:#646964;
+  --line: rgba(26,27,25,0.09);       /* -25% vs previous 0.12 — dividers organize, don't compete */
+  --line-on-ink: rgba(241,239,232,0.10); /* -23% vs previous 0.13 */
+  --rag-red:#B5493B;
+  --rag-amber:#C68A3D;
+  --rag-green:#5C7A5F;
 
-  /* HERO */
-  header.hero {
-    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
-    color: #fff;
-    padding: 96px 0 88px 0;
-  }
-  header.hero .wrap { max-width: 1080px; }
-  .eyebrow {
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 26px;
-  }
-  header.hero h1 {
-    font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem); line-height: 1.1; margin: 0 0 22px 0; font-weight: 900; max-width: 15ch;
-    letter-spacing: -0.015em;
-  }
-  header.hero .sub {
-    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; color: #c3cbdb; max-width: 580px; margin-bottom: 38px;
-  }
-  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-  .btn-primary {
-    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 15px;
-    padding: 15px 25px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; text-align: center;
-  }
-  .btn-secondary {
-    color: #fff; font-weight: 600; font-size: 15px; border: 1px solid #3a4560;
-    padding: 14px 23px; border-radius: 4px; line-height: 1.3; text-align: center;
-  }
-  .filesize { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+  --display:'Fraunces', serif;
+  --body:'IBM Plex Sans', sans-serif;
+  --mono:'IBM Plex Mono', monospace;
 
-  /* GATE FORM */
-  .gate-form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .gate-form input[type=email] {
-    background: #ffffff; border: 1px solid #3a4560; border-radius: 4px;
-    padding: 14px 15px; font-size: 16px; color: var(--ink); min-width: 260px; flex: 1;
-  }
-  .gate-form input[type=email]::placeholder { color: #8b93a3; }
-  .gate-form button.btn-primary { border: none; cursor: pointer; }
-  .gate-form .hp { position: absolute; left: -9999px; opacity: 0; }
-  .gate-note { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; color: var(--muted); margin-top: 12px; }
-  .gate-note.dark { color: var(--muted); }
-  .gate-error {
-    display: none; background: rgba(181,73,59,0.12); border: 1px solid rgba(181,73,59,0.4);
-    color: #f2b8ae; font-size: 13.5px; padding: 12px 15px; border-radius: 4px; margin-top: 14px; max-width: 480px; line-height: 1.5;
-  }
-  .gate-error.show { display: block; }
-  .gate-form button.btn-primary[disabled] { opacity: 0.65; cursor: not-allowed; }
+  --maxw: 1220px;
 
-  /* SECTION helpers */
-  section { padding: 92px 0; }
-  section.alt { background: var(--panel); }
-  .kicker {
-    font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #8C5F16; margin-bottom: 14px;
-  }
-  h2 { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.25rem); font-weight: 900; color: var(--navy); margin: 0 0 20px 0; letter-spacing: -0.012em; line-height: 1.18; }
-  .lede { font-size: 17px; line-height: 1.62; color: var(--body); max-width: 640px; margin-bottom: 36px; }
+  /* ---- consolidated "muted" text colors ----
+     Previously six near-duplicate one-off grays (#7D7B71, #8D8B80, #96948A,
+     #B0AEA3, #BEBCB1, #C6C4B9 …) were scattered through the sheet for
+     secondary/metadata text on the dark (ink) background. Reduced to two
+     deliberate steps so metadata reads as one consistent level, not six
+     slightly-different ones: */
+  --muted-on-ink: #B4B2A7;   /* metadata / labels / sources on ink — was #7D7B71 / #8D8B80 / #96948A / #B0AEA3 */
+  --body-on-ink: #CCCABF;    /* body copy / descriptions on ink — was #BEBCB1 / #C6C4B9 */
 
-  /* PIPELINE */
-  .pipeline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 22px 0; margin: 26px 0 48px 0; }
-  .pipe-cell { text-align: center; width: 100px; }
-  .pipe-letter {
-    width: 58px; height: 58px; margin: 0 auto 10px auto; border-radius: 50%;
-    background: var(--navy); color: var(--gold); font-family: monospace; font-weight: 800; font-size: 21px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .pipe-name { font-size: 12.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.03em; }
+  /* ============================================================
+     TYPE SCALE — fluid clamp() tokens, mobile → large desktop.
+     Ranges follow the refinement spec; see REPORT for the exact
+     px value each token resolves to at common breakpoints.
+     ============================================================ */
+  --fs-hero:      clamp(2.75rem, 2rem + 3.5vw, 5rem);        /* 44px → 80px : homepage hero display headline */
+  --fs-h1:        clamp(2.25rem, 1.7rem + 2.6vw, 4rem);      /* 36px → 64px : primary page H1 */
+  --fs-h2:        clamp(2rem, 1.45rem + 2.5vw, 3.625rem);    /* 32px → 58px : major section H2 (shared by all section-head + About/Contact headlines) */
+  --fs-card-title:clamp(1.4375rem, 1.2rem + 1vw, 1.875rem);  /* 23px → 30px : card / service / content-block titles */
+  --fs-phase-name:clamp(1.0625rem, 0.9rem + 0.65vw, 1.375rem); /* 17px → 22px : SHIELD phase names */
+  --fs-phase-letter: clamp(2.125rem, 1.4rem + 3vw, 3.5rem);  /* 34px → 56px : SHIELD decorative initials */
+  --fs-stat-num:  clamp(2.75rem, 1.6rem + 5.2vw, 4.75rem);   /* 44px → 76px : statistics */
+  --fs-body:      clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem); /* 17px → 19px : primary body copy */
+  --fs-support:   clamp(0.9375rem, 0.9125rem + 0.25vw, 1.0625rem); /* 15px → 17px : supporting copy ("Ideal for", card descriptions) */
+  --fs-micro:     clamp(0.6875rem, 0.66rem + 0.15vw, 0.8125rem); /* 11px → 13px : micro-labels / metadata / eyebrows */
+  --fs-nav:       13px;                                    /* nav links */
+  --fs-btn:       13.5px;                                    /* CTA buttons */
+  --lh-body: 1.6;
+  --lh-support: 1.5;
 
-  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; }
-  @media (max-width: 640px) { .phase-grid { grid-template-columns: 1fr; } }
-  .phase-card { border-top: 3px solid var(--gold); padding-top: 18px; }
-  .phase-card .h { display: flex; align-items: center; gap: 11px; margin-bottom: 9px; }
-  .phase-card .badge {
-    font-family: monospace; font-weight: 800; font-size: 12.5px; color: #fff; background: var(--navy);
-    border-radius: 3px; padding: 3px 9px;
-  }
-  .phase-card .name { font-weight: 800; font-size: 19px; color: var(--navy); }
-  .phase-card p { font-size: 15.5px; line-height: 1.6; color: var(--body); margin: 0; }
+  /* ---- spacing tokens ---- */
+  --space-section: clamp(96px, 60px + 7vw, 152px);   /* major section vertical padding */
+  --space-section-tight: clamp(76px, 52px + 5vw, 116px);
+  --space-head-gap: clamp(22px, 16px + 1.2vw, 32px); /* heading -> supporting paragraph */
+  --space-body-gap: clamp(28px, 20px + 2vw, 44px);   /* supporting paragraph -> CTA/content */
+  --space-para: clamp(20px, 16px + 0.8vw, 26px);     /* paragraph -> paragraph */
+  --card-pad: clamp(32px, 24px + 1.6vw, 44px);       /* card internal padding */
+}
 
-  /* STATS */
-  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0 8px 0; }
-  .stat { flex: 1; min-width: 180px; border: 1px solid var(--line); border-radius: 6px; padding: 24px; }
-  .stat .num { font-size: 36px; font-weight: 900; color: var(--navy); line-height: 1; }
-  .stat .cap { font-size: 14px; line-height: 1.5; color: var(--body); margin-top: 10px; }
-  .stat .src { font-family: monospace; font-size: 11.5px; color: #5F6A7D; margin-top: 10px; }
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); font-family:var(--body); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility; }
+h1,h2,h3,h4{ margin:0; font-weight:600; }
+p{ margin:0; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; background:none; border:none; }
+section{ scroll-margin-top:90px; }
+img,svg{ display:block; max-width:100%; }
+:focus-visible{ outline:2px solid var(--copper); outline-offset:3px; }
 
-  /* CHECK LIST */
-  .check-q { display: flex; gap: 15px; margin-bottom: 26px; align-items: flex-start; }
-  .check-q .box { width: 18px; height: 18px; border: 2px solid var(--navy); border-radius: 3px; flex-shrink: 0; margin-top: 3px; }
-  .check-q .tag { font-family: monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8C5F16; margin-bottom: 4px; }
-  .check-q .q { font-size: 16px; line-height: 1.5; color: var(--ink); }
+.container{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+.eyebrow{
+  font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--copper-deep); font-weight:500; display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{ content:''; width:18px; height:1px; background:var(--copper-deep); display:inline-block; }
+.eyebrow.on-ink{ color:var(--copper-light); }
+.eyebrow.on-ink::before{ background:var(--copper-light); }
 
-  /* WHY */
-  .why-row { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 14px; }
-  .why-col { flex: 1; min-width: 220px; border-top: 3px solid var(--gold); padding-top: 16px; }
-  .why-col .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
-  .why-col .d { font-size: 14.5px; line-height: 1.6; color: var(--body); }
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity 800ms cubic-bezier(.16,.8,.24,1), transform 800ms cubic-bezier(.16,.8,.24,1); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+.reveal-stagger > * { transition-delay:calc(var(--i,0) * 90ms); }
 
-  /* FINAL CTA */
-  .final-cta {
-    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
-    color: #fff; text-align: center; padding: 92px 0;
-  }
-  .final-cta h2 { color: #fff; }
-  .final-cta .lede { color: #c3cbdb; margin: 0 auto 36px auto; }
-  .final-cta .btn-row { justify-content: center; }
+/* ============================================================
+   LOGO MARK  (inline, reusable)
+   ============================================================ */
+.mark{ display:inline-flex; align-items:center; gap:12px; }
+.mark svg{ display:block; flex-shrink:0; }
+.mark-word{ font-family:var(--display); font-weight:600; letter-spacing:0.01em; }
+.mark-word .b{ font-weight:400; }
 
-  footer.site {
-    background: var(--navy); color: var(--muted); padding: 40px 0; font-size: 13.5px; line-height: 1.6;
-  }
-  footer.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  footer.site a { color: var(--muted); }
+/* ============================================================
+   NAV
+   ============================================================ */
+#site-nav{
+  position:fixed; top:0; left:0; right:0; z-index:300;
+  background:rgba(241,239,232,0); border-bottom:1px solid transparent;
+  transition:background 320ms ease, border-color 320ms ease, backdrop-filter 320ms ease;
+}
+#site-nav.scrolled{
+  background:rgba(251,250,247,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:0 32px;
+  height:132px; transition:height 380ms cubic-bezier(.2,.8,.2,1);
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+}
+#site-nav.scrolled .nav-inner{ height:76px; }
+
+.nav-brand{ color:var(--paper-white); transition:color 240ms ease; min-width:0; }
+#site-nav.scrolled .nav-brand{ color:var(--ink); }
+.nav-brand.mark{ gap:18px; transition:gap 380ms cubic-bezier(.2,.8,.2,1); align-items:center; }
+#site-nav.scrolled .nav-brand.mark{ gap:12px; }
+.nav-brand svg{ width:52px; height:52px; transition:width 380ms cubic-bezier(.2,.8,.2,1), height 380ms cubic-bezier(.2,.8,.2,1); flex-shrink:0; }
+#site-nav.scrolled .nav-brand svg{ width:32px; height:32px; }
+.nav-brand-text{ display:flex; flex-direction:column; gap:6px; min-width:0; }
+.nav-brand .mark-word{ font-size:26px; letter-spacing:0.06em; transition:font-size 380ms cubic-bezier(.2,.8,.2,1); line-height:1; white-space:nowrap; }
+#site-nav.scrolled .nav-brand .mark-word{ font-size:18px; }
+.nav-brand-caption{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--copper-light); opacity:1; max-height:18px; transform:scale(1); transform-origin:left center;
+  transition:opacity 320ms ease, max-height 320ms ease, transform 320ms ease, color 320ms ease, font-size 320ms ease;
+}
+/* Scrolled state stays just under the 11px micro-label floor deliberately:
+   at this point it's sharing a 76px-tall bar with the shrunk logo mark and
+   the nav links, and treating it as a fully independent label there would
+   crowd the bar; it is nav-brand-caption's own reduced state, not a piece
+   of content someone needs to read at that moment. */
+#site-nav.scrolled .nav-brand-caption{ font-size:9.5px; color:var(--slate); }
+
+.nav-links{ display:none; align-items:center; gap:21px; transition:gap 320ms ease; flex-shrink:1; min-width:0; }
+#site-nav.scrolled .nav-links{ gap:18px; }
+.nav-links a{
+  font-family:var(--mono); font-size:var(--fs-nav); letter-spacing:0.02em; text-transform:uppercase; color:var(--paper);
+  padding:6px 0; border-bottom:1px solid transparent; transition:color 200ms ease, border-color 200ms ease;
+  opacity:0.86; white-space:nowrap; flex-shrink:0;
+}
+#site-nav.scrolled .nav-links a{ color:var(--slate); opacity:1; }
+.nav-links a:hover{ color:var(--copper); border-color:var(--copper); opacity:1; }
+#site-nav.scrolled .nav-links a:hover{ color:var(--ink); }
+
+.btn{
+  font-family:var(--mono); font-size:var(--fs-btn); font-weight:500; letter-spacing:0.055em; text-transform:uppercase;
+  padding:16px 28px; display:inline-flex; align-items:center; gap:9px; border:1px solid transparent;
+  transition:background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  line-height:1.3; text-align:center;
+}
+/* No white-space:nowrap here (deliberately, unlike the nav links above):
+   the longest CTA labels ("Download the Free SHIELD Framework Guide") are
+   real, unshortenable content — at the larger 13.5px CTA size this refinement
+   introduced, forcing them onto one line would overflow a narrow mobile
+   viewport instead of wrapping to a second line inside the button. */
+@media(max-width:479px){ .btn{ padding:15px 22px; } }
+.btn-primary{ background:var(--copper); color:var(--ink); }
+.btn-primary:hover{ background:var(--copper-light); transform:translateY(-2px); box-shadow:0 10px 24px rgba(180,133,74,0.28); }
+.btn-ghost-onink{ border-color:rgba(241,239,232,0.32); color:var(--paper); }
+.btn-ghost-onink:hover{ border-color:var(--paper); background:rgba(241,239,232,0.06); }
+.btn-ghost{ border-color:rgba(26,27,25,0.28); color:var(--ink); }
+.btn-ghost:hover{ border-color:var(--ink); background:rgba(26,27,25,0.04); }
+.btn-full{ background:var(--ink); color:var(--paper-white); }
+.btn-full:hover{ background:var(--ink-soft); transform:translateY(-2px); }
+
+.nav-cta{ display:none; }
+.nav-cta.btn{
+  border:1px solid rgba(241,239,232,0.32); background:transparent; color:var(--paper); padding:15px 17px;
+  transition:background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+.nav-cta.btn:hover{ border-color:var(--paper); background:rgba(241,239,232,0.06); }
+#site-nav.scrolled .nav-cta.btn{ background:var(--copper); color:var(--ink); border-color:var(--copper); }
+#site-nav.scrolled .nav-cta.btn:hover{ background:var(--copper-light); transform:translateY(-2px); box-shadow:0 10px 24px rgba(180,133,74,0.28); }
+.nav-burger{ display:flex; flex-direction:column; gap:5px; padding:12px; }
+.nav-burger span{ display:block; width:22px; height:1.5px; background:var(--paper); transition:background 200ms ease; }
+#site-nav.scrolled .nav-burger span{ background:var(--ink); }
+@media(min-width:1180px){
+  .nav-links{ display:flex; }
+  .nav-cta{ display:inline-flex; }
+  .nav-burger{ display:none; }
+}
+/* Breakpoint moved from 920px to 1180px: at the larger nav type sizes this
+   refinement pass introduced (13px links, 13.5px CTA, bigger brand caption),
+   920px no longer left enough room for six nav links + the full-text CTA
+   button without collision — verified by rendering the bar at 920–1160px
+   during QA. Below 1180px the burger menu (unchanged, same six links + same
+   CTA) takes over instead of a cramped, overlapping horizontal bar. */
+
+/* mobile drawer */
+.mobile-drawer{
+  position:fixed; inset:0 0 auto 0; top:84px; z-index:250; background:var(--ink);
+  padding:8px 32px 32px; display:flex; flex-direction:column; gap:2px;
+  border-bottom:1px solid var(--line-on-ink);
+  transform:translateY(-8px); opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+}
+#site-nav.open .mobile-drawer{ opacity:1; transform:translateY(0); visibility:visible; pointer-events:auto; }
+.mobile-drawer a{ font-family:var(--mono); font-size:14px; letter-spacing:0.04em; color:var(--paper); padding:18px 0; border-bottom:1px solid var(--line-on-ink); text-transform:uppercase; }
+.mobile-drawer .btn{ margin-top:18px; align-self:flex-start; }
+@media(min-width:1180px){ .mobile-drawer{ display:none !important; } }
+@media(max-width:1179px){
+  .nav-inner{ height:84px !important; }
+  .nav-brand svg{ width:32px !important; height:32px !important; }
+  .nav-brand .mark-word{ font-size:19px !important; }
+  .nav-brand-caption{ display:none; }
+  #hero{ padding-top:126px; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+#hero{
+  background:var(--ink); color:var(--paper); position:relative; overflow:hidden;
+  padding:186px 0 0;
+}
+#hero::before{
+  content:''; position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--line-on-ink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-on-ink) 1px, transparent 1px);
+  background-size:68px 68px; opacity:0.72; /* was full-strength; grid now reads after the headline, not before it */
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 30% 30%, black 40%, transparent 85%);
+          mask-image: radial-gradient(ellipse 90% 70% at 30% 30%, black 40%, transparent 85%);
+}
+.hero-glow{
+  position:absolute; right:-8%; top:8%; width:640px; height:640px; border-radius:50%;
+  background:radial-gradient(circle, rgba(180,133,74,0.16) 0%, transparent 70%); pointer-events:none;
+}
+.hero-grid{
+  position:relative; z-index:2; display:grid; grid-template-columns:1.08fr 0.92fr; gap:60px; align-items:center;
+  padding-bottom:112px;
+}
+.hero-index{
+  font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.17em; text-transform:uppercase; color:var(--muted-on-ink);
+  display:flex; align-items:center; gap:10px; margin-bottom:34px;
+}
+.hero-index .dot{ width:6px; height:6px; border-radius:50%; background:var(--copper); }
+.hero-stakes{
+  font-family:var(--mono); font-size:14px; color:#C8917A; letter-spacing:0.02em; line-height:1.55;
+  margin:0 0 14px;
+}
+.hero-h1{
+  font-family:var(--display); font-size:var(--fs-hero); font-weight:600; line-height:1.03;
+  letter-spacing:-0.02em; margin:10px 0 30px; color:var(--paper-white); max-width:15ch;
+}
+.hero-h1 em{ font-style:italic; font-weight:400; color:var(--copper-light); }
+.hero-sub{ font-size:clamp(17px, 15.6px + 0.4vw, 20px); line-height:1.56; color:var(--body-on-ink); max-width:540px; margin-bottom:40px; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:44px; }
+.hero-credential{
+  font-family:var(--mono); font-size:12px; letter-spacing:0.02em; color:var(--muted-on-ink);
+  border-top:1px solid var(--line-on-ink); padding-top:22px; max-width:500px; line-height:1.8;
+}
+.hero-credential b{ color:var(--copper-light); font-weight:500; }
+.hero-credential-role{ color:var(--paper-white); font-weight:500; }
+.hero-credential-creds{ color:var(--muted-on-ink); }
+
+/* ---- signature element: animated case file / risk register ---- */
+.case-file{ position:relative; }
+.case-file-tab{
+  position:absolute; top:-16px; left:28px; z-index:3;
+  background:var(--copper); color:var(--ink); font-family:var(--mono); font-size:11px; font-weight:600;
+  letter-spacing:0.09em; text-transform:uppercase; padding:8px 15px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.28);
+}
+.case-file-stamp{
+  position:absolute; top:26px; right:26px; z-index:3; transform:rotate(6deg);
+  border:1.5px solid rgba(181,73,59,0.55); color:rgba(181,73,59,1);
+  font-family:var(--mono); font-weight:600; font-size:11px; letter-spacing:0.13em;
+  padding:6px 13px; border-radius:3px; opacity:0; animation:stampIn 500ms 1400ms cubic-bezier(.2,1.4,.4,1) forwards;
+}
+@keyframes stampIn{
+  0%{ opacity:0; transform:rotate(6deg) scale(1.6); }
+  60%{ opacity:1; }
+  100%{ opacity:1; transform:rotate(6deg) scale(1); }
+}
+.case-file-card{
+  background:var(--paper-white); color:var(--ink); border:1px solid rgba(0,0,0,0.06);
+  box-shadow:0 30px 70px rgba(0,0,0,0.4); position:relative; z-index:2;
+}
+.case-file-head{
+  display:flex; align-items:center; justify-content:space-between; padding:19px 24px;
+  border-bottom:1px solid var(--line); font-family:var(--mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:var(--slate);
+}
+.case-file-head .dotmark{ width:6px; height:6px; border-radius:50%; background:var(--copper); display:inline-block; margin-right:8px; }
+.case-file-row{
+  display:flex; align-items:center; gap:14px; padding:17px 24px; border-bottom:1px solid var(--line);
+}
+.rag{ width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.rag.red{ background:var(--rag-red); } .rag.amber{ background:var(--rag-amber); } .rag.green{ background:var(--rag-green); }
+.redact-bar{
+  height:10px; background:var(--ink); border-radius:1px; flex:1; transform-origin:left center;
+  transform:scaleX(0); animation:redactIn 620ms cubic-bezier(.2,.7,.3,1) forwards;
+}
+.case-file-row:nth-child(2) .redact-bar{ animation-delay:520ms; }
+.case-file-row:nth-child(3) .redact-bar{ animation-delay:700ms; }
+.case-file-row:nth-child(4) .redact-bar{ animation-delay:880ms; }
+.case-file-row:nth-child(5) .redact-bar{ animation-delay:1060ms; }
+@keyframes redactIn{ to{ transform:scaleX(1); } }
+.case-file-row .rag-label{ font-family:var(--mono); font-size:11.5px; color:var(--slate); width:66px; flex-shrink:0; }
+.case-file-foot{
+  padding:19px 24px; font-family:var(--mono); font-size:11px; color:var(--slate); letter-spacing:0.02em; line-height:1.65;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.case-file-foot b{ color:var(--copper-deep); }
+.case-file-shadow-card{
+  position:absolute; inset:16px -16px auto auto; top:20px; right:-16px; width:88%; height:100%;
+  background:var(--ink-softer); border:1px solid var(--line-on-ink); z-index:1;
+}
+
+/* ============================================================
+   TICKER / STANDARDS STRIP
+   ============================================================ */
+#standards{ background:var(--ink-soft); padding:28px 0; position:relative; z-index:2; }
+.standards-inner{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0 40px; row-gap:14px; }
+.standards-label{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.17em; text-transform:uppercase; color:var(--muted-on-ink); }
+.standards-item{ font-family:var(--mono); font-size:13px; letter-spacing:0.07em; color:#D6D4C8; }
+.standards-sep{ width:1px; height:14px; background:var(--line-on-ink); }
+
+/* ============================================================
+   GENERIC SECTION
+   ============================================================ */
+.section{ padding:var(--space-section) 0; }
+.section.tight{ padding:var(--space-section-tight) 0; }
+.section-head{ max-width:660px; margin-bottom:64px; }
+.section-head h2{ font-family:var(--display); font-size:var(--fs-h2); line-height:1.12; letter-spacing:-0.016em; margin-top:var(--space-head-gap); }
+.section-head p{ margin-top:var(--space-head-gap); font-size:var(--fs-body); line-height:var(--lh-body); color:var(--slate); max-width:62ch; }
+.bg-white{ background:var(--paper-white); }
+.section-foot-line{ margin-top:52px; padding-top:28px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+
+/* ============================================================
+   ABOUT / FOUNDER'S EDGE
+   ============================================================ */
+.about-grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:80px; align-items:start; }
+.about-body p{ font-size:var(--fs-body); line-height:1.6; color:var(--slate); margin-bottom:var(--space-para); max-width:62ch; }
+.about-body p.lede{ font-size:clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem); line-height:1.4; color:var(--ink); font-family:var(--display); font-weight:500; margin-bottom:26px; }
+.about-founder{ margin-top:32px; font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.03em; color:var(--slate); border-top:1px solid var(--line); padding-top:22px; line-height:1.8; }
+
+.cred-list{ display:flex; flex-direction:column; }
+.cred-item{ padding:30px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:80px 1fr; gap:22px; }
+.cred-item:first-child{ padding-top:0; }
+.cred-item:last-of-type{ border-bottom:none; }
+.cred-mark{ font-family:var(--display); font-size:clamp(1.75rem, 1.6rem + 0.6vw, 2.125rem); font-weight:600; color:var(--copper-deep); line-height:1; padding-top:2px; }
+.cred-title{ font-family:var(--display); font-size:clamp(1.5rem, 1.4rem + 0.4vw, 1.75rem); font-weight:600; margin-bottom:10px; line-height:1.2; }
+.cred-desc{ font-size:var(--fs-support); line-height:var(--lh-support); color:var(--slate); }
+
+/* ============================================================
+   STAT BAND  (sourced, real figures — no fabricated traction)
+   ============================================================ */
+#stats{ background:var(--ink); color:var(--paper-white); padding:104px 0; position:relative; overflow:hidden; }
+#stats::before{
+  content:''; position:absolute; inset:0;
+  background-image:linear-gradient(var(--line-on-ink) 1px, transparent 1px), linear-gradient(90deg, var(--line-on-ink) 1px, transparent 1px);
+  background-size:68px 68px; opacity:0.4;
+}
+.stats-grid{ position:relative; z-index:2; display:grid; grid-template-columns:repeat(3,1fr); gap:52px; }
+.stat-num{ font-family:var(--display); font-size:var(--fs-stat-num); font-weight:600; color:var(--copper-light); line-height:1; letter-spacing:-0.015em; }
+.stat-label{ font-family:var(--body); font-size:var(--fs-support); color:var(--body-on-ink); margin-top:20px; line-height:1.5; max-width:32ch; }
+.stat-source{ font-family:var(--mono); font-size:var(--fs-micro); color:var(--muted-on-ink); margin-top:16px; letter-spacing:0.04em; }
+
+/* ============================================================
+   DIFFERENTIATION
+   ============================================================ */
+.diff-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:8px; }
+
+/* ============================================================
+   CLIENT JOURNEY
+   ============================================================ */
+.journey-strip{ display:flex; align-items:stretch; gap:0; margin-top:8px; }
+.journey-step{ flex:1; display:flex; flex-direction:column; gap:12px; padding:4px 10px; }
+.journey-num{ font-family:var(--mono); font-size:13px; color:var(--copper-deep); letter-spacing:0.05em; }
+.journey-title{ font-family:var(--display); font-size:clamp(1.3125rem, 1.225rem + 0.375vw, 1.5625rem); font-weight:600; line-height:1.25; }
+.journey-desc{ font-size:var(--fs-support); line-height:var(--lh-support); color:var(--slate); }
+.journey-arrow{ display:flex; align-items:center; justify-content:center; color:var(--copper-deep); font-size:18px; padding:0 6px; flex-shrink:0; opacity:0.75; }
+@media(max-width:900px){
+  .journey-strip{ flex-direction:column; gap:26px; }
+  .journey-arrow{ display:none; }
+}
+.diff-card{ background:var(--paper-white); padding:var(--card-pad); transition:background 200ms ease; }
+.diff-card:hover{ background:#fff; }
+.diff-tag{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-deep); margin-bottom:20px; }
+.diff-title{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; margin-bottom:14px; line-height:1.24; }
+.diff-body{ font-size:var(--fs-support); line-height:1.6; color:var(--slate); }
+
+/* ============================================================
+   SHIELD FRAMEWORK
+   ============================================================ */
+#shield{ background:var(--ink); color:var(--paper); position:relative; overflow:hidden; }
+#shield::after{
+  content:''; position:absolute; right:-10%; bottom:-20%; width:520px; height:520px; border-radius:50%;
+  background:radial-gradient(circle, rgba(180,133,74,0.10) 0%, transparent 70%); pointer-events:none;
+}
+#shield .section-head h2{ color:var(--paper-white); }
+#shield .section-head p{ color:var(--body-on-ink); }
+.shield-rows{ position:relative; z-index:2; border-top:1px solid var(--line-on-ink); }
+.shield-row{
+  display:grid; grid-template-columns:76px 210px 1fr; gap:30px; align-items:start;
+  padding:34px 0; border-bottom:1px solid var(--line-on-ink); transition:padding-left 220ms ease;
+}
+.shield-row:hover{ padding-left:10px; }
+.shield-letter{ font-family:var(--display); font-size:var(--fs-phase-letter); font-weight:600; color:var(--copper); line-height:1; }
+.shield-row-start{ background:rgba(180,133,74,0.07); margin:0 -20px; padding-left:20px !important; padding-right:20px; border-radius:2px; }
+.shield-row-start .shield-letter{ font-size:calc(var(--fs-phase-letter) + 6px); }
+.shield-start-badge{
+  display:inline-block; font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:0.07em; text-transform:uppercase;
+  color:var(--ink); background:var(--copper-light); padding:4px 9px; border-radius:2px; margin-left:12px; vertical-align:middle;
+}
+.shield-name{ font-family:var(--mono); font-size:var(--fs-phase-name); font-weight:500; letter-spacing:0.05em; text-transform:uppercase; color:var(--paper-white); padding-top:8px; }
+.shield-desc{ font-size:clamp(1rem, 0.95rem + 0.25vw, 1.125rem); line-height:1.65; color:var(--body-on-ink); padding-top:8px; }
+.shield-cta{ position:relative; z-index:2; margin-top:52px; display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+.shield-cta-note{ font-family:var(--mono); font-size:12px; color:var(--muted-on-ink); }
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
+.svc-card{ background:var(--paper-white); border:1px solid var(--line); padding:var(--card-pad); display:flex; flex-direction:column; transition:border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease; }
+.svc-card:hover{ border-color:rgba(180,133,74,0.55); transform:translateY(-3px); box-shadow:0 20px 40px rgba(26,27,25,0.08); }
+.svc-code{
+  font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--copper);
+  border:1px solid rgba(180,133,74,0.45); width:46px; height:46px; display:flex; align-items:center; justify-content:center; margin-bottom:26px;
+}
+.svc-label{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.1em; text-transform:uppercase; color:var(--slate); margin-bottom:11px; }
+.svc-title{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; margin-bottom:15px; line-height:1.22; }
+.svc-desc{ font-size:clamp(1rem, 0.95rem + 0.25vw, 1.125rem); line-height:1.65; color:var(--slate); margin-bottom:28px; flex:1; }
+.svc-ideal{ font-family:var(--mono); font-size:var(--fs-support); color:var(--slate); border-top:1px solid var(--line); padding-top:19px; letter-spacing:0.005em; line-height:1.5; }
+.svc-card.flagship{ background:var(--ink); border-color:var(--ink); }
+.svc-card.flagship .svc-code{ color:var(--copper-light); border-color:var(--copper); }
+.svc-card.flagship .svc-label{ color:var(--muted-on-ink); }
+.svc-card.flagship .svc-title{ color:var(--paper-white); }
+.svc-card.flagship .svc-desc{ color:var(--body-on-ink); }
+.svc-card.flagship .svc-ideal{ color:var(--muted-on-ink); border-color:var(--line-on-ink); }
+.svc-card.flagship:hover{ border-color:var(--copper); }
+
+/* ============================================================
+   SECTORS
+   ============================================================ */
+.sector-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+.sector-cell{ background:var(--paper-white); padding:38px 32px; transition:background 200ms ease; display:flex; flex-direction:column; gap:12px; }
+.sector-cell:hover{ background:#fff; }
+.sector-num{ font-family:var(--mono); font-size:var(--fs-micro); color:var(--copper-deep); letter-spacing:0.08em; }
+.sector-name{ font-family:var(--display); font-size:clamp(1.375rem, 1.3rem + 0.33vw, 1.594rem); font-weight:600; }
+.sector-desc{ font-size:var(--fs-support); line-height:1.55; color:var(--slate); }
+
+/* ============================================================
+   INSIGHTS
+   ============================================================ */
+.insight-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
+.insight-card{ display:flex; flex-direction:column; gap:18px; }
+.insight-tag{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-deep); }
+.insight-title{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; line-height:1.28; }
+.insight-desc{ font-size:var(--fs-support); line-height:1.6; color:var(--slate); }
+.insight-link{ font-family:var(--mono); font-size:14px; letter-spacing:0.03em; color:var(--ink); border-bottom:1px solid var(--copper); padding-bottom:3px; align-self:flex-start; margin-top:auto; }
+.insight-link.soon{ color:var(--slate); border-bottom:1px dashed var(--line); cursor:default; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact{ background:var(--ink); color:var(--paper); position:relative; overflow:hidden; }
+#contact::before{
+  content:''; position:absolute; inset:0;
+  background-image:linear-gradient(var(--line-on-ink) 1px, transparent 1px), linear-gradient(90deg, var(--line-on-ink) 1px, transparent 1px);
+  background-size:68px 68px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 80% 40%, black 30%, transparent 80%);
+          mask-image: radial-gradient(ellipse 70% 60% at 80% 40%, black 30%, transparent 80%);
+}
+.contact-grid{ position:relative; z-index:2; display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; }
+#contact .section-head h2{ color:var(--paper-white); }
+#contact .section-head p{ color:var(--body-on-ink); }
+.contact-detail{ display:flex; flex-direction:column; gap:28px; margin-top:48px; }
+.contact-detail-item{ border-top:1px solid var(--line-on-ink); padding-top:20px; }
+.contact-detail-label{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.13em; text-transform:uppercase; color:var(--muted-on-ink); margin-bottom:10px; }
+.contact-detail-value{ font-family:var(--display); font-size:clamp(1.375rem, 1.3rem + 0.35vw, 1.625rem); color:var(--paper-white); }
+
+.contact-form{ background:var(--paper-white); color:var(--ink); padding:var(--card-pad); box-shadow:0 30px 70px rgba(0,0,0,0.35); }
+.form-row{ margin-bottom:24px; }
+.form-row label{ display:block; font-family:var(--mono); font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--slate); margin-bottom:10px; }
+.form-row input, .form-row select, .form-row textarea{
+  width:100%; border:1px solid rgba(26,27,25,0.18); background:var(--paper-white); padding:15px 16px; font-family:var(--body); font-size:16px; color:var(--ink);
+  transition:border-color 160ms ease;
+}
+/* font-size is 16px (not the ~14.5px used elsewhere on the page) specifically
+   because iOS Safari auto-zooms the viewport when focusing a text input
+   sized below 16px — a real mobile-usability defect, not a stylistic choice. */
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus{ outline:none; border-color:var(--copper); box-shadow:0 0 0 3px rgba(180,133,74,0.18); }
+.form-row input[aria-invalid="true"], .form-row select[aria-invalid="true"], .form-row textarea[aria-invalid="true"]{ border-color:var(--rag-red); }
+.form-row textarea{ resize:vertical; min-height:110px; }
+.form-two{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-submit{ width:100%; justify-content:center; margin-top:8px; }
+.form-note{ font-family:var(--mono); font-size:12px; color:var(--slate); margin-top:18px; line-height:1.6; }
+.form-success{ text-align:center; padding:40px 10px; }
+.form-success-icon{ width:42px; height:42px; margin:0 auto 16px; color:var(--copper); }
+.form-success-icon svg{ width:100%; height:100%; display:block; }
+.form-success h3{ font-family:var(--display); font-size:26px; margin-bottom:12px; }
+.form-success p{ font-size:15px; color:var(--slate); line-height:1.6; }
+.form-success-steps{ text-align:left; max-width:380px; margin:26px auto 0; display:flex; flex-direction:column; gap:14px; }
+.form-success-step{ display:flex; align-items:flex-start; gap:11px; font-size:14.5px; line-height:1.55; color:var(--slate); }
+.form-success-step .dot{ width:6px; height:6px; border-radius:50%; background:var(--copper); flex-shrink:0; margin-top:7px; }
+.form-success-note{ margin-top:26px; padding-top:22px; border-top:1px solid var(--line); font-size:13.5px; color:var(--slate); line-height:1.65; font-style:italic; max-width:380px; margin-left:auto; margin-right:auto; }
+.form-success-cta{ margin-top:24px; }
+.hidden{ display:none !important; }
+.form-error{ background:rgba(181,73,59,0.08); border:1px solid rgba(181,73,59,0.35); padding:18px 20px; margin-top:18px; }
+.form-error p{ font-size:14px; color:var(--rag-red); line-height:1.6; }
+.form-error a{ text-decoration:underline; }
+.form-submit[disabled]{ opacity:0.6; cursor:not-allowed; transform:none !important; box-shadow:none !important; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
+.footer-grid{ display:grid; grid-template-columns:1.4fr 0.8fr 0.9fr 1fr; gap:52px; padding-bottom:60px; border-bottom:1px solid var(--line-on-ink); }
+.footer-brand .mark{ margin-bottom:22px; }
+.footer-brand .mark-word{ color:var(--paper-white); font-size:20px; }
+.footer-desc{ font-size:16px; line-height:1.7; color:#A19E92; max-width:290px; }
+.footer-h{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.12em; text-transform:uppercase; color:var(--muted-on-ink); margin-bottom:22px; }
+.footer-links{ display:flex; flex-direction:column; gap:15px; }
+.footer-links a{ font-size:16px; color:var(--body-on-ink); transition:color 160ms ease; }
+.footer-links a:hover{ color:var(--copper-light); }
+.footer-cred{ font-size:16px; color:var(--body-on-ink); }
+.footer-bottom{
+  padding:28px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-family:var(--mono); font-size:13px; color:var(--muted-on-ink); letter-spacing:0.02em;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:980px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .case-file{ max-width:480px; }
+  .about-grid{ grid-template-columns:1fr; gap:56px; }
+  .contact-grid{ grid-template-columns:1fr; gap:52px; }
+  .diff-grid, .sector-grid{ grid-template-columns:repeat(2,1fr); }
+  .stats-grid{ grid-template-columns:1fr; gap:40px; }
+  .footer-grid{ grid-template-columns:1fr 1fr; gap:40px 32px; }
+}
+@media(max-width:680px){
+  .section{ padding:88px 0; }
+  .section.tight{ padding:72px 0; }
+  .services-grid, .diff-grid, .sector-grid, .insight-grid{ grid-template-columns:1fr; }
+  .shield-row{ grid-template-columns:52px 1fr; gap:14px 18px; }
+  .shield-row .shield-name{ grid-column:1 / -1; padding-top:0; margin-top:-4px; }
+  /* Pre-existing gap: only shield-name got the full-width override below,
+     so shield-desc was left confined to the 1fr column next to the 52px
+     letter — at this width that's barely 200px, wrapping every description
+     to one or two words per line. Giving it the same full-width treatment
+     fixes that regardless of screen size. */
+  .shield-row .shield-desc{ grid-column:1 / -1; padding-top:2px; }
+  .form-two{ grid-template-columns:1fr; }
+  .footer-grid{ grid-template-columns:1fr; }
+  /* hero-h1 relies on --fs-hero's own clamp() floor (44px, within the
+     40–48px mobile target) — no separate override needed here, and the
+     previous clamp(32px,9vw,44px) is removed because its 32px floor sat
+     below the mobile hero minimum. */
+  .contact-form{ padding:32px 26px; }
+}
+
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Clyvara",
+  "legalName": "Clyvara LLC",
+  "url": "https://clyvara.io",
+  "logo": "https://clyvara.io/favicon.svg",
+  "image": "https://clyvara.io/clyvara-og-image.png",
+  "description": "Helping small businesses identify cyber risks, strengthen security, and protect what they've built.",
+  "founder": {
+    "@type": "Person",
+    "name": "Rodger Lutalo",
+    "jobTitle": "Founder & Principal Cybersecurity Consultant"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dallas-Fort Worth",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "areaServed": "Dallas-Fort Worth, Texas",
+  "knowsAbout": [
+    "Cybersecurity risk assessment",
+    "Governance, risk and compliance (GRC)",
+    "NIST Cybersecurity Framework",
+    "ISO/IEC 27001",
+    "SOC 2",
+    "HIPAA",
+    "CIS Controls v8",
+    "CMMC"
+  ]
+}
+</script>
 </head>
 <body>
 
-<nav class="site">
-  <div class="wrap">
-    <div class="brand">CLYVARA <span>Cyber Risk &amp; Compliance Advisory</span></div>
-    <div class="links">
-      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
-      <a href="https://clyvara.io/#services">Services</a>
-      <a href="https://clyvara.io/#insights">Insights</a>
-      <a class="cta" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand mark" aria-label="Clyvara home">
+      <svg viewBox="0 0 599.29 547.41" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="currentColor" d="M278.97,395.34c-19.15,0-42.37,1.35-60.56-0.26c-48.14-4.28-90.59-21.89-123.13-58.83c-61.12-69.39-47.32-175.46,29.57-226.86c41.41-27.68,87.75-37.24,137.04-34.44c31.29,1.78,68.53,9.85,98.05,20.24l3.16,84c-0.95-2.41-1.97-4.8-2.85-7.24c-9.87-27.4-25.26-51.04-48.82-68.52c-36.96-27.41-77.65-28.86-119.56-14.49c-37.01,12.69-61.82,39.22-75.19,75.2c-23.87,64.22-16.08,125.6,26.97,179.39c15.43,19.28,34.05,33.24,57.18,40.71c22.75,7.34,50.4,7.57,74.44,4.24L278.97,395.34z"/>
+        <path fill="#B4854A" d="M367.22,437.55l-98.03-165.58h-52.35c2.18,0.03,4.62,3.28,8.37,9.29c4.52,7.25,10.14,17.45,18.27,30.96c11.47,19.07,25.43,42.98,39.66,66.63c33.18,55.16,65.04,111.05,65.04,111.05l193.55-326.81h-12.69L367.22,437.55z"/>
+      </svg>
+      <span class="nav-brand-text">
+        <span class="mark-word">CLY<span class="b">VARA</span></span>
+        <span class="nav-brand-caption">Cyber Risk &amp; Compliance Advisory</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#shield">SHIELD Framework</a>
+      <a href="#services">Services</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
     </div>
+    <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
+      <a href="#contact" class="btn btn-primary nav-cta">Book a Risk Conversation</a>
+      <button class="nav-burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-drawer">
+    <a href="#about">About</a>
+    <a href="#shield">SHIELD Framework</a>
+    <a href="#services">Services</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#insights">Insights</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-primary">Book a Risk Conversation</a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Free Checklist · Questionnaire Readiness</div>
-    <h1>Could you answer a security questionnaire today?</h1>
-    <div class="sub">Most small businesses find out about their security gaps from someone else — a customer running vendor due diligence, a cyber insurer at renewal, a funder reviewing a grant. This free one-page checklist lists the 35 pieces of evidence they actually ask for, across the eight areas every questionnaire covers, so you can see exactly where you stand before they ask.</div>
-    <form id="get-checklist" class="gate-form" action="https://formspree.io/f/xppazdko" method="POST">
-      <input type="email" name="email" placeholder="you@company.com" required>
-      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="_subject" value="New Readiness Checklist download">
-      <button type="submit" class="btn-primary" id="get-checklist-btn">&#8595; Get the free checklist</button>
-    </form>
-    <div class="gate-error" id="get-checklist-error">Something went wrong sending your request. Please try again, or email <a href="mailto:Info@clyvara.io" style="color:#f2b8ae; text-decoration:underline;">Info@clyvara.io</a> directly.</div>
-    <div class="gate-note">1 page · takes 30 seconds · no spam, just the checklist</div>
-    <div class="btn-row" style="margin-top:16px;">
-      <a class="btn-secondary" href="#inside">See what's inside</a>
-    </div>
-  </div>
-</header>
+<div id="top"></div>
 
-<section id="inside">
-  <div class="wrap">
-    <div class="kicker">What's Inside</div>
-    <h2>Eight areas. Thirty-five pieces of evidence.</h2>
-    <p class="lede">Every item on the checklist is phrased as evidence — something you could produce within one business day if a customer, insurer, or funder asked for it tomorrow.</p>
-    <div class="phase-grid">
-      <div class="phase-card"><div class="h"><span class="badge">1</span><span class="name">Know what you have</span></div><p>Your device and software inventory, who administers each system, and a map of where customer or patient data actually lives.</p></div><div class="phase-card"><div class="h"><span class="badge">2</span><span class="name">Control who gets in</span></div><p>MFA, named accounts with no shared logins, your admin list, and proof that leavers lose access the day they leave.</p></div><div class="phase-card"><div class="h"><span class="badge">3</span><span class="name">Keep systems defended</span></div><p>Patching records, endpoint protection coverage, and recent vulnerability results you can hand over, not describe.</p></div><div class="phase-card"><div class="h"><span class="badge">4</span><span class="name">Back up — and prove recovery</span></div><p>A backup schedule is a claim. A dated restore test is evidence. Questionnaires increasingly ask for the second one.</p></div><div class="phase-card"><div class="h"><span class="badge">5</span><span class="name">Be ready for an incident</span></div><p>A written response plan, the first phone calls listed, and notes showing the plan has been walked through at least once.</p></div><div class="phase-card"><div class="h"><span class="badge">6</span><span class="name">Govern it on paper</span></div><p>A signed security policy, a current risk assessment, a risk register with owners, and findings shown closed — not just opened.</p></div><div class="phase-card"><div class="h"><span class="badge">7</span><span class="name">Prepare your people</span></div><p>Training records, phishing-awareness results, and signed acceptable-use acknowledgments for the whole team.</p></div><div class="phase-card"><div class="h"><span class="badge">8</span><span class="name">Manage your vendors</span></div><p>Which vendors can touch your systems or data, the agreements you hold with them, and the reviews you have on file.</p></div>
-    </div>
-  </div>
-</section>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-index"><span class="dot"></span>CLYVARA / FILE — 2026 / DALLAS–FORT WORTH</div>
+        <div class="eyebrow on-ink">Cyber Risk &amp; Compliance Advisory</div>
+        <p class="hero-stakes">A single breach costs the average small business $200K+ — and most never fully recover.</p>
+        <h1 class="hero-h1">Protect what you have built.</h1>
+        <p class="hero-sub">Clyvara brings research-driven rigor, disciplined project delivery, and fractional CISO access to small and mid-sized businesses across Dallas–Fort Worth — the depth of a security team, without the headcount.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Book a Free SHIELD Risk Conversation</a>
+          <a href="#shield" class="btn btn-ghost-onink">View the SHIELD Framework</a>
+        </div>
+        <div class="hero-credential"><b>Rodger Lutalo</b> — <span class="hero-credential-role">Founder &amp; Principal Cybersecurity Consultant</span> <span class="hero-credential-creds">(DBA, MS Computer Science, PMP)</span>. Doctoral research into cybersecurity awareness and training failures in small and mid-sized enterprises.</div>
+      </div>
 
-<section class="alt">
-  <div class="wrap">
-    <div class="kicker">How To Use It</div>
-    <h2>Ten honest minutes, once a quarter.</h2>
-    <p class="lede">Print it or keep it on screen. Work down the list and tick only what you could actually produce within one business day — not what you believe is probably in place.</p>
-    <div class="check-q"><div class="box"></div><div><div class="tag">Step one</div><div class="q">Tick what you could produce within one business day.</div></div></div>
-    <div class="check-q"><div class="box"></div><div><div class="tag">Step two</div><div class="q">The unticked boxes are your real exposure — roughly in the order a questionnaire will find them.</div></div></div>
-    <div class="check-q"><div class="box"></div><div><div class="tag">Step three</div><div class="q">Treat the unticked list as your work plan, and re-run the checklist each quarter to watch it shrink.</div></div></div>
-    <a class="btn-secondary" style="color:var(--navy); border-color:var(--navy); margin-top:6px; display:inline-block;" href="#get-checklist">Get the checklist &#8594;</a>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="kicker">Why Clyvara</div>
-    <h2>Depth a generalist can't offer. Access an enterprise firm won't give you.</h2>
-    <div class="why-row">
-      <div class="why-col"><div class="t">Research-Backed</div><div class="d">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail.</div></div>
-      <div class="why-col"><div class="t">Focused</div><div class="d">Clyvara doesn't sell IT support or general consulting. Cybersecurity advisory is the entire practice.</div></div>
-      <div class="why-col"><div class="t">Accessible</div><div class="d">Direct access to a credentialed principal consultant — not a junior analyst routed through account layers.</div></div>
+      <div class="case-file reveal" style="--i:1">
+        <div class="case-file-tab">Risk Register — Excerpt</div>
+        <div class="case-file-stamp">Confidential</div>
+        <div class="case-file-shadow-card" aria-hidden="true"></div>
+        <div class="case-file-card">
+          <div class="case-file-head"><span><span class="dotmark"></span>SHIELD / Phase S — Survey</span><span>Rev. 03</span></div>
+          <div class="case-file-row"><span class="rag red"></span><span class="rag-label">Critical</span><span class="redact-bar" style="max-width:78%;"></span></div>
+          <div class="case-file-row"><span class="rag amber"></span><span class="rag-label">Elevated</span><span class="redact-bar" style="max-width:58%;"></span></div>
+          <div class="case-file-row"><span class="rag amber"></span><span class="rag-label">Elevated</span><span class="redact-bar" style="max-width:66%;"></span></div>
+          <div class="case-file-row"><span class="rag green"></span><span class="rag-label">Managed</span><span class="redact-bar" style="max-width:44%;"></span></div>
+          <div class="case-file-row" style="border-bottom:none;"><span class="rag green"></span><span class="rag-label">Managed</span><span class="redact-bar" style="max-width:52%;"></span></div>
+          <div class="case-file-foot">
+            <span>Full register delivered in <b>SHIELD Phase S</b></span>
+            <span>clyvara.io</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="final-cta">
-  <div class="wrap">
-    <div class="kicker" style="color:var(--gold);">Start Here</div>
-    <h2>Start with the checklist. Then close the gaps.</h2>
-    <p class="lede">If the checklist leaves boxes unticked, Clyvara's Risk &amp; Readiness Assessment turns them into a documented risk register and a remediation roadmap — the evidence pack behind every future questionnaire.</p>
-    <div class="btn-row">
-      <a class="btn-primary" href="#get-checklist">&#8595; Get the checklist</a>
-      <a class="btn-secondary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
-    </div>
+<!-- ============================================================
+     STANDARDS STRIP
+     ============================================================ -->
+<div id="standards">
+  <div class="container standards-inner">
+    <span class="standards-label">Frameworks we work within</span>
+    <span class="standards-sep"></span>
+    <span class="standards-item">NIST CSF</span>
+    <span class="standards-sep"></span>
+    <span class="standards-item">ISO/IEC 27001</span>
+    <span class="standards-sep"></span>
+    <span class="standards-item">SOC 2</span>
+    <span class="standards-sep"></span>
+    <span class="standards-item">HIPAA</span>
+    <span class="standards-sep"></span>
+    <span class="standards-item">CIS Controls v8</span>
+    <span class="standards-sep"></span>
+    <span class="standards-item">CMMC</span>
   </div>
 </div>
 
-<footer class="site">
-  <div class="wrap">
-    <div>&copy; 2026 Clyvara LLC · Dallas&ndash;Fort Worth, Texas</div>
-    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a></div>
+<!-- ============================================================
+     ABOUT / FOUNDER'S EDGE
+     ============================================================ -->
+<section id="about" class="section bg-white">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow">About Clyvara</div>
+        <h2 style="font-family:var(--display); font-size:var(--fs-h2); line-height:1.12; margin-top:var(--space-head-gap); letter-spacing:-0.016em;">A single-specialty firm, built on research most consultancies never do.</h2>
+        <div class="about-body" style="margin-top:var(--space-body-gap);">
+          <p class="lede">Clyvara exists because SMB cybersecurity failures are rarely a technology problem — they're a training and governance problem.</p>
+          <p>That's the conclusion of the doctoral research this firm is built on. Rather than selling another tool or another audit, Clyvara delivers the discipline of an enterprise security program — scoped, priced, and paced for a business that has 20 to 200 employees, not 20,000.</p>
+          <p>Clyvara stays deliberately narrow. No general technology advisory. No digital transformation consulting. Every dollar of effort goes deeper into cybersecurity — new frameworks, new sectors, new delivery models — never wider into adjacent, more commoditized markets.</p>
+        </div>
+        <div class="about-founder">Founder-led · Manager-managed LLC · Dallas–Fort Worth, Texas</div>
+      </div>
+
+      <div class="reveal" style="--i:1">
+        <div class="cred-list">
+          <div class="cred-item">
+            <div class="cred-mark">DBA</div>
+            <div>
+              <div class="cred-title">Doctorate in Business Administration</div>
+              <div class="cred-desc">Original doctoral research project examining cybersecurity awareness and training failures in small and mid-sized enterprises — the research foundation behind Clyvara's entire methodology.</div>
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-mark">MS</div>
+            <div>
+              <div class="cred-title">MS, Computer Science</div>
+              <div class="cred-desc">Graduate study spanning cybersecurity, networking, software engineering, cloud computing, information systems, and business analytics.</div>
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-mark">PMP</div>
+            <div>
+              <div class="cred-title">Project Management Professional</div>
+              <div class="cred-desc">Every engagement scoped, managed, and delivered with defined milestones and documented outcomes — not open-ended hours.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal" style="--i:0">
+        <div class="stat-num">43%</div>
+        <div class="stat-label">of cyberattacks specifically target small and mid-sized businesses.</div>
+        <div class="stat-source">Source: Accenture</div>
+      </div>
+      <div class="reveal" style="--i:1">
+        <div class="stat-num">95%</div>
+        <div class="stat-label">of data breaches involve human error — a training and governance failure, not a technology one.</div>
+        <div class="stat-source">Source: IBM</div>
+      </div>
+      <div class="reveal" style="--i:2">
+        <div class="stat-num">$200K+</div>
+        <div class="stat-label">is the average cost of a breach for a small or mid-sized business.</div>
+        <div class="stat-source">Source: Hiscox</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIFFERENTIATION
+     ============================================================ -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why Clyvara</div>
+      <h2>Depth a generalist can't offer. Access an enterprise firm won't give you.</h2>
+      <p>Clyvara sits deliberately between the two extremes most SMBs are stuck choosing from: an overstretched IT generalist, or an enterprise firm priced for a Fortune 500 budget.</p>
+    </div>
+    <div class="diff-grid reveal reveal-stagger" style="--i:1">
+      <div class="diff-card" style="--i:0">
+        <div class="diff-tag">Research-Backed</div>
+        <div class="diff-title">Doctoral research foundation</div>
+        <div class="diff-body">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail — not a repackaged vendor checklist.</div>
+      </div>
+      <div class="diff-card" style="--i:1">
+        <div class="diff-tag">Focused</div>
+        <div class="diff-title">Single-specialty by design</div>
+        <div class="diff-body">Clyvara doesn't sell IT support, digital transformation, or general consulting. Cybersecurity advisory is the entire practice — depth over breadth, always.</div>
+      </div>
+      <div class="diff-card" style="--i:2">
+        <div class="diff-tag">Accessible</div>
+        <div class="diff-title">Fractional CISO, real access</div>
+        <div class="diff-body">Direct access to a credentialed principal consultant — not a junior analyst routed through account management layers at a larger firm.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SHIELD FRAMEWORK
+     ============================================================ -->
+<section id="shield" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow on-ink">Methodology</div>
+      <h2>Clyvara's SHIELD Framework</h2>
+      <p>A six-phase programme that takes a business from unknown exposure to a managed, monitored security posture — each phase with a defined outcome and a deliverable you keep.</p>
+    </div>
+
+    <div class="shield-rows reveal">
+      <div class="shield-row shield-row-start">
+        <div class="shield-letter">S</div>
+        <div class="shield-name">Survey <span class="shield-start-badge">Start here</span></div>
+        <div class="shield-desc">A full risk assessment against your actual environment — not a generic checklist. You receive a prioritized, RAG-rated risk register. Every engagement begins here.</div>
+      </div>
+      <div class="shield-row">
+        <div class="shield-letter">H</div>
+        <div class="shield-name">Harden</div>
+        <div class="shield-desc">Remediation of the highest-priority findings first — technical controls, access management, and configuration fixes sequenced by actual risk reduction.</div>
+      </div>
+      <div class="shield-row">
+        <div class="shield-letter">I</div>
+        <div class="shield-name">Instruct</div>
+        <div class="shield-desc">Security awareness training built on the same research foundation behind Clyvara's methodology — addressing the human-error root cause directly, not a once-a-year video.</div>
+      </div>
+      <div class="shield-row">
+        <div class="shield-letter">E</div>
+        <div class="shield-name">Enforce</div>
+        <div class="shield-desc">Incident response planning — a documented plan, defined roles, and a practiced response, so the business knows exactly what to do when something happens, not just when it should have.</div>
+      </div>
+      <div class="shield-row">
+        <div class="shield-letter">L</div>
+        <div class="shield-name">Ledger</div>
+        <div class="shield-desc">A monthly one-page dashboard that keeps your risk register current between formal reviews, so issues get caught in weeks, not discovered during a breach or an audit.</div>
+      </div>
+      <div class="shield-row">
+        <div class="shield-letter">D</div>
+        <div class="shield-name">Defend</div>
+        <div class="shield-desc">The SHIELD Defend Retainer — fractional CISO access and incident-readiness support for businesses that want a standing partner, not a one-time project.</div>
+      </div>
+    </div>
+
+    <div class="shield-cta">
+      <a href="#contact" class="btn btn-primary">Start with a Free SHIELD Risk Conversation</a>
+      <a href="/shield-framework-guide" class="btn btn-ghost-onink">Download the Free SHIELD Framework Guide</a>
+      <span class="shield-cta-note">No obligation. 45 minutes. A real conversation, not a sales script.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CLIENT JOURNEY
+     ============================================================ -->
+<section class="section tight bg-white">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">How It Works</div>
+      <h2>What working with Clyvara actually looks like.</h2>
+    </div>
+    <div class="journey-strip reveal">
+      <div class="journey-step">
+        <div class="journey-num">01</div>
+        <div class="journey-title">Book a Conversation</div>
+        <div class="journey-desc">A free, 45-minute SHIELD Risk Conversation — no obligation, no sales script.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-num">02</div>
+        <div class="journey-title">SHIELD Survey</div>
+        <div class="journey-desc">A full risk assessment, delivered as a prioritized, RAG-rated risk register.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-num">03</div>
+        <div class="journey-title">Prioritized Roadmap</div>
+        <div class="journey-desc">A clear, sequenced plan — what to fix first, and what it will cost.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-num">04</div>
+        <div class="journey-title">Implementation</div>
+        <div class="journey-desc">Hardening, governance, and training rolled out against the plan.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-num">05</div>
+        <div class="journey-title">Ongoing Oversight</div>
+        <div class="journey-desc">Standing fractional CISO support through the SHIELD Defend Retainer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section id="services" class="section bg-white">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Services</div>
+      <h2>Engagements scoped to what your business actually needs.</h2>
+      <p>Every service below is delivered under Clyvara's SHIELD Framework — fixed scope, defined deliverables, no open-ended retainers unless you want one.</p>
+    </div>
+    <div class="services-grid reveal reveal-stagger" style="--i:1">
+      <div class="svc-card" style="--i:0">
+        <div class="svc-code">01</div>
+        <div class="svc-label">Assess</div>
+        <div class="svc-title">SHIELD Risk Snapshot</div>
+        <div class="svc-desc">A full survey of your technical, procedural, and human-layer risk — delivered as a prioritized, RAG-rated risk register you can act on immediately.</div>
+        <div class="svc-ideal">Ideal for: businesses that have never had a formal assessment, or need one for a client or insurer.</div>
+      </div>
+      <div class="svc-card" style="--i:1">
+        <div class="svc-code">02</div>
+        <div class="svc-label">Advise</div>
+        <div class="svc-title">SHIELD Governance Accelerator</div>
+        <div class="svc-desc">Policy frameworks, documentation, and governance structures aligned to NIST CSF, ISO/IEC 27001, SOC 2, HIPAA, CIS Controls v8, or CMMC — built for what your contracts actually require.</div>
+        <div class="svc-ideal">Ideal for: businesses facing a compliance deadline, insurer questionnaire, or client due-diligence request.</div>
+      </div>
+      <div class="svc-card" style="--i:2">
+        <div class="svc-code">03</div>
+        <div class="svc-label">Advise</div>
+        <div class="svc-title">SHIELD Incident Readiness</div>
+        <div class="svc-desc">Tabletop exercises, response playbooks, and readiness assessments — so the first time you test your plan isn't during a real incident.</div>
+        <div class="svc-ideal">Ideal for: businesses with no documented response plan, or one that hasn't been tested in over a year.</div>
+      </div>
+      <div class="svc-card flagship" style="--i:3">
+        <div class="svc-code">04</div>
+        <div class="svc-label">Lead</div>
+        <div class="svc-title">Fractional CISO / SHIELD Defend Retainer</div>
+        <div class="svc-desc">Ongoing strategic and operational security leadership — board-ready reporting, vendor oversight, and a direct line to a credentialed principal consultant.</div>
+        <div class="svc-ideal">Ideal for: businesses that need standing security leadership without a full-time executive hire.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTORS
+     ============================================================ -->
+<section id="sectors" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Sectors</div>
+      <h2>Depth in the industries where risk is highest and margin for error is lowest.</h2>
+    </div>
+    <div class="sector-grid reveal">
+      <div class="sector-cell"><div class="sector-num">01</div><div class="sector-name">Healthcare</div><div class="sector-desc">HIPAA-aligned risk management for practices and providers handling protected health information.</div></div>
+      <div class="sector-cell"><div class="sector-num">02</div><div class="sector-name">Professional Services</div><div class="sector-desc">Client-data protection and confidentiality controls for firms whose reputation is the product.</div></div>
+      <div class="sector-cell"><div class="sector-num">03</div><div class="sector-name">Real Estate</div><div class="sector-desc">Wire-fraud prevention and transaction-security controls for brokerages and title operations.</div></div>
+      <div class="sector-cell"><div class="sector-num">04</div><div class="sector-name">Logistics</div><div class="sector-desc">Operational continuity and vendor-risk management for supply chains that can't afford downtime.</div></div>
+      <div class="sector-cell"><div class="sector-num">05</div><div class="sector-name">Financial Services</div><div class="sector-desc">Regulatory-aligned controls for firms managing sensitive financial data and client assets.</div></div>
+      <div class="sector-cell"><div class="sector-num">06</div><div class="sector-name">Nonprofits</div><div class="sector-desc">Right-sized security programs that protect donor data without enterprise-level budgets.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INSIGHTS
+     ============================================================ -->
+<section id="insights" class="section bg-white">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Insights</div>
+      <h2>Research-grounded perspective, not vendor content.</h2>
+      <p>Practitioner writing on SMB cybersecurity, drawn from the same research foundation behind Clyvara's methodology.</p>
+    </div>
+    <div class="insight-grid reveal reveal-stagger" style="--i:1">
+      <div class="insight-card" style="--i:0">
+        <div class="insight-tag">Article Series</div>
+        <div class="insight-title">Why SMB security training fails — and what actually works</div>
+        <div class="insight-desc">A practitioner breakdown of the founder's original research behind Clyvara's approach to security awareness.</div>
+        <span class="insight-link soon">Coming soon</span>
+      </div>
+      <div class="insight-card" style="--i:1">
+        <div class="insight-tag">Framework</div>
+        <div class="insight-title">Inside the SHIELD Framework</div>
+        <div class="insight-desc">A closer look at how each of the six phases works, and what deliverable you walk away with.</div>
+        <a href="/shield-framework-guide" class="insight-link">Download the free guide →</a>
+      </div>
+      <div class="insight-card" style="--i:2">
+        <div class="insight-tag">Briefing</div>
+        <div class="insight-title">The Clyvara Cybersecurity Brief</div>
+        <div class="insight-desc">A monthly, no-fluff briefing on the risks that actually matter to a Dallas–Fort Worth SMB.</div>
+        <span class="insight-link soon">Coming soon</span>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:28px; border:1px solid var(--line); border-radius:10px; padding:20px 24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+      <div style="max-width:640px;"><strong>Free checklist:</strong> The Security Questionnaire Readiness Checklist — the 35 pieces of evidence customers, insurers, and funders ask for, on one page.</div>
+      <a href="/readiness-checklist" class="insight-link">Get the free checklist →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="eyebrow on-ink">Start a Conversation</div>
+        <h2 style="font-family:var(--display); color:var(--paper-white); font-size:var(--fs-h2); line-height:1.12; margin-top:var(--space-head-gap); letter-spacing:-0.016em;">Book a free SHIELD Risk Conversation.</h2>
+        <p style="margin-top:var(--space-head-gap); font-size:var(--fs-body); line-height:1.6; color:var(--body-on-ink); max-width:46ch;">45 minutes, no obligation. We'll talk through where your business actually stands — and whether Clyvara is the right fit before anyone signs anything.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-item">
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value">Info@clyvara.io</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-label">Location</div>
+            <div class="contact-detail-value">Dallas–Fort Worth, TX</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-label">Response Time</div>
+            <div class="contact-detail-value">Within one business day</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="--i:1">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-two">
+            <div class="form-row">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="Name" autocomplete="name" maxlength="200" required>
+            </div>
+            <div class="form-row">
+              <label for="femail">Email</label>
+              <!-- name="email" (lowercase, exact) is deliberate, not a
+                   stylistic inconsistency with the other fields below: this
+                   is the literal field name Formspree's autoresponder
+                   plugin requires in order to know who to send the
+                   acknowledgement email to (see 09_Internal_Operations
+                   contact-form architecture doc). Renaming this would
+                   silently break the auto-responder. -->
+              <input type="email" id="femail" name="email" autocomplete="email" maxlength="320" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="fcompany">Company</label>
+            <input type="text" id="fcompany" name="Company" autocomplete="organization" maxlength="200">
+          </div>
+          <div class="form-row">
+            <label for="fsector">Sector</label>
+            <!-- No option was previously marked selected, so an unopened
+                 dropdown silently submitted "Healthcare" for every visitor
+                 who never touched it - a real data-quality bug (every
+                 unspecified sector was miscounted as Healthcare). The
+                 explicit empty default below closes that; it also makes the
+                 field genuinely optional rather than accidentally always
+                 answered. -->
+            <select id="fsector" name="Sector">
+              <option value="" selected disabled>Select a sector (optional)</option>
+              <option>Healthcare</option>
+              <option>Professional Services</option>
+              <option>Real Estate</option>
+              <option>Logistics</option>
+              <option>Financial Services</option>
+              <option>Nonprofit</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fmessage">What's going on?</label>
+            <textarea id="fmessage" name="Message" placeholder="A sentence or two is plenty." maxlength="5000"></textarea>
+          </div>
+          <!-- Honeypot spam trap: real visitors never see or fill this field.
+               Left unstyled-hidden (display:none) per the target provider's
+               documented bot-catching convention. Any submission with this
+               field populated is silently discarded client-side. -->
+          <div class="form-row" style="display:none;" aria-hidden="true">
+            <label for="f_gotcha">Leave this field empty</label>
+            <input type="text" id="f_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" id="formSubmitBtn">Request a Risk Conversation</button>
+          <p class="form-note">No spam, no vendor pitch. Just a reply from Rodger, within one business day.</p>
+          <!-- role="alert" + aria-live="assertive": announced immediately to
+               screen reader users the moment an error appears, without
+               requiring focus to already be inside this region. tabindex="-1"
+               lets JS move keyboard focus here on error, so sighted keyboard
+               users don't lose their place after the form is done submitting. -->
+          <div class="form-error hidden" id="formError" role="alert" aria-live="assertive" tabindex="-1">
+            <p id="formErrorText">Something went wrong sending your request. Please try again, or email <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> directly and we'll follow up within one business day.</p>
+          </div>
+        </form>
+        <!-- role="status" + aria-live="polite": announced without
+             interrupting anything else the screen reader is doing (unlike
+             the error region above, which is intentionally more urgent). -->
+        <div class="contact-form form-success hidden" id="formSuccess" role="status" aria-live="polite" tabindex="-1">
+          <div class="form-success-icon" aria-hidden="true">
+            <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M13.5 22.5l5.5 5.5L31 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Thank you.</h3>
+          <p>Your request for a SHIELD Risk Conversation has been received successfully.</p>
+          <div class="form-success-steps">
+            <div class="form-success-step"><span class="dot"></span><span>I'll personally review what you've shared.</span></div>
+            <div class="form-success-step"><span class="dot"></span><span>If it looks like a fit, I'll reach out to schedule your 45-minute SHIELD Risk Conversation.</span></div>
+            <div class="form-success-step"><span class="dot"></span><span>Either way, you'll hear from me within one business day.</span></div>
+          </div>
+          <p class="form-success-note">This first conversation is simply about understanding where your organization stands today — not a sales pitch.</p>
+          <div class="form-success-cta"><a href="#shield" class="insight-link">Learn more about the SHIELD Framework &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="mark" aria-label="Clyvara home" style="gap:16px;">
+          <svg width="38" height="38" viewBox="0 0 599.29 547.41" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="currentColor" d="M278.97,395.34c-19.15,0-42.37,1.35-60.56-0.26c-48.14-4.28-90.59-21.89-123.13-58.83c-61.12-69.39-47.32-175.46,29.57-226.86c41.41-27.68,87.75-37.24,137.04-34.44c31.29,1.78,68.53,9.85,98.05,20.24l3.16,84c-0.95-2.41-1.97-4.8-2.85-7.24c-9.87-27.4-25.26-51.04-48.82-68.52c-36.96-27.41-77.65-28.86-119.56-14.49c-37.01,12.69-61.82,39.22-75.19,75.2c-23.87,64.22-16.08,125.6,26.97,179.39c15.43,19.28,34.05,33.24,57.18,40.71c22.75,7.34,50.4,7.57,74.44,4.24L278.97,395.34z"/>
+            <path fill="#B4854A" d="M367.22,437.55l-98.03-165.58h-52.35c2.18,0.03,4.62,3.28,8.37,9.29c4.52,7.25,10.14,17.45,18.27,30.96c11.47,19.07,25.43,42.98,39.66,66.63c33.18,55.16,65.04,111.05,65.04,111.05l193.55-326.81h-12.69L367.22,437.55z"/>
+          </svg>
+          <span style="display:flex; flex-direction:column; gap:5px;">
+            <span class="mark-word" style="font-size:22px;">CLY<span class="b">VARA</span></span>
+            <span style="font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.14em; text-transform:uppercase; color:var(--copper-light);">Cyber Risk &amp; Compliance Advisory</span>
+          </span>
+        </a>
+        <p class="footer-desc" style="margin-top:20px;">Research-driven cyber risk and compliance advisory for small and mid-sized businesses across Dallas–Fort Worth.</p>
+        <div style="margin-top:26px;"><a href="https://www.linkedin.com/company/clyvara" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.08em; color:var(--muted-on-ink); border:1px solid var(--line-on-ink); padding:10px 15px; display:inline-block;">LinkedIn ↗</a></div>
+      </div>
+      <div>
+        <div class="footer-h">Navigate</div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#shield">SHIELD Framework</a>
+          <a href="#services">Services</a>
+          <a href="#sectors">Sectors</a>
+          <a href="#insights">Insights</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Services</div>
+        <div class="footer-links">
+          <a href="#services">Risk Assessment</a>
+          <a href="#services">Compliance &amp; Governance</a>
+          <a href="#services">Incident Response Readiness</a>
+          <a href="#services">SHIELD Defend Retainer</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Credentials</div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:22px;">
+          <span class="footer-cred">DBA</span>
+          <span class="footer-cred">MS, Computer Science</span>
+          <span class="footer-cred">PMP</span>
+        </div>
+        <div class="footer-h">Contact</div>
+        <div class="footer-cred" style="line-height:1.8;">Info@clyvara.io</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clyvara LLC · All rights reserved</span>
+      <span>Dallas–Fort Worth, Texas</span>
+    </div>
   </div>
 </footer>
+
 <script>
-(function () {
-  var PDF_URL = 'checklist.html';
-  var form = document.getElementById('get-checklist');
-  var btn = document.getElementById('get-checklist-btn');
-  var errorBox = document.getElementById('get-checklist-error');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    errorBox.classList.remove('show');
-    var honeypot = form.querySelector('input[name="_gotcha"]');
-    if (honeypot && honeypot.value) return;
-    var originalLabel = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Sending\u2026';
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-      .then(function (response) {
-        if (response.ok) {
-          window.location.href = PDF_URL;
-        } else {
-          return response.json().then(function (data) {
-            throw new Error((data && data.error) || 'Submission was rejected.');
-          });
-        }
-      })
-      .catch(function () {
-        btn.disabled = false;
-        btn.textContent = originalLabel;
-        errorBox.classList.add('show');
-      });
+  // Nav scroll state
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   });
-})();
+
+  // Mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.mobile-drawer a').forEach(a => {
+    a.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // Contact form
+  //
+  // HISTORY:
+  // - v2.0.3 / v2.1.0 (Findings C-1, F-02; FE-1): a client-side mailto: link
+  //   was used as a documented interim fix, dependent on the visitor's own
+  //   mail client and account.
+  // - Aug 5 2026 production incident: a live submission produced no email,
+  //   because mailto: delegates sending to the visitor's own device — not
+  //   anything Clyvara controls. No mailto: logic remains anywhere in this
+  //   handler; the only mailto: links left on the page are plain-text
+  //   fallback contact links shown to a visitor if a submission fails.
+  // - Production Incident Resolution (Aug 5 2026): wired to Clyvara's
+  //   verified, live Formspree endpoint and confirmed end-to-end against a
+  //   real inbox. A more resilient architecture (Netlify Function ->
+  //   persistent storage -> email provider) was fully built and unit-tested
+  //   as part of the same investigation and lives at /netlify/functions/ +
+  //   /admin/, documented as a future enhancement rather than deployed
+  //   (see /netlify/FUTURE_ENHANCEMENT.md and 09_Internal_Operations).
+  // - Production Hardening v1.1 (this revision, Aug 5 2026): the pipeline
+  //   itself was already working; this pass polishes it for a professional
+  //   client-facing operation without adding architecture. Field `name`
+  //   attributes were changed from internal shorthand (fname, femail, ...)
+  //   to human-readable labels, since Formspree's default notification
+  //   email lists fields exactly as their `name` attribute reads — this is
+  //   what makes the notification readable without a custom email
+  //   template. `femail`'s name specifically became the literal string
+  //   "email" (not "Email") because that exact, lowercase field name is
+  //   Formspree's documented requirement for its auto-responder plugin to
+  //   know which address to reply to. Hidden operational metadata
+  //   (timestamp, page URL, browser, source, environment) was added so
+  //   Clyvara has troubleshooting context without cluttering what a human
+  //   reads first. The Sector dropdown's missing default was also fixed —
+  //   it previously had no selected option, so an unopened dropdown
+  //   silently submitted "Healthcare" for every visitor who never touched
+  //   it, corrupting sector data on a fraction of submissions.
+  //
+  // This handler: submits directly to Formspree over HTTPS, shows the
+  // success message only once Formspree's API confirms acceptance (HTTP
+  // 200 with no `errors` array — see
+  // https://help.formspree.io/hc/en-us/articles/360013470814), shows a
+  // specific, honest error otherwise, and never claims success it can't
+  // back up.
+  (function(){
+    var FORM_ENDPOINT = 'https://formspree.io/f/xppazdko';
+
+    var form = document.getElementById('contactForm');
+    var submitBtn = document.getElementById('formSubmitBtn');
+    var successPanel = document.getElementById('formSuccess');
+    var errorPanel = document.getElementById('formError');
+    var errorText = document.getElementById('formErrorText');
+    var fieldIds = ['fname', 'femail', 'fcompany', 'fsector', 'fmessage'];
+
+    // Maps Formspree's field-name-keyed error responses (they key errors by
+    // the `name` attribute actually submitted, e.g. "email", "Company")
+    // back to this page's stable DOM ids, so the right input gets
+    // aria-invalid regardless of what human-readable name Formspree sees.
+    var FIELD_NAME_TO_ID = { Name: 'fname', email: 'femail', Company: 'fcompany', Sector: 'fsector', Message: 'fmessage' };
+
+    function genRequestId(){
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'req-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+    }
+
+    function maskEmail(value){
+      // Same masking convention used in the (currently inactive) Netlify
+      // backend's logger — kept consistent so a future migration to that
+      // architecture doesn't need to redesign what "safe to log" means.
+      if (!value || value.indexOf('@') === -1) return '(invalid)';
+      var parts = value.split('@');
+      var user = parts[0];
+      var maskedUser = user.length <= 2 ? user.charAt(0) + '*' : user.charAt(0) + Array(user.length - 1).join('*') + user.charAt(user.length - 1);
+      return maskedUser + '@' + parts[1];
+    }
+
+    // Operational logging (client-side only — there is no server in this
+    // architecture; Formspree's own dashboard is the second, authoritative
+    // record). Each of the request's named stages gets its own explicit
+    // status value so the sequence is traceable by requestId alone:
+    // 'validated' -> 'submitted' -> 'accepted' | 'rejected' | 'network_error'.
+    // Email addresses are masked and message content is never logged, only
+    // whether one was provided — deliberately avoiding unnecessary personal
+    // information in a log stream that has broader read access (anyone with
+    // browser dev tools open) than the actual submission record does.
+    function logSubmission(status, requestId, detail){
+      var entry = {
+        event: 'contact_form_submission',
+        timestamp: new Date().toISOString(),
+        requestId: requestId,
+        status: status,
+        detail: detail || null
+      };
+      if (status === 'rejected' || status === 'network_error') { console.error('[ContactForm]', entry); }
+      else { console.log('[ContactForm]', entry); }
+    }
+
+    function clearFieldErrors(){
+      fieldIds.forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.removeAttribute('aria-invalid');
+      });
+    }
+
+    // aria-invalid + moving focus into the message region is what makes
+    // this "accessible" rather than just visible: a screen reader announces
+    // role="alert"/aria-live regions on their own, but moving focus there
+    // too means a keyboard user's next Tab press continues naturally from
+    // the message instead of from wherever they were before submitting.
+    function showError(message, invalidFieldIds){
+      errorText.innerHTML = message;
+      errorPanel.classList.remove('hidden');
+      clearFieldErrors();
+      (invalidFieldIds || []).forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.setAttribute('aria-invalid', 'true');
+      });
+      errorPanel.focus();
+    }
+
+    function showSuccess(){
+      form.reset();
+      form.classList.add('hidden');
+      successPanel.classList.remove('hidden');
+      successPanel.focus();
+    }
+
+    function formatFormspreeErrors(errors){
+      return errors.map(function(e){
+        return (e.field || 'Field') + ': ' + (e.message || 'invalid value');
+      }).join(' ');
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      var name = document.getElementById('fname').value.trim();
+      var email = document.getElementById('femail').value.trim();
+      var message = document.getElementById('fmessage').value.trim();
+      var company = document.getElementById('fcompany').value.trim();
+      var sector = document.getElementById('fsector').value; // '' if the visitor left the new default option selected
+      var honeypot = document.getElementById('f_gotcha');
+      var requestId = genRequestId();
+
+      if (!name || !email) {
+        showError('Please fill in your name and email so we can get back to you.', [!name ? 'fname' : null, !email ? 'femail' : null].filter(Boolean));
+        return;
+      }
+      logSubmission('validated', requestId, { hasEmail: true, hasName: true, hasCompany: !!company, hasSector: !!sector, hasMessage: !!message });
+
+      // Client-side honeypot short-circuit: if the trap field has a value,
+      // a bot filled it in (real visitors never see it — see the CSS/markup
+      // above). Skip the network call entirely rather than spending a
+      // Formspree submission on a bot, but still show the same success UI a
+      // human would see, so a bot gets no signal it was caught.
+      if (honeypot && honeypot.value) {
+        logSubmission('rejected', requestId, 'honeypot triggered client-side — likely bot, submission dropped before network request');
+        showSuccess();
+        return;
+      }
+
+      errorPanel.classList.add('hidden');
+      clearFieldErrors();
+      submitBtn.disabled = true;
+      submitBtn.setAttribute('aria-busy', 'true');
+      submitBtn.textContent = 'Sending…';
+
+      var formData = new FormData(form);
+
+      // Formspree "special fields": _subject sets the notification email's
+      // subject line, _replyto sets Reply-To to the visitor's own address
+      // (both verified against a real inbox — see the incident resolution
+      // report). Subject format redesigned for inbox triage: leads with the
+      // two things Rodger needs at a glance (who/what sector) rather than a
+      // generic line.
+      var subjectParts = ['New SHIELD Risk Conversation Request'];
+      if (company) subjectParts.push(company);
+      else if (name) subjectParts.push(name);
+      if (sector) subjectParts.push(sector);
+      formData.set('_subject', subjectParts.join(' | '));
+      formData.set('_replyto', email);
+
+      // requestId is the permanent identifier for this inquiry — the same
+      // value appears in this console log, in the Formspree submission
+      // record (and thus the notification email), and is the join key for
+      // any future CRM or admin-dashboard integration (see the Reliability
+      // Enhancement / future-architecture documentation). Everything below
+      // it is operational metadata: useful for troubleshooting, not shown
+      // to Rodger as part of the "message" a lead actually wrote.
+      formData.set('requestId', requestId);
+      formData.set('meta_timestampUTC', new Date().toISOString());
+      formData.set('meta_website', 'clyvara.io');
+      formData.set('meta_environment', 'production');
+      formData.set('meta_formName', 'Clyvara Contact Form');
+      formData.set('meta_pageUrl', window.location.href);
+      formData.set('meta_source', 'Website Contact Form');
+      formData.set('meta_browser', navigator.userAgent);
+
+      logSubmission('submitted', requestId, { httpEndpoint: 'formspree', hasMessage: !!message, email: maskEmail(email) });
+
+      // Deliberately no 'Content-Type' header: letting the browser set the
+      // multipart/form-data boundary itself is required for a FormData body
+      // to be parsed correctly by Formspree (or any server) — setting it
+      // manually is a common source of silently-broken submissions.
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      })
+      .then(function(response){
+        return response.json().catch(function(){ return null; }).then(function(data){ return { response: response, data: data }; });
+      })
+      .then(function(result){
+        var response = result.response, data = result.data;
+
+        if (response.ok && (!data || !data.errors)) {
+          logSubmission('accepted', requestId, { httpStatus: response.status });
+          showSuccess();
+          return;
+        }
+
+        if (data && Array.isArray(data.errors) && data.errors.length) {
+          var msg = formatFormspreeErrors(data.errors);
+          var invalidIds = data.errors
+            .map(function(e){ return FIELD_NAME_TO_ID[e.field] || null; })
+            .filter(Boolean);
+          logSubmission('rejected', requestId, { httpStatus: response.status, reason: 'formspree_validation', errors: data.errors });
+          showError(msg || 'Please check the form and try again.', invalidIds);
+          return;
+        }
+
+        // Any other non-OK response (rate limiting, form disabled, an
+        // outage on Formspree's side, etc.) — the one honest "we could not
+        // confirm this was received" case. Never claim success here.
+        logSubmission('rejected', requestId, { httpStatus: response.status, reason: 'formspree_error' });
+        showError('Your request could not be sent right now (error ' + response.status + '). Please try again, or email <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> directly and we\'ll follow up within one business day.');
+      })
+      .catch(function(err){
+        logSubmission('network_error', requestId, { reason: 'network error: ' + (err && err.message ? err.message : String(err)) });
+        showError('We couldn\'t reach our server — please check your connection and try again, or email <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> directly.');
+      })
+      .finally(function(){
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute('aria-busy');
+        submitBtn.textContent = 'Request a Risk Conversation';
+      });
+    });
+  })();
 </script>
+
 </body>
 </html>

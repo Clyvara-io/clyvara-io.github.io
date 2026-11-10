@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SHIELD Framework Guide | Clyvara</title>
+<meta name="description" content="Download the free SHIELD Framework guide — Clyvara's six-phase cybersecurity methodology for small and mid-sized businesses.">
+<link rel="canonical" href="https://clyvara.io/shield-framework-guide">
+<meta property="og:title" content="The SHIELD Framework Guide | Clyvara">
+<meta property="og:description" content="A practical guide to Clyvara's six-phase cybersecurity methodology for small and mid-sized businesses.">
+<meta property="og:type" content="article">
+<meta name="author" content="Rodger Lutalo">
+<meta property="article:author" content="Rodger Lutalo">
+<meta property="article:published_time" content="2026-06-01T00:00:00Z">
+<meta property="og:image" content="https://clyvara.io/shield-guide-og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The SHIELD Framework Guide | Clyvara">
+<meta name="twitter:description" content="A practical guide to Clyvara's six-phase cybersecurity methodology for small and mid-sized businesses.">
+<meta name="twitter:image" content="https://clyvara.io/shield-guide-og-image.png">
+<style>
+  :root {
+    --navy: #0b1220;
+    --navy2: #16203a;
+    --gold: #d9a441;
+    --ink: #1c2331;
+    --body: #3a4360;
+    --muted: #8b93a3;
+    --line: #e2e6ee;
+    --panel: #f7f8fb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+  a { text-decoration: none; }
+  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav.site {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(11,18,32,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #232d47;
+  }
+  nav.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1080px; gap: 16px; }
+  nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
+  nav.site .brand span { color: var(--gold); }
+  nav.site .links { display: flex; gap: 24px; align-items: center; }
+  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
+  nav.site .links a:hover { color: #fff; }
+  nav.site .cta {
+    background: var(--gold); color: var(--navy) !important; font-weight: 700;
+    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
+  }
+  @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff;
+    padding: 96px 0 88px 0;
+  }
+  header.hero .wrap { max-width: 1080px; }
+  .eyebrow {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+  }
+  header.hero h1 {
+    font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem); line-height: 1.1; margin: 0 0 22px 0; font-weight: 900; max-width: 15ch;
+    letter-spacing: -0.015em;
+  }
+  header.hero .sub {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; color: #c3cbdb; max-width: 580px; margin-bottom: 38px;
+  }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 15px;
+    padding: 15px 25px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; text-align: center;
+  }
+  .btn-secondary {
+    color: #fff; font-weight: 600; font-size: 15px; border: 1px solid #3a4560;
+    padding: 14px 23px; border-radius: 4px; line-height: 1.3; text-align: center;
+  }
+  .filesize { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+
+  /* GATE FORM */
+  .gate-form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .gate-form input[type=email] {
+    background: #ffffff; border: 1px solid #3a4560; border-radius: 4px;
+    padding: 14px 15px; font-size: 16px; color: var(--ink); min-width: 260px; flex: 1;
+  }
+  .gate-form input[type=email]::placeholder { color: #8b93a3; }
+  .gate-form button.btn-primary { border: none; cursor: pointer; }
+  .gate-form .hp { position: absolute; left: -9999px; opacity: 0; }
+  .gate-note { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; color: var(--muted); margin-top: 12px; }
+  .gate-note.dark { color: var(--muted); }
+  .gate-error {
+    display: none; background: rgba(181,73,59,0.12); border: 1px solid rgba(181,73,59,0.4);
+    color: #f2b8ae; font-size: 13.5px; padding: 12px 15px; border-radius: 4px; margin-top: 14px; max-width: 480px; line-height: 1.5;
+  }
+  .gate-error.show { display: block; }
+  .gate-form button.btn-primary[disabled] { opacity: 0.65; cursor: not-allowed; }
+
+  /* SECTION helpers */
+  section { padding: 92px 0; }
+  section.alt { background: var(--panel); }
+  .kicker {
+    font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8C5F16; margin-bottom: 14px;
+  }
+  h2 { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.25rem); font-weight: 900; color: var(--navy); margin: 0 0 20px 0; letter-spacing: -0.012em; line-height: 1.18; }
+  .lede { font-size: 17px; line-height: 1.62; color: var(--body); max-width: 640px; margin-bottom: 36px; }
+
+  /* PIPELINE */
+  .pipeline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 22px 0; margin: 26px 0 48px 0; }
+  .pipe-cell { text-align: center; width: 100px; }
+  .pipe-letter {
+    width: 58px; height: 58px; margin: 0 auto 10px auto; border-radius: 50%;
+    background: var(--navy); color: var(--gold); font-family: monospace; font-weight: 800; font-size: 21px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pipe-name { font-size: 12.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; }
+  @media (max-width: 640px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase-card { border-top: 3px solid var(--gold); padding-top: 18px; }
+  .phase-card .h { display: flex; align-items: center; gap: 11px; margin-bottom: 9px; }
+  .phase-card .badge {
+    font-family: monospace; font-weight: 800; font-size: 12.5px; color: #fff; background: var(--navy);
+    border-radius: 3px; padding: 3px 9px;
+  }
+  .phase-card .name { font-weight: 800; font-size: 19px; color: var(--navy); }
+  .phase-card p { font-size: 15.5px; line-height: 1.6; color: var(--body); margin: 0; }
+
+  /* STATS */
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0 8px 0; }
+  .stat { flex: 1; min-width: 180px; border: 1px solid var(--line); border-radius: 6px; padding: 24px; }
+  .stat .num { font-size: 36px; font-weight: 900; color: var(--navy); line-height: 1; }
+  .stat .cap { font-size: 14px; line-height: 1.5; color: var(--body); margin-top: 10px; }
+  .stat .src { font-family: monospace; font-size: 11.5px; color: #5F6A7D; margin-top: 10px; }
+
+  /* CHECK LIST */
+  .check-q { display: flex; gap: 15px; margin-bottom: 26px; align-items: flex-start; }
+  .check-q .box { width: 18px; height: 18px; border: 2px solid var(--navy); border-radius: 3px; flex-shrink: 0; margin-top: 3px; }
+  .check-q .tag { font-family: monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8C5F16; margin-bottom: 4px; }
+  .check-q .q { font-size: 16px; line-height: 1.5; color: var(--ink); }
+
+  /* WHY */
+  .why-row { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 14px; }
+  .why-col { flex: 1; min-width: 220px; border-top: 3px solid var(--gold); padding-top: 16px; }
+  .why-col .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+  .why-col .d { font-size: 14.5px; line-height: 1.6; color: var(--body); }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff; text-align: center; padding: 92px 0;
+  }
+  .final-cta h2 { color: #fff; }
+  .final-cta .lede { color: #c3cbdb; margin: 0 auto 36px auto; }
+  .final-cta .btn-row { justify-content: center; }
+
+  footer.site {
+    background: var(--navy); color: var(--muted); padding: 40px 0; font-size: 13.5px; line-height: 1.6;
+  }
+  footer.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.site a { color: var(--muted); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Clyvara",
+  "legalName": "Clyvara LLC",
+  "url": "https://clyvara.io",
+  "logo": "https://clyvara.io/favicon.svg",
+  "image": "https://clyvara.io/clyvara-og-image.png",
+  "description": "Helping small businesses identify cyber risks, strengthen security, and protect what they've built.",
+  "founder": {
+    "@type": "Person",
+    "name": "Rodger Lutalo",
+    "jobTitle": "Founder & Principal Cybersecurity Consultant"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dallas-Fort Worth",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "areaServed": "Dallas-Fort Worth, Texas",
+  "knowsAbout": [
+    "Cybersecurity risk assessment",
+    "Governance, risk and compliance (GRC)",
+    "NIST Cybersecurity Framework",
+    "ISO/IEC 27001",
+    "SOC 2",
+    "HIPAA",
+    "CIS Controls v8",
+    "CMMC"
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <div class="brand">CLYVARA <span>Cyber Risk &amp; Compliance Advisory</span></div>
+    <div class="links">
+      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+      <a href="https://clyvara.io/#services">Services</a>
+      <a href="https://clyvara.io/#insights">Insights</a>
+      <a class="cta" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Free Guide · SHIELD Framework</div>
+    <h1>How small and mid-sized businesses build a complete cybersecurity programme.</h1>
+    <div class="sub">A practical, no-pitch guide to Clyvara's six-phase SHIELD methodology — what each phase does, where organizations get stuck, and five questions worth asking before your first risk conversation.</div>
+
+    <!--
+      GATE FORM — wired to the same Formspree endpoint as the existing
+      "Clyvara Contact Form" (clyvara.io's Risk Conversation form). Submissions
+      land in the same Formspree inbox; the _subject field below labels these
+      as guide-download leads so they're easy to tell apart from Risk
+      Conversation requests.
+
+      Redirect note: Formspree's built-in "_next" redirect is a paid-plan
+      feature (locked under "Upgrade to Personal" on this account's Settings
+      > Redirect field, confirmed August 2026) — it silently does nothing on
+      this plan and Formspree shows its own generic "Thanks!" page instead.
+      So this form submits via JavaScript (fetch, same pattern the main
+      clyvara.io contact form already uses) and the script below sends the
+      visitor to the PDF itself once Formspree confirms the submission
+      succeeded — no dependency on the locked redirect feature.
+    -->
+    <form id="get-guide" class="gate-form" action="https://formspree.io/f/xppazdko" method="POST">
+      <input type="email" name="email" placeholder="you@company.com" required>
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="New SHIELD Framework Guide download">
+      <button type="submit" class="btn-primary" id="get-guide-btn">&#8595; Get the free guide (PDF)</button>
+    </form>
+    <div class="gate-error" id="get-guide-error">Something went wrong sending your request. Please try again, or email <a href="mailto:Info@clyvara.io" style="color:#f2b8ae; text-decoration:underline;">Info@clyvara.io</a> directly.</div>
+    <div class="gate-note">8 pages · takes 30 seconds · no spam, just the guide</div>
+    <div class="btn-row" style="margin-top:16px;">
+      <a class="btn-secondary" href="https://clyvara.io/#shield">View the framework online</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The SHIELD Model</div>
+    <h2>Six phases. One sequence.</h2>
+    <p class="lede">Every Clyvara engagement moves through the same six phases, in the same order — mapped to NIST CSF 2.0 and CIS Controls v8.</p>
+
+    <div class="pipeline">
+      <div class="pipe-cell"><div class="pipe-letter">S</div><div class="pipe-name">Survey</div></div>
+      <div class="pipe-cell"><div class="pipe-letter">H</div><div class="pipe-name">Harden</div></div>
+      <div class="pipe-cell"><div class="pipe-letter">I</div><div class="pipe-name">Instruct</div></div>
+      <div class="pipe-cell"><div class="pipe-letter">E</div><div class="pipe-name">Enforce</div></div>
+      <div class="pipe-cell"><div class="pipe-letter">L</div><div class="pipe-name">Ledger</div></div>
+      <div class="pipe-cell"><div class="pipe-letter">D</div><div class="pipe-name">Defend</div></div>
+    </div>
+
+    <div class="phase-grid">
+      <div class="phase-card"><div class="h"><span class="badge">S</span><span class="name">Survey</span></div><p>A full risk assessment against your actual environment — not a generic checklist. You receive a prioritized, RAG-rated risk register.</p></div>
+      <div class="phase-card"><div class="h"><span class="badge">H</span><span class="name">Harden</span></div><p>Remediation of the highest-priority findings first — technical controls, access management, and configuration fixes sequenced by actual risk reduction.</p></div>
+      <div class="phase-card"><div class="h"><span class="badge">I</span><span class="name">Instruct</span></div><p>Security awareness training built on original research — addressing the human-error root cause directly, not a once-a-year video.</p></div>
+      <div class="phase-card"><div class="h"><span class="badge">E</span><span class="name">Enforce</span></div><p>Incident response planning — a documented plan, defined roles, and a practiced response, so you know exactly what to do when something happens.</p></div>
+      <div class="phase-card"><div class="h"><span class="badge">L</span><span class="name">Ledger</span></div><p>A monthly one-page dashboard that keeps your risk register current between formal reviews, so issues get caught in weeks, not at audit time.</p></div>
+      <div class="phase-card"><div class="h"><span class="badge">D</span><span class="name">Defend</span></div><p>The SHIELD Defend Retainer — fractional CISO access and incident-readiness support for a standing partner, not a one-time project.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Why It Matters</div>
+    <h2>The stakes, in three numbers.</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="num">43%</div><div class="cap">of cyberattacks specifically target small and mid-sized businesses</div><div class="src">SOURCE: ACCENTURE</div></div>
+      <div class="stat"><div class="num">95%</div><div class="cap">of data breaches involve human error — a training and governance failure, not a technology one</div><div class="src">SOURCE: IBM</div></div>
+      <div class="stat"><div class="num">$200K+</div><div class="cap">is the average cost of a breach for a small or mid-sized business</div><div class="src">SOURCE: HISCOX</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Executive SHIELD Check</div>
+    <h2>Five questions worth asking first.</h2>
+    <p class="lede">Not a scored assessment — there's no number at the end. If more than one of these gives you pause, that's useful information: it tells you which phase to start with. The full guide includes all five, plus what each answer usually means.</p>
+
+    <div class="check-q"><div class="box"></div><div><div class="tag">Maps to Survey</div><div class="q">Could you name your actual attack surface today, or would you be guessing?</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Maps to Enforce</div><div class="q">If a team member clicked a phishing link tomorrow morning and your systems went down — who would you call first?</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Maps to Ledger</div><div class="q">If you have compliance requirements, could you demonstrate you meet them today, without a scramble?</div></div></div>
+
+    <a class="btn-secondary" style="color:var(--navy); border-color:var(--navy); margin-top:6px; display:inline-block;" href="#get-guide">Get all five questions in the guide &#8594;</a>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Why Clyvara</div>
+    <h2>Depth a generalist can't offer. Access an enterprise firm won't give you.</h2>
+    <div class="why-row">
+      <div class="why-col"><div class="t">Research-Backed</div><div class="d">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail.</div></div>
+      <div class="why-col"><div class="t">Focused</div><div class="d">Clyvara doesn't sell IT support or general consulting. Cybersecurity advisory is the entire practice.</div></div>
+      <div class="why-col"><div class="t">Accessible</div><div class="d">Direct access to a credentialed principal consultant — not a junior analyst routed through account layers.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold);">Start Here</div>
+    <h2>Book a free SHIELD Risk Conversation.</h2>
+    <p class="lede">45 minutes, no obligation. We'll talk through where your business actually stands today — before anyone signs anything.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="#get-guide">&#8595; Get the guide</a>
+      <a class="btn-secondary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>&copy; 2026 Clyvara LLC · Dallas&ndash;Fort Worth, Texas</div>
+    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var PDF_URL = 'https://clyvara.io/shield-framework-guide.pdf';
+  var form = document.getElementById('get-guide');
+  var btn = document.getElementById('get-guide-btn');
+  var errorBox = document.getElementById('get-guide-error');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorBox.classList.remove('show');
+
+    // Honeypot check — if the hidden field got filled, quietly no-op rather
+    // than tipping off a bot that it was caught.
+    var honeypot = form.querySelector('input[name="_gotcha"]');
+    if (honeypot && honeypot.value) return;
+
+    var originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          // Success — send the visitor straight to the PDF. This replaces
+          // Formspree's own "_next" redirect, which is locked on this
+          // account's plan (see comment above the form).
+          window.location.href = PDF_URL;
+        } else {
+          return response.json().then(function (data) {
+            throw new Error((data && data.error) || 'Submission was rejected.');
+          });
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+        errorBox.classList.add('show');
+      });
+  });
+})();
+</script>
+
+</body>
+</html>

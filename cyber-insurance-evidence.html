@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Insurance Evidence: What Insurers Ask For | Clyvara</title>
+<meta name="description" content="Cyber insurance applications and renewals now turn on evidence, not answers. The controls insurers probe, the proof that counts for each, and the mistakes that cost firms coverage.">
+<link rel="canonical" href="https://clyvara.io/cyber-insurance-evidence">
+<meta property="og:title" content="Cyber Insurance Evidence: What Insurers Ask For | Clyvara">
+<meta property="og:description" content="Insurers now underwrite proof, not promises. The controls they probe, the evidence that counts, and how to have it ready before renewal.">
+<meta property="og:type" content="article">
+<meta name="author" content="Rodger Lutalo">
+<meta property="og:image" content="https://clyvara.io/clyvara-og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cyber Insurance Evidence: What Insurers Ask For | Clyvara">
+<meta name="twitter:description" content="Insurers now underwrite proof, not promises. The controls they probe and the evidence that counts.">
+<meta name="twitter:image" content="https://clyvara.io/clyvara-og-image.png">
+<style>
+  :root {
+    --navy: #0b1220;
+    --navy2: #16203a;
+    --gold: #d9a441;
+    --ink: #1c2331;
+    --body: #3a4360;
+    --muted: #8b93a3;
+    --line: #e2e6ee;
+    --panel: #f7f8fb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+  a { text-decoration: none; }
+  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav.site {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(11,18,32,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #232d47;
+  }
+  nav.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1080px; gap: 16px; }
+  nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
+  nav.site .brand span { color: var(--gold); }
+  nav.site .links { display: flex; gap: 24px; align-items: center; }
+  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
+  nav.site .links a:hover { color: #fff; }
+  nav.site .cta {
+    background: var(--gold); color: var(--navy) !important; font-weight: 700;
+    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
+  }
+  @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff;
+    padding: 96px 0 88px 0;
+  }
+  header.hero .wrap { max-width: 1080px; }
+  .eyebrow {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+  }
+  header.hero h1 {
+    font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem); line-height: 1.1; margin: 0 0 22px 0; font-weight: 900; max-width: 15ch;
+    letter-spacing: -0.015em;
+  }
+  header.hero .sub {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; color: #c3cbdb; max-width: 580px; margin-bottom: 38px;
+  }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 15px;
+    padding: 15px 25px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; text-align: center;
+  }
+  .btn-secondary {
+    color: #fff; font-weight: 600; font-size: 15px; border: 1px solid #3a4560;
+    padding: 14px 23px; border-radius: 4px; line-height: 1.3; text-align: center;
+  }
+  .filesize { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+
+  /* GATE FORM */
+  .gate-form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .gate-form input[type=email] {
+    background: #ffffff; border: 1px solid #3a4560; border-radius: 4px;
+    padding: 14px 15px; font-size: 16px; color: var(--ink); min-width: 260px; flex: 1;
+  }
+  .gate-form input[type=email]::placeholder { color: #8b93a3; }
+  .gate-form button.btn-primary { border: none; cursor: pointer; }
+  .gate-form .hp { position: absolute; left: -9999px; opacity: 0; }
+  .gate-note { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; color: var(--muted); margin-top: 12px; }
+  .gate-note.dark { color: var(--muted); }
+  .gate-error {
+    display: none; background: rgba(181,73,59,0.12); border: 1px solid rgba(181,73,59,0.4);
+    color: #f2b8ae; font-size: 13.5px; padding: 12px 15px; border-radius: 4px; margin-top: 14px; max-width: 480px; line-height: 1.5;
+  }
+  .gate-error.show { display: block; }
+  .gate-form button.btn-primary[disabled] { opacity: 0.65; cursor: not-allowed; }
+
+  /* SECTION helpers */
+  section { padding: 92px 0; }
+  section.alt { background: var(--panel); }
+  .kicker {
+    font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8C5F16; margin-bottom: 14px;
+  }
+  h2 { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.25rem); font-weight: 900; color: var(--navy); margin: 0 0 20px 0; letter-spacing: -0.012em; line-height: 1.18; }
+  .lede { font-size: 17px; line-height: 1.62; color: var(--body); max-width: 640px; margin-bottom: 36px; }
+
+  /* PIPELINE */
+  .pipeline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 22px 0; margin: 26px 0 48px 0; }
+  .pipe-cell { text-align: center; width: 100px; }
+  .pipe-letter {
+    width: 58px; height: 58px; margin: 0 auto 10px auto; border-radius: 50%;
+    background: var(--navy); color: var(--gold); font-family: monospace; font-weight: 800; font-size: 21px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pipe-name { font-size: 12.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; }
+  @media (max-width: 640px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase-card { border-top: 3px solid var(--gold); padding-top: 18px; }
+  .phase-card .h { display: flex; align-items: center; gap: 11px; margin-bottom: 9px; }
+  .phase-card .badge {
+    font-family: monospace; font-weight: 800; font-size: 12.5px; color: #fff; background: var(--navy);
+    border-radius: 3px; padding: 3px 9px;
+  }
+  .phase-card .name { font-weight: 800; font-size: 19px; color: var(--navy); }
+  .phase-card p { font-size: 15.5px; line-height: 1.6; color: var(--body); margin: 0; }
+
+  /* STATS */
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0 8px 0; }
+  .stat { flex: 1; min-width: 180px; border: 1px solid var(--line); border-radius: 6px; padding: 24px; }
+  .stat .num { font-size: 36px; font-weight: 900; color: var(--navy); line-height: 1; }
+  .stat .cap { font-size: 14px; line-height: 1.5; color: var(--body); margin-top: 10px; }
+  .stat .src { font-family: monospace; font-size: 11.5px; color: #5F6A7D; margin-top: 10px; }
+
+  /* CHECK LIST */
+  .check-q { display: flex; gap: 15px; margin-bottom: 26px; align-items: flex-start; }
+  .check-q .box { width: 18px; height: 18px; border: 2px solid var(--navy); border-radius: 3px; flex-shrink: 0; margin-top: 3px; }
+  .check-q .tag { font-family: monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8C5F16; margin-bottom: 4px; }
+  .check-q .q { font-size: 16px; line-height: 1.5; color: var(--ink); }
+
+  /* WHY */
+  .why-row { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 14px; }
+  .why-col { flex: 1; min-width: 220px; border-top: 3px solid var(--gold); padding-top: 16px; }
+  .why-col .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+  .why-col .d { font-size: 14.5px; line-height: 1.6; color: var(--body); }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff; text-align: center; padding: 92px 0;
+  }
+  .final-cta h2 { color: #fff; }
+  .final-cta .lede { color: #c3cbdb; margin: 0 auto 36px auto; }
+  .final-cta .btn-row { justify-content: center; }
+
+  footer.site {
+    background: var(--navy); color: var(--muted); padding: 40px 0; font-size: 13.5px; line-height: 1.6;
+  }
+  footer.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.site a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <div class="brand">CLYVARA <span>Cyber Risk &amp; Compliance Advisory</span></div>
+    <div class="links">
+      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+      <a href="https://clyvara.io/#services">Services</a>
+      <a href="https://clyvara.io/#insights">Insights</a>
+      <a class="cta" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Guide &middot; Cyber Insurance Readiness</div>
+    <h1>Your insurer doesn&rsquo;t underwrite promises. It underwrites proof.</h1>
+    <div class="sub">Cyber insurance applications and renewals used to be paperwork. Today underwriters probe a short list of controls &mdash; and increasingly ask for the evidence behind the answers. This guide walks through the eight areas insurers check, the question behind each one, and the proof that actually counts.</div>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://clyvara.io/readiness-checklist">&#8595; Get the free readiness checklist</a>
+      <a class="btn-secondary" href="#evidence">See the evidence list</a>
+    </div>
+    <div class="filesize">The checklist condenses this guide into one page &mdash; 35 items, free.</div>
+  </div>
+</header>
+
+<section id="evidence">
+  <div class="wrap">
+    <div class="kicker">The Evidence List</div>
+    <h2>Eight areas every underwriter probes.</h2>
+    <p class="lede">The wording varies by carrier. The substance does not. For each area: the question being asked, and the evidence that answers it. If you can produce the proof within one business day, you are ready. If you can only describe it, you have a gap &mdash; and renewal is the worst week to discover it.</p>
+    <div class="phase-grid">
+      <div class="phase-card"><div class="h"><span class="badge">1</span><span class="name">Multi-factor authentication</span></div><p>The question: is MFA enforced on email, remote access, and administrator accounts? The proof that counts: your MFA policy plus a coverage report from your identity provider showing who is enrolled — not a screenshot of one person's phone.</p></div><div class="phase-card"><div class="h"><span class="badge">2</span><span class="name">Endpoint detection & response</span></div><p>The question: is EDR running on every workstation and server? The proof that counts: a console coverage report with device counts that match your inventory. 'We bought it' without full deployment is the most common gap insurers find.</p></div><div class="phase-card"><div class="h"><span class="badge">3</span><span class="name">Backups that actually restore</span></div><p>The question: are backups isolated or immutable, and when did you last test a restore? The proof that counts: a dated restore-test record. A backup schedule proves intent; a restore test proves recovery.</p></div><div class="phase-card"><div class="h"><span class="badge">4</span><span class="name">Patching & vulnerability management</span></div><p>The question: how fast are critical vulnerabilities patched? The proof that counts: recent scan summaries and patch reports with dates — a rhythm an underwriter can see, not a claim they have to trust.</p></div><div class="phase-card"><div class="h"><span class="badge">5</span><span class="name">Email security</span></div><p>The question: are SPF, DKIM, and DMARC in place on your domains? The proof that counts: the published DNS records and DMARC reporting. This is the one area an insurer can verify from outside your building, in minutes.</p></div><div class="phase-card"><div class="h"><span class="badge">6</span><span class="name">People controls</span></div><p>The question: do staff complete security awareness training and phishing testing? The proof that counts: completion records and test results by name and date, plus a process for repeat clickers.</p></div><div class="phase-card"><div class="h"><span class="badge">7</span><span class="name">Incident response readiness</span></div><p>The question: do you have a written incident response plan, and has it been exercised? The proof that counts: the plan itself, with named roles and first calls, plus notes from a walkthrough or tabletop exercise.</p></div><div class="phase-card"><div class="h"><span class="badge">8</span><span class="name">Access control & vendors</span></div><p>The question: who has privileged access, and which vendors can reach your systems or data? The proof that counts: access-review records, a leaver process that closes accounts the same day, and a vendor list with agreements on file.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Where Firms Get Caught</div>
+    <h2>Three mistakes that cost firms at renewal.</h2>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake one</div><div class="q"><strong>Answering aspirationally.</strong> &ldquo;We plan to enable MFA&rdquo; written as &ldquo;yes&rdquo; is a misrepresentation &mdash; and insurers compare applications against the facts when a claim arrives. An honest &ldquo;not yet, remediation under way&rdquo; protects you; a hopeful &ldquo;yes&rdquo; can endanger the coverage itself.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake two</div><div class="q"><strong>Treating the application as a form, not an evidence request.</strong> The firms that renew smoothly keep the proof in one place &mdash; a risk register, dated test records, current reports. The firms that scramble rebuild a year of evidence in a week.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake three</div><div class="q"><strong>Starting at renewal.</strong> Most gaps on this list take weeks to close properly &mdash; MFA rollouts, backup restore tests, vendor reviews. Ninety days before renewal is a work plan. Nine days before is a negotiation from weakness.</div></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Why Clyvara</div>
+    <h2>Depth a generalist can&rsquo;t offer. Access an enterprise firm won&rsquo;t give you.</h2>
+    <div class="why-row">
+      <div class="why-col"><div class="t">Research-Backed</div><div class="d">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail.</div></div>
+      <div class="why-col"><div class="t">Focused</div><div class="d">Clyvara doesn&rsquo;t sell IT support or general consulting. Cybersecurity advisory is the entire practice.</div></div>
+      <div class="why-col"><div class="t">Accessible</div><div class="d">Direct access to a credentialed principal consultant &mdash; not a junior analyst routed through account layers.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold);">Start Here</div>
+    <h2>Check yourself against the list &mdash; free.</h2>
+    <p class="lede">The Security Questionnaire Readiness Checklist turns the eight areas above into 35 tick-boxes you can score in ten honest minutes. If boxes stay unticked, Clyvara&rsquo;s Risk &amp; Readiness Assessment closes them into a documented risk register and remediation roadmap &mdash; the evidence pack behind this renewal and every questionnaire after it.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://clyvara.io/readiness-checklist">&#8595; Get the free checklist</a>
+      <a class="btn-secondary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>&copy; 2026 Clyvara LLC · Dallas&ndash;Fort Worth, Texas</div>
+    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Readiness Self-Check | Clyvara</title>
+<meta name="description" content="Twelve questions, one honest score. Check whether your business could produce the security evidence customers, insurers, and funders ask for — within one business day.">
+<link rel="canonical" href="https://clyvara.io/readiness-self-check">
+<meta property="og:title" content="Security Readiness Self-Check | Clyvara">
+<meta property="og:description" content="Could you produce the evidence within one business day? Twelve questions drawn from the readiness checklist, scored instantly, in your browser.">
+<meta property="og:type" content="article">
+<meta name="author" content="Rodger Lutalo">
+<meta property="og:image" content="https://clyvara.io/clyvara-og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Security Readiness Self-Check | Clyvara">
+<meta name="twitter:description" content="Twelve questions, one honest score: how ready is your security evidence?">
+<meta name="twitter:image" content="https://clyvara.io/clyvara-og-image.png">
+<style>
+  :root {
+    --navy: #0b1220;
+    --navy2: #16203a;
+    --gold: #d9a441;
+    --ink: #1c2331;
+    --body: #3a4360;
+    --muted: #8b93a3;
+    --line: #e2e6ee;
+    --panel: #f7f8fb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+  a { text-decoration: none; }
+  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav.site {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(11,18,32,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #232d47;
+  }
+  nav.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1080px; gap: 16px; }
+  nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
+  nav.site .brand span { color: var(--gold); }
+  nav.site .links { display: flex; gap: 24px; align-items: center; }
+  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
+  nav.site .links a:hover { color: #fff; }
+  nav.site .cta {
+    background: var(--gold); color: var(--navy) !important; font-weight: 700;
+    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
+  }
+  @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff;
+    padding: 96px 0 88px 0;
+  }
+  header.hero .wrap { max-width: 1080px; }
+  .eyebrow {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+  }
+  header.hero h1 {
+    font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem); line-height: 1.1; margin: 0 0 22px 0; font-weight: 900; max-width: 15ch;
+    letter-spacing: -0.015em;
+  }
+  header.hero .sub {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; color: #c3cbdb; max-width: 580px; margin-bottom: 38px;
+  }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 15px;
+    padding: 15px 25px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; text-align: center;
+  }
+  .btn-secondary {
+    color: #fff; font-weight: 600; font-size: 15px; border: 1px solid #3a4560;
+    padding: 14px 23px; border-radius: 4px; line-height: 1.3; text-align: center;
+  }
+  .filesize { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+
+  /* SECTION helpers */
+  section { padding: 92px 0; }
+  section.alt { background: var(--panel); }
+  .kicker {
+    font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8C5F16; margin-bottom: 14px;
+  }
+  h2 { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.25rem); font-weight: 900; color: var(--navy); margin: 0 0 20px 0; letter-spacing: -0.012em; line-height: 1.18; }
+  .lede { font-size: 17px; line-height: 1.62; color: var(--body); max-width: 640px; margin-bottom: 36px; }
+
+  /* SELF-CHECK */
+  .quiz-progress { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: #5F6A7D; margin-bottom: 26px; }
+  fieldset.q-card {
+    border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 6px;
+    padding: 22px 24px 20px 24px; margin: 0 0 20px 0; background: #fff;
+  }
+  fieldset.q-card legend { float: left; width: 100%; padding: 0; margin-bottom: 6px; }
+  fieldset.q-card .tag {
+    font-family: monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8C5F16; margin-bottom: 4px;
+  }
+  fieldset.q-card .q { font-size: 16.5px; line-height: 1.5; color: var(--ink); font-weight: 600; }
+  fieldset.q-card .counts { font-size: 14px; line-height: 1.55; color: var(--body); margin: 6px 0 16px 0; clear: both; }
+  .opts { display: flex; gap: 10px; flex-wrap: wrap; clear: both; }
+  .opts label {
+    border: 1.5px solid var(--line); border-radius: 4px; padding: 10px 20px; cursor: pointer;
+    font-size: 14.5px; font-weight: 700; color: var(--body); background: #fff; transition: border-color 0.12s, background 0.12s, color 0.12s;
+  }
+  .opts label:hover { border-color: var(--navy); color: var(--navy); }
+  .opts input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .opts label:has(input:checked) { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .opts label:has(input:focus-visible) { outline: 2px solid var(--gold); outline-offset: 2px; }
+  fieldset.q-card.missing { border-color: rgba(181,73,59,0.55); border-top-color: rgba(181,73,59,0.85); }
+  .quiz-actions { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .quiz-actions button.btn-primary { border: none; cursor: pointer; }
+  .quiz-actions button.btn-primary[disabled] { opacity: 0.65; cursor: not-allowed; }
+  .quiz-hint { font-size: 14px; color: #B5493B; display: none; }
+  .quiz-hint.show { display: block; }
+  .reset-link { background: none; border: none; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--body); text-decoration: underline; padding: 0; }
+
+  /* RESULT */
+  #result { display: none; }
+  #result.show { display: block; }
+  .result-card { border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 6px; padding: 30px 30px 26px 30px; background: #fff; }
+  .result-top { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+  .result-score { font-size: 64px; font-weight: 900; color: var(--navy); line-height: 1; }
+  .result-score .of { display: block; font-size: 13px; font-weight: 600; color: var(--muted); margin-top: 8px; letter-spacing: 0.04em; text-transform: uppercase; font-family: 'SFMono-Regular', Consolas, monospace; }
+  .result-band { font-size: 24px; font-weight: 900; color: var(--navy); margin: 2px 0 8px 0; letter-spacing: -0.01em; }
+  .result-text { font-size: 16px; line-height: 1.62; color: var(--body); max-width: 560px; margin: 0; }
+  .weak-list { margin: 26px 0 4px 0; }
+  .weak-list .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 12px; }
+  .weak-item { display: flex; gap: 15px; margin-bottom: 16px; align-items: flex-start; }
+  .weak-item .badge {
+    font-family: monospace; font-weight: 800; font-size: 12.5px; color: #fff; background: var(--navy);
+    border-radius: 3px; padding: 3px 9px; flex-shrink: 0; margin-top: 2px;
+  }
+  .weak-item .name { font-weight: 800; font-size: 15.5px; color: var(--navy); }
+  .weak-item .ask { font-size: 14.5px; line-height: 1.55; color: var(--body); }
+  .result-ctas { margin-top: 28px; }
+  .result-ctas .btn-secondary { color: var(--navy); border-color: var(--navy); }
+  .fine { font-size: 12.5px; color: var(--muted); margin-top: 22px; line-height: 1.55; max-width: 640px; }
+
+  /* WHY */
+  .why-row { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 14px; }
+  .why-col { flex: 1; min-width: 220px; border-top: 3px solid var(--gold); padding-top: 16px; }
+  .why-col .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+  .why-col .d { font-size: 14.5px; line-height: 1.6; color: var(--body); }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff; text-align: center; padding: 92px 0;
+  }
+  .final-cta h2 { color: #fff; }
+  .final-cta .lede { color: #c3cbdb; margin: 0 auto 36px auto; }
+  .final-cta .btn-row { justify-content: center; }
+
+  footer.site {
+    background: var(--navy); color: var(--muted); padding: 40px 0; font-size: 13.5px; line-height: 1.6;
+  }
+  footer.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.site a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <div class="brand">CLYVARA <span>Cyber Risk &amp; Compliance Advisory</span></div>
+    <div class="links">
+      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+      <a href="https://clyvara.io/#services">Services</a>
+      <a href="https://clyvara.io/#insights">Insights</a>
+      <a class="cta" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Free Self-Check · Questionnaire Readiness</div>
+    <h1>Twelve questions. One honest score.</h1>
+    <div class="sub">Customers, cyber insurers, and funders don&rsquo;t just ask what you do — they ask you to show it. This self-check asks their question twelve ways: could you produce the evidence within one business day? Answer honestly and see where your evidence stands, and which areas a reviewer would press first. Your answers stay in this browser — nothing is sent or stored.</div>
+    <div class="btn-row">
+      <a class="btn-primary" href="#self-check">Start the self-check</a>
+      <a class="btn-secondary" href="https://clyvara.io/readiness-checklist">Get the full checklist instead</a>
+    </div>
+    <div class="filesize">About three minutes · drawn from the 35-item Security Questionnaire Readiness Checklist</div>
+  </div>
+</header>
+
+<section id="self-check">
+  <div class="wrap">
+    <div class="kicker">The Self-Check</div>
+    <h2>Answer for what you could produce — not what you believe is in place.</h2>
+    <p class="lede">Every question is about evidence: a document, a record, or a report with a date on it. <strong>Yes</strong> means you could produce it within one business day. <strong>Partially</strong> means it exists for some systems or some people, or it exists but is out of date. <strong>No</strong> means it isn&rsquo;t written down anywhere you could hand over.</p>
+    <div class="quiz-progress" id="quiz-progress">0 of 12 answered</div>
+
+    <form id="self-check-form" novalidate>
+
+      <fieldset class="q-card" data-area="0">
+        <legend><div class="tag">Area 1 · Know what you have</div><div class="q">Could you produce a current inventory of the computers, servers, and devices your business uses?</div></legend>
+        <p class="counts">What counts: the inventory itself, plus your list of cloud services and software with who administers each one.</p>
+        <div class="opts">
+          <label><input type="radio" name="q1" value="2">Yes</label>
+          <label><input type="radio" name="q1" value="1">Partially</label>
+          <label><input type="radio" name="q1" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="0">
+        <legend><div class="tag">Area 1 · Know what you have</div><div class="q">Could you produce a map of what customer, patient, or client data you hold, and where it lives?</div></legend>
+        <p class="counts">What counts: a data map or written summary naming the data, the systems it sits in, and how your network fits together.</p>
+        <div class="opts">
+          <label><input type="radio" name="q2" value="2">Yes</label>
+          <label><input type="radio" name="q2" value="1">Partially</label>
+          <label><input type="radio" name="q2" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="1">
+        <legend><div class="tag">Area 2 · Control who gets in</div><div class="q">Could you produce proof that multi-factor authentication is enforced on email, remote access, and administrator accounts?</div></legend>
+        <p class="counts">What counts: an MFA coverage report from your identity provider showing who is enrolled — not a screenshot of one person&rsquo;s phone.</p>
+        <div class="opts">
+          <label><input type="radio" name="q3" value="2">Yes</label>
+          <label><input type="radio" name="q3" value="1">Partially</label>
+          <label><input type="radio" name="q3" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="1">
+        <legend><div class="tag">Area 2 · Control who gets in</div><div class="q">Could you produce a current list of accounts with administrator rights, and a dated record of your most recent access review?</div></legend>
+        <p class="counts">What counts: the admin list, named accounts with no shared logins, and the review record showing leavers lose access when they leave.</p>
+        <div class="opts">
+          <label><input type="radio" name="q4" value="2">Yes</label>
+          <label><input type="radio" name="q4" value="1">Partially</label>
+          <label><input type="radio" name="q4" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="2">
+        <legend><div class="tag">Area 3 · Keep systems defended</div><div class="q">Could you produce your most recent patch report and an endpoint protection coverage list?</div></legend>
+        <p class="counts">What counts: dated patch or update records, a coverage list showing protection on every device, and a recent vulnerability scan with its results.</p>
+        <div class="opts">
+          <label><input type="radio" name="q5" value="2">Yes</label>
+          <label><input type="radio" name="q5" value="1">Partially</label>
+          <label><input type="radio" name="q5" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="3">
+        <legend><div class="tag">Area 4 · Back up — and prove recovery</div><div class="q">Could you produce a documented backup schedule — what is backed up, how often, and where it is kept?</div></legend>
+        <p class="counts">What counts: the written schedule, including how backups are protected against ransomware and the retention period your policy states.</p>
+        <div class="opts">
+          <label><input type="radio" name="q6" value="2">Yes</label>
+          <label><input type="radio" name="q6" value="1">Partially</label>
+          <label><input type="radio" name="q6" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="3">
+        <legend><div class="tag">Area 4 · Back up — and prove recovery</div><div class="q">Could you produce a dated record of a restore test — a time you actually recovered data from your backups?</div></legend>
+        <p class="counts">What counts: the restore-test record with its date and result. A backup schedule is a claim; a dated restore test is evidence.</p>
+        <div class="opts">
+          <label><input type="radio" name="q7" value="2">Yes</label>
+          <label><input type="radio" name="q7" value="1">Partially</label>
+          <label><input type="radio" name="q7" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="4">
+        <legend><div class="tag">Area 5 · Be ready for an incident</div><div class="q">Could you produce a written incident response plan with the contact list for your first phone calls?</div></legend>
+        <p class="counts">What counts: the plan, however short — named roles, and the first calls listed: IT provider, insurer, bank, legal counsel — plus notes from a walkthrough or a real incident.</p>
+        <div class="opts">
+          <label><input type="radio" name="q8" value="2">Yes</label>
+          <label><input type="radio" name="q8" value="1">Partially</label>
+          <label><input type="radio" name="q8" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="5">
+        <legend><div class="tag">Area 6 · Govern it on paper</div><div class="q">Could you produce an information security policy that is dated and signed, and your most recent risk assessment?</div></legend>
+        <p class="counts">What counts: the signed policy document itself and the risk assessment as a document — not a description of either.</p>
+        <div class="opts">
+          <label><input type="radio" name="q9" value="2">Yes</label>
+          <label><input type="radio" name="q9" value="1">Partially</label>
+          <label><input type="radio" name="q9" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="5">
+        <legend><div class="tag">Area 6 · Govern it on paper</div><div class="q">Could you produce a risk register — each significant risk, its owner, and its treatment — with findings shown closed?</div></legend>
+        <p class="counts">What counts: the register, plus a remediation tracker showing findings you have closed, not just opened.</p>
+        <div class="opts">
+          <label><input type="radio" name="q10" value="2">Yes</label>
+          <label><input type="radio" name="q10" value="1">Partially</label>
+          <label><input type="radio" name="q10" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="6">
+        <legend><div class="tag">Area 7 · Prepare your people</div><div class="q">Could you produce security awareness training records for your staff, and signed acceptable-use acknowledgments?</div></legend>
+        <p class="counts">What counts: completion records by name and date, phishing-awareness results if you run them, and the signed acknowledgments themselves.</p>
+        <div class="opts">
+          <label><input type="radio" name="q11" value="2">Yes</label>
+          <label><input type="radio" name="q11" value="1">Partially</label>
+          <label><input type="radio" name="q11" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-card" data-area="7">
+        <legend><div class="tag">Area 8 · Manage your vendors</div><div class="q">Could you produce a list of the vendors that can access your systems or your data, with the agreements you hold with them?</div></legend>
+        <p class="counts">What counts: the vendor inventory, signed data-protection or business-associate agreements where they apply, and a security review on file for critical vendors.</p>
+        <div class="opts">
+          <label><input type="radio" name="q12" value="2">Yes</label>
+          <label><input type="radio" name="q12" value="1">Partially</label>
+          <label><input type="radio" name="q12" value="0">No</label>
+        </div>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button type="submit" class="btn-primary" id="score-btn">See my score</button>
+        <span class="quiz-hint" id="quiz-hint">A few questions are still unanswered — they&rsquo;re outlined above.</span>
+      </div>
+    </form>
+
+    <div id="result" aria-live="polite">
+      <div class="result-card">
+        <div class="result-top">
+          <div class="result-score"><span id="result-pct">0%</span><span class="of">Evidence readiness</span></div>
+          <div>
+            <div class="result-band" id="result-band"></div>
+            <p class="result-text" id="result-text"></p>
+          </div>
+        </div>
+        <div class="weak-list" id="weak-wrap">
+          <div class="t">Where the evidence is thinnest</div>
+          <div id="weak-items"></div>
+        </div>
+        <div class="btn-row result-ctas">
+          <a class="btn-primary" href="https://clyvara.io/security-questionnaire-readiness-checklist.pdf">&#8595; Download the full checklist (PDF)</a>
+          <a class="btn-secondary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+        </div>
+        <p class="fine">This self-check is general guidance for planning purposes. It is not an audit, and a score here does not by itself establish compliance with any framework or regulation. Your answers were scored in your browser and were not sent or stored.</p>
+        <div style="margin-top:14px;"><button type="button" class="reset-link" id="reset-btn">Start over</button></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Why Clyvara</div>
+    <h2>Depth a generalist can&rsquo;t offer. Access an enterprise firm won&rsquo;t give you.</h2>
+    <div class="why-row">
+      <div class="why-col"><div class="t">Research-Backed</div><div class="d">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail.</div></div>
+      <div class="why-col"><div class="t">Focused</div><div class="d">Clyvara doesn&rsquo;t sell IT support or general consulting. Cybersecurity advisory is the entire practice.</div></div>
+      <div class="why-col"><div class="t">Accessible</div><div class="d">Direct access to a credentialed principal consultant — not a junior analyst routed through account layers.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold);">Start Here</div>
+    <h2>Start with the score. Then close the gaps.</h2>
+    <p class="lede">The full checklist turns this score into 35 tick-boxes you can work through item by item. If boxes stay unticked, Clyvara&rsquo;s Risk &amp; Readiness Assessment turns them into a documented risk register and a remediation roadmap — the evidence pack behind every future questionnaire.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://clyvara.io/security-questionnaire-readiness-checklist.pdf">&#8595; Download the checklist (PDF)</a>
+      <a class="btn-secondary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>&copy; 2026 Clyvara LLC · Dallas&ndash;Fort Worth, Texas</div>
+    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var AREAS = [
+    { name: 'Know what you have', ask: 'The full checklist asks for: a device and software inventory with named administrators, and a map of where customer or patient data lives.' },
+    { name: 'Control who gets in', ask: 'The full checklist asks for: MFA proof, named accounts with no shared logins, a current admin list, a written joiner/leaver process, and a dated access review.' },
+    { name: 'Keep systems defended', ask: 'The full checklist asks for: a patching schedule with recent reports, endpoint protection coverage for every device, and a recent vulnerability scan with results.' },
+    { name: 'Back up — and prove recovery', ask: 'The full checklist asks for: a documented backup schedule, backups protected against ransomware, a dated restore-test record, and a stated retention period.' },
+    { name: 'Be ready for an incident', ask: 'The full checklist asks for: a written response plan, a first-calls contact list, notes from a walkthrough or a real incident, and your insurance policy details if you carry cover.' },
+    { name: 'Govern it on paper', ask: 'The full checklist asks for: a dated, signed security policy, a current risk assessment, a risk register with owners, and findings shown closed.' },
+    { name: 'Prepare your people', ask: 'The full checklist asks for: training records, phishing-awareness results, signed acceptable-use acknowledgments, and background checks where a role or contract requires them.' },
+    { name: 'Manage your vendors', ask: 'The full checklist asks for: a vendor inventory, signed agreements where they apply, security reviews on file for critical vendors, and breach-notification commitments in contracts.' }
+  ];
+  var BANDS = [
+    { min: 75, title: 'Evidence in hand',
+      text: 'Most of your evidence is in hand. A customer questionnaire, an insurance renewal, or a funder review would still take work, but you would be assembling documents, not creating them under deadline. The full checklist shows the remaining items worth closing before someone asks.' },
+    { min: 40, title: 'Partly documented',
+      text: 'Some of your evidence is in hand and some is not. On a questionnaire, that reads as risk: the answer may be yes, but the proof is not ready to send. A reviewer gives you days, not weeks — the areas below are where they would press first.' },
+    { min: 0, title: 'Running on answers, not evidence',
+      text: 'Right now your security rests on answers, not evidence. That is not unusual for a business of your size — but it is exactly what a customer, insurer, or funder tests. Start with the areas below: each one is a short list of documents to assemble, not a technology purchase.' }
+  ];
+  var form = document.getElementById('self-check-form');
+  var progress = document.getElementById('quiz-progress');
+  var hint = document.getElementById('quiz-hint');
+  var result = document.getElementById('result');
+  var cards = Array.prototype.slice.call(form.querySelectorAll('fieldset.q-card'));
+  var TOTAL = cards.length;
+
+  function answeredCount() {
+    var n = 0;
+    cards.forEach(function (card) {
+      if (card.querySelector('input[type=radio]:checked')) n++;
+    });
+    return n;
+  }
+
+  form.addEventListener('change', function () {
+    progress.textContent = answeredCount() + ' of ' + TOTAL + ' answered';
+    cards.forEach(function (card) {
+      if (card.querySelector('input[type=radio]:checked')) card.classList.remove('missing');
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var firstMissing = null;
+    cards.forEach(function (card) {
+      var checked = card.querySelector('input[type=radio]:checked');
+      card.classList.toggle('missing', !checked);
+      if (!checked && !firstMissing) firstMissing = card;
+    });
+    if (firstMissing) {
+      hint.classList.add('show');
+      result.classList.remove('show');
+      firstMissing.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    hint.classList.remove('show');
+
+    var total = 0;
+    var areaScore = AREAS.map(function () { return { got: 0, max: 0 }; });
+    cards.forEach(function (card) {
+      var v = parseInt(card.querySelector('input[type=radio]:checked').value, 10);
+      var a = parseInt(card.getAttribute('data-area'), 10);
+      total += v;
+      areaScore[a].got += v;
+      areaScore[a].max += 2;
+    });
+    var pct = Math.round((total / (TOTAL * 2)) * 100);
+    document.getElementById('result-pct').textContent = pct + '%';
+
+    var band = BANDS[BANDS.length - 1];
+    for (var i = 0; i < BANDS.length; i++) {
+      if (pct >= BANDS[i].min) { band = BANDS[i]; break; }
+    }
+    document.getElementById('result-band').textContent = band.title;
+    document.getElementById('result-text').textContent = band.text;
+
+    var weak = areaScore
+      .map(function (s, idx) { return { idx: idx, pct: s.max ? (s.got / s.max) : 1 }; })
+      .filter(function (w) { return w.pct < 1; })
+      .sort(function (a, b) { return a.pct - b.pct; });
+
+    var wrap = document.getElementById('weak-wrap');
+    var items = document.getElementById('weak-items');
+    items.innerHTML = '';
+    if (!weak.length) {
+      wrap.querySelector('.t').textContent = 'No thin areas in this pass';
+      var p = document.createElement('p');
+      p.className = 'result-text';
+      p.textContent = 'Every area scored full marks on these twelve questions. The full checklist goes deeper — 35 items — and is the version worth re-running each quarter.';
+      items.appendChild(p);
+    } else {
+      wrap.querySelector('.t').textContent = 'Where the evidence is thinnest';
+      weak.forEach(function (w) {
+        var row = document.createElement('div');
+        row.className = 'weak-item';
+        var badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = String(w.idx + 1);
+        var body = document.createElement('div');
+        var name = document.createElement('div');
+        name.className = 'name';
+        name.textContent = AREAS[w.idx].name;
+        var ask = document.createElement('div');
+        ask.className = 'ask';
+        ask.textContent = AREAS[w.idx].ask;
+        body.appendChild(name);
+        body.appendChild(ask);
+        row.appendChild(badge);
+        row.appendChild(body);
+        items.appendChild(row);
+      });
+    }
+
+    result.classList.add('show');
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('reset-btn').addEventListener('click', function () {
+    form.reset();
+    cards.forEach(function (card) { card.classList.remove('missing'); });
+    progress.textContent = '0 of ' + TOTAL + ' answered';
+    hint.classList.remove('show');
+    result.classList.remove('show');
+    document.getElementById('self-check').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>

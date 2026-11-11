@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Questionnaire Response Service | Clyvara</title>
+<meta name="description" content="A customer's security questionnaire is a procurement gate, not paperwork. How to triage it when it lands, answer honestly, and back every yes with evidence you can produce.">
+<link rel="canonical" href="https://clyvara.io/questionnaire-response">
+<meta property="og:title" content="How to Answer a Customer&rsquo;s Security Questionnaire | Clyvara">
+<meta property="og:description" content="Every yes on a questionnaire is a claim. The triage, the evidence behind each of the eight areas, the honest way to say 'in progress,' and the mistakes that stall deals.">
+<meta property="og:type" content="article">
+<meta name="author" content="Rodger Lutalo">
+<meta property="og:image" content="https://clyvara.io/clyvara-og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Answer a Customer&rsquo;s Security Questionnaire | Clyvara">
+<meta name="twitter:description" content="Every yes is a claim. Claims need documents. A practical guide to answering customer security questionnaires with evidence.">
+<meta name="twitter:image" content="https://clyvara.io/clyvara-og-image.png">
+<style>
+  :root {
+    --navy: #0b1220;
+    --navy2: #16203a;
+    --gold: #d9a441;
+    --ink: #1c2331;
+    --body: #3a4360;
+    --muted: #8b93a3;
+    --line: #e2e6ee;
+    --panel: #f7f8fb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+  a { text-decoration: none; }
+  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav.site {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(11,18,32,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #232d47;
+  }
+  nav.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1080px; gap: 16px; }
+  nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
+  nav.site .brand span { color: var(--gold); }
+  nav.site .links { display: flex; gap: 24px; align-items: center; }
+  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
+  nav.site .links a:hover { color: #fff; }
+  nav.site .cta {
+    background: var(--gold); color: var(--navy) !important; font-weight: 700;
+    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
+  }
+  @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff;
+    padding: 96px 0 88px 0;
+  }
+  header.hero .wrap { max-width: 1080px; }
+  .eyebrow {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+  }
+  header.hero h1 {
+    font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem); line-height: 1.1; margin: 0 0 22px 0; font-weight: 900; max-width: 15ch;
+    letter-spacing: -0.015em;
+  }
+  header.hero .sub {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; color: #c3cbdb; max-width: 580px; margin-bottom: 38px;
+  }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 15px;
+    padding: 15px 25px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; text-align: center;
+  }
+  .btn-secondary {
+    color: #fff; font-weight: 600; font-size: 15px; border: 1px solid #3a4560;
+    padding: 14px 23px; border-radius: 4px; line-height: 1.3; text-align: center;
+  }
+  .filesize { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+
+  /* SECTION helpers */
+  section { padding: 92px 0; }
+  section.alt { background: var(--panel); }
+  .kicker {
+    font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8C5F16; margin-bottom: 14px;
+  }
+  h2 { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.25rem); font-weight: 900; color: var(--navy); margin: 0 0 20px 0; letter-spacing: -0.012em; line-height: 1.18; }
+  .lede { font-size: 17px; line-height: 1.62; color: var(--body); max-width: 640px; margin-bottom: 36px; }
+  .fine { font-size: 12.5px; color: var(--muted); margin-top: 22px; line-height: 1.55; max-width: 640px; }
+
+  /* PHASE GRID */
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; }
+  @media (max-width: 640px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase-card { border-top: 3px solid var(--gold); padding-top: 18px; }
+  .phase-card .h { display: flex; align-items: center; gap: 11px; margin-bottom: 9px; }
+  .phase-card .badge {
+    font-family: monospace; font-weight: 800; font-size: 12.5px; color: #fff; background: var(--navy);
+    border-radius: 3px; padding: 3px 9px;
+  }
+  .phase-card .name { font-weight: 800; font-size: 19px; color: var(--navy); }
+  .phase-card p { font-size: 15.5px; line-height: 1.6; color: var(--body); margin: 0; }
+
+  /* CHECK LIST */
+  .check-q { display: flex; gap: 15px; margin-bottom: 26px; align-items: flex-start; }
+  .check-q .box { width: 18px; height: 18px; border: 2px solid var(--navy); border-radius: 3px; flex-shrink: 0; margin-top: 3px; }
+  .check-q .tag { font-family: monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8C5F16; margin-bottom: 4px; }
+  .check-q .q { font-size: 16px; line-height: 1.5; color: var(--ink); }
+
+  /* WHY */
+  .why-row { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 14px; }
+  .why-col { flex: 1; min-width: 220px; border-top: 3px solid var(--gold); padding-top: 16px; }
+  .why-col .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+  .why-col .d { font-size: 14.5px; line-height: 1.6; color: var(--body); }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff; text-align: center; padding: 92px 0;
+  }
+  .final-cta h2 { color: #fff; }
+  .final-cta .lede { color: #c3cbdb; margin: 0 auto 36px auto; }
+  .final-cta .lede a { color: var(--gold); text-decoration: underline; }
+  .final-cta .btn-row { justify-content: center; }
+
+  footer.site {
+    background: var(--navy); color: var(--muted); padding: 40px 0; font-size: 13.5px; line-height: 1.6;
+  }
+  footer.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.site a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <div class="brand">CLYVARA <span>Cyber Risk &amp; Compliance Advisory</span></div>
+    <div class="links">
+      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+      <a href="https://clyvara.io/#services">Services</a>
+      <a href="https://clyvara.io/#insights">Insights</a>
+      <a class="cta" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Service &middot; Customer Security Questionnaires</div>
+    <h1>A customer&rsquo;s questionnaire, answered with evidence.</h1>
+    <div class="sub">Send Clyvara the questionnaire your customer sent you. It comes back completed &mdash; every answer matched to the evidence behind it, and the honest gaps named with a fix for each &mdash; ready for you to submit. One fixed fee, agreed before we start: <strong>$750</strong>.</div>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+      <a class="btn-secondary" href="https://clyvara.io/security-questionnaire-guide">Read the free guide first</a>
+    </div>
+    <div class="filesize">For small and mid-sized businesses answering a customer&rsquo;s security questionnaire for a contract, a renewal, or a place in a supply chain.</div>
+  </div>
+</header>
+
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="kicker">What You Get</div>
+    <h2>Answers you can defend, not answers you hope hold up.</h2>
+    <p class="lede">A questionnaire is a request for evidence wearing a spreadsheet&rsquo;s clothes. This service produces the response and the file behind it:</p>
+    <div class="check-q"><div class="box"></div><div><div class="tag">One</div><div class="q"><strong>The completed questionnaire.</strong> Every question answered, in the format it arrived &mdash; spreadsheet, document, or portal questions returned as a completed copy &mdash; ready for you to submit.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Two</div><div class="q"><strong>An evidence index.</strong> Each answer tied to the document or record that backs it, so when the follow-up &ldquo;show me&rdquo; arrives, it takes minutes to answer, not days of reconstruction.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Three</div><div class="q"><strong>Honest gap notes.</strong> Where the truthful answer is &ldquo;not yet,&rdquo; the response says so, with a date and an owner &mdash; the answer reviewers trust, instead of a bare yes that collapses at audit or renewal.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Four</div><div class="q"><strong>A gap list with fixes.</strong> The short list of what to put in place before the next questionnaire lands, in priority order, so this scramble does not repeat.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Five</div><div class="q"><strong>A walkthrough call.</strong> Thirty minutes together over the finished answers before you send them, so you can defend every line in your own words.</div></div></div>
+  </div>
+</section>
+
+<section class="alt" id="how-it-works">
+  <div class="wrap">
+    <div class="kicker">How It Works</div>
+    <h2>Four steps, days not weeks.</h2>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="h"><span class="badge">1</span><span class="name">Send it</span></div>
+        <p>You send the questionnaire and your deadline. If the date cannot be met honestly, you hear that the same day, not the day before it.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">2</span><span class="name">Triage call</span></div>
+        <p>Thirty minutes on what the sender is really testing, what evidence you already hold, and what would need creating. If the questionnaire does not fit this service&rsquo;s scope, you hear that here, before any fee is due.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">3</span><span class="name">The evidence pass</span></div>
+        <p>Clyvara drafts every answer against your documents and records, and flags anything that cannot be evidenced as claimed. Nothing goes in that you could not produce within a business day.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">4</span><span class="name">Delivery</span></div>
+        <p>The completed questionnaire, the evidence index, and the gap list, plus the walkthrough call. In the standard case, delivery is within three business days of the triage call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="the-fee">
+  <div class="wrap">
+    <div class="kicker">The Fee</div>
+    <h2>Fixed at $750. No hourly meter.</h2>
+    <p class="lede">One questionnaire, one fixed fee of $750, payable in full when we start. If the triage call shows the work does not fit this scope &mdash; a questionnaire running to hundreds of questions, or one that really needs a full assessment underneath it &mdash; the fee is not taken and the honest route is named instead.</p>
+    <div class="why-row">
+      <div class="why-col"><div class="t">What it is</div><div class="d">A completed, evidence-backed response to one customer&rsquo;s security questionnaire, plus the index and gap list behind it. Led and delivered personally by Clyvara&rsquo;s principal consultant.</div></div>
+      <div class="why-col"><div class="t">What it is not</div><div class="d">Not a full risk assessment &mdash; that is the Risk &amp; Readiness Assessment. Not remediation work, and not a promise about the customer&rsquo;s decision. Answers stay truthful even when the truthful answer is uncomfortable; that is what makes them hold up.</div></div>
+      <div class="why-col"><div class="t">Who it fits</div><div class="d">Businesses answering customer or partner questionnaires to win or keep work &mdash; healthcare practices, professional-services firms, and the suppliers around them &mdash; where the answers matter and the evidence is scattered.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold);">Start Here</div>
+    <h2>The next questionnaire doesn&rsquo;t have to be a scramble.</h2>
+    <p class="lede">If one is already sitting in your inbox, book a Risk Conversation and mention the deadline. If it hasn&rsquo;t landed yet, the free <a href="https://clyvara.io/security-questionnaire-guide">guide</a> and the twelve-question <a href="https://clyvara.io/readiness-self-check">Readiness Self-Check</a> show exactly what senders ask for, so you can start gathering the evidence now.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+      <a class="btn-secondary" href="https://clyvara.io/security-questionnaire-guide">Read the free guide</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>&copy; 2026 Clyvara LLC · Dallas&ndash;Fort Worth, Texas</div>
+    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a></div>
+  </div>
+</footer>
+</body>
+</html>

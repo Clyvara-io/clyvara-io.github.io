@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Answer a Customer&rsquo;s Security Questionnaire | Clyvara</title>
+<meta name="description" content="A customer's security questionnaire is a procurement gate, not paperwork. How to triage it when it lands, answer honestly, and back every yes with evidence you can produce.">
+<link rel="canonical" href="https://clyvara.io/security-questionnaire-guide">
+<meta property="og:title" content="How to Answer a Customer&rsquo;s Security Questionnaire | Clyvara">
+<meta property="og:description" content="Every yes on a questionnaire is a claim. The triage, the evidence behind each of the eight areas, the honest way to say 'in progress,' and the mistakes that stall deals.">
+<meta property="og:type" content="article">
+<meta name="author" content="Rodger Lutalo">
+<meta property="og:image" content="https://clyvara.io/clyvara-og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Answer a Customer&rsquo;s Security Questionnaire | Clyvara">
+<meta name="twitter:description" content="Every yes is a claim. Claims need documents. A practical guide to answering customer security questionnaires with evidence.">
+<meta name="twitter:image" content="https://clyvara.io/clyvara-og-image.png">
+<style>
+  :root {
+    --navy: #0b1220;
+    --navy2: #16203a;
+    --gold: #d9a441;
+    --ink: #1c2331;
+    --body: #3a4360;
+    --muted: #8b93a3;
+    --line: #e2e6ee;
+    --panel: #f7f8fb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+  a { text-decoration: none; }
+  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav.site {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(11,18,32,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #232d47;
+  }
+  nav.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1080px; gap: 16px; }
+  nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
+  nav.site .brand span { color: var(--gold); }
+  nav.site .links { display: flex; gap: 24px; align-items: center; }
+  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
+  nav.site .links a:hover { color: #fff; }
+  nav.site .cta {
+    background: var(--gold); color: var(--navy) !important; font-weight: 700;
+    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
+  }
+  @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff;
+    padding: 96px 0 88px 0;
+  }
+  header.hero .wrap { max-width: 1080px; }
+  .eyebrow {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+  }
+  header.hero h1 {
+    font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem); line-height: 1.1; margin: 0 0 22px 0; font-weight: 900; max-width: 15ch;
+    letter-spacing: -0.015em;
+  }
+  header.hero .sub {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; color: #c3cbdb; max-width: 580px; margin-bottom: 38px;
+  }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 15px;
+    padding: 15px 25px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; text-align: center;
+  }
+  .btn-secondary {
+    color: #fff; font-weight: 600; font-size: 15px; border: 1px solid #3a4560;
+    padding: 14px 23px; border-radius: 4px; line-height: 1.3; text-align: center;
+  }
+  .filesize { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+
+  /* SECTION helpers */
+  section { padding: 92px 0; }
+  section.alt { background: var(--panel); }
+  .kicker {
+    font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8C5F16; margin-bottom: 14px;
+  }
+  h2 { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.25rem); font-weight: 900; color: var(--navy); margin: 0 0 20px 0; letter-spacing: -0.012em; line-height: 1.18; }
+  .lede { font-size: 17px; line-height: 1.62; color: var(--body); max-width: 640px; margin-bottom: 36px; }
+  .fine { font-size: 12.5px; color: var(--muted); margin-top: 22px; line-height: 1.55; max-width: 640px; }
+
+  /* PHASE GRID */
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; }
+  @media (max-width: 640px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase-card { border-top: 3px solid var(--gold); padding-top: 18px; }
+  .phase-card .h { display: flex; align-items: center; gap: 11px; margin-bottom: 9px; }
+  .phase-card .badge {
+    font-family: monospace; font-weight: 800; font-size: 12.5px; color: #fff; background: var(--navy);
+    border-radius: 3px; padding: 3px 9px;
+  }
+  .phase-card .name { font-weight: 800; font-size: 19px; color: var(--navy); }
+  .phase-card p { font-size: 15.5px; line-height: 1.6; color: var(--body); margin: 0; }
+
+  /* CHECK LIST */
+  .check-q { display: flex; gap: 15px; margin-bottom: 26px; align-items: flex-start; }
+  .check-q .box { width: 18px; height: 18px; border: 2px solid var(--navy); border-radius: 3px; flex-shrink: 0; margin-top: 3px; }
+  .check-q .tag { font-family: monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8C5F16; margin-bottom: 4px; }
+  .check-q .q { font-size: 16px; line-height: 1.5; color: var(--ink); }
+
+  /* WHY */
+  .why-row { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 14px; }
+  .why-col { flex: 1; min-width: 220px; border-top: 3px solid var(--gold); padding-top: 16px; }
+  .why-col .t { font-weight: 800; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+  .why-col .d { font-size: 14.5px; line-height: 1.6; color: var(--body); }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(160deg, var(--navy) 0%, #121a2b 55%, var(--navy2) 100%);
+    color: #fff; text-align: center; padding: 92px 0;
+  }
+  .final-cta h2 { color: #fff; }
+  .final-cta .lede { color: #c3cbdb; margin: 0 auto 36px auto; }
+  .final-cta .lede a { color: var(--gold); text-decoration: underline; }
+  .final-cta .btn-row { justify-content: center; }
+
+  footer.site {
+    background: var(--navy); color: var(--muted); padding: 40px 0; font-size: 13.5px; line-height: 1.6;
+  }
+  footer.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.site a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <div class="brand">CLYVARA <span>Cyber Risk &amp; Compliance Advisory</span></div>
+    <div class="links">
+      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+      <a href="https://clyvara.io/#services">Services</a>
+      <a href="https://clyvara.io/#insights">Insights</a>
+      <a class="cta" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Guide &middot; Customer Security Questionnaires</div>
+    <h1>Your customer isn&rsquo;t collecting forms. They&rsquo;re collecting proof.</h1>
+    <div class="sub">Sooner or later, a customer will ask how you protect the information they trust you with &mdash; and your answers help decide whether the contract moves. This guide covers how to triage the questionnaire when it lands, how to answer honestly without underselling yourself, the evidence behind each of its sections, and the mistakes that quietly stall deals.</div>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://clyvara.io/readiness-self-check">Take the free readiness self-check</a>
+      <a class="btn-secondary" href="https://clyvara.io/readiness-checklist">&#8595; Get the free readiness checklist</a>
+    </div>
+    <div class="filesize">The self-check takes about three minutes. The checklist is one page &mdash; 35 items, free.</div>
+  </div>
+</header>
+
+<section id="what-it-is">
+  <div class="wrap">
+    <div class="kicker">What It Is</div>
+    <h2>A procurement gate, not a paperwork exercise.</h2>
+    <p class="lede">A security questionnaire is how a customer decides whether you are a safe pair of hands for their data. It arrives dressed as a spreadsheet, or a login to a portal, but the decision behind it is commercial: can this business be trusted inside our supply chain, with our customers&rsquo; information in its systems? Treat it as paperwork and it stalls your deal at the last step. Treat it as what it is &mdash; a request for evidence &mdash; and it can move the deal forward.</p>
+    <p class="lede" style="margin-bottom:0;">The sender is rarely trying to catch you out. Their own customers, insurers, and funders ask them the same questions about their vendors, and your answers become part of their file &mdash; the record they would produce if anyone asked why they chose you. A weak response doesn&rsquo;t just raise a question about your security. It leaves the person championing your deal with nothing to defend you with.</p>
+  </div>
+</section>
+
+<section class="alt" id="triage">
+  <div class="wrap">
+    <div class="kicker">When It Lands</div>
+    <h2>Triage it before you answer a single question.</h2>
+    <p class="lede">The first hour with a questionnaire decides whether the rest is orderly or a scramble. Five moves, before anyone types an answer:</p>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Move one</div><div class="q"><strong>Give it one owner.</strong> Not a committee, and not simply &ldquo;the IT person.&rdquo; One named person who tracks every question, every attachment, and the deadline &mdash; and who has the standing to ask colleagues for documents and actually get them.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Move two</div><div class="q"><strong>Find the real deadline.</strong> The date in the covering email, minus the sender&rsquo;s review time, minus your own approval step. If the date is impossible, say so on day one and agree a new one. Senders respect an early conversation; they remember a silent miss.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Move three</div><div class="q"><strong>Count and sort before you answer.</strong> Group the questions: company and policy questions, technical questions, and requests for attachments. Under the branding, most questionnaires are the same eight areas in different wording &mdash; the sections below. Sorting them turns a wall of questions into a short evidence list.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Move four</div><div class="q"><strong>Spot the evidence hiding inside the yes/no questions.</strong> &ldquo;Do you test your restores?&rdquo; is not asking for a tick; it is asking for a date and a record. Read every yes as the start of a follow-up &mdash; <em>show me</em>. If the proof would take more than a day to produce, that question is work, not admin.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Move five</div><div class="q"><strong>Ask your questions early.</strong> An ambiguous question, evidence you don&rsquo;t hold in the format requested, a section that doesn&rsquo;t apply to your business &mdash; a short clarification email on day one is professional. The same email on the deadline day is an excuse.</div></div></div>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="wrap">
+    <div class="kicker">The Evidence Principle</div>
+    <h2>Every &ldquo;yes&rdquo; is a claim. Claims need documents.</h2>
+    <p class="lede">The test for every answer is simple: could you produce the proof within one business day? If the document exists &mdash; a dated policy, a coverage report, a test record &mdash; the yes is safe, and the evidence can travel with it. If producing the proof would take a week of reconstruction, the honest answer is not yes. It is the truth, with a date and an owner.</p>
+    <div class="check-q"><div class="box"></div><div><div class="tag">The bare yes</div><div class="q">&ldquo;Yes &mdash; MFA is enabled.&rdquo; Nothing behind it: no scope, no date, no record. It answers the question on the form and invites exactly the follow-up it cannot support.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">The answer that holds up</div><div class="q">&ldquo;MFA is enforced on email and remote access today &mdash; coverage report attached. Administrator accounts complete on [date], owned by [name].&rdquo; Same control, honestly scoped: what is done, what is in progress, when it finishes, and who owns it. Reviewers trust this answer precisely because it admits its edges.</div></div></div>
+    <p class="lede" style="margin-bottom:0;">That is not underselling yourself. A dated, owned &ldquo;in progress&rdquo; tells the reviewer your business manages its security deliberately. A bare &ldquo;yes&rdquo; that collapses under one follow-up tells them the opposite &mdash; and questionnaires have a way of coming back out of the file: at renewal, at audit, after an incident.</p>
+  </div>
+</section>
+
+<section class="alt" id="areas">
+  <div class="wrap">
+    <div class="kicker">The Eight Areas</div>
+    <h2>What the sections ask &mdash; and the proof that counts.</h2>
+    <p class="lede">Strip the branding off any customer&rsquo;s questionnaire and the same eight areas appear, in some order, in some wording. For each: the question behind the questions, and the evidence that answers it. If you can produce the proof within one business day, you are ready for that section. If you can only describe it, that section is your work plan.</p>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="h"><span class="badge">1</span><span class="name">Know what you have</span></div>
+        <p>They ask what systems you run, what software you rely on, and what customer or client data you hold. The proof that counts: a current inventory of computers, servers, devices, cloud services and software &mdash; with who administers each &mdash; and a data map showing where that data lives. You cannot defend what you have not listed.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">2</span><span class="name">Control who gets in</span></div>
+        <p>They ask who can reach your systems, and how access is granted and taken away. The proof that counts: MFA enforced on email, remote access, and administrator accounts; a named account for every user, with no shared logins; a current list of administrator rights; a written joiner/leaver process; and a dated record of your most recent access review.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">3</span><span class="name">Keep systems defended</span></div>
+        <p>They ask whether your systems are patched and protected, and whether you go looking for weaknesses. The proof that counts: a patching schedule with the most recent patch report, endpoint protection on every device with a coverage list to prove it, a recent vulnerability scan with its results, and email filtering and anti-phishing protection in place.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">4</span><span class="name">Back up &mdash; and prove recovery</span></div>
+        <p>They ask how you back up &mdash; and the only part that really matters: whether you have ever restored. The proof that counts: a documented backup schedule (what, how often, where), backups protected against ransomware, a retention period that matches your policy, and a dated record of a restore test. A schedule is a claim; a restore test is evidence.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">5</span><span class="name">Be ready for an incident</span></div>
+        <p>They ask what happens on your worst day. The proof that counts: a written incident response plan, however short; the contact list for the first phone calls &mdash; IT provider, insurer, bank, legal counsel; notes from a tabletop exercise, a real incident, or lessons learned; and your cyber insurance policy details page, if you carry cover.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">6</span><span class="name">Govern it on paper</span></div>
+        <p>They ask whether security in your business is managed or improvised. The proof that counts: an information security policy that is dated and signed, your most recent risk assessment, a risk register naming each significant risk, its owner, and its treatment &mdash; and a remediation tracker showing findings closed, not just opened.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">7</span><span class="name">Prepare your people</span></div>
+        <p>They ask whether your staff are part of the defence or part of the gap. The proof that counts: security awareness training records, phishing-awareness activity or results if you run them, signed acceptable-use acknowledgments, and background checks where a role or a contract requires them.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">8</span><span class="name">Manage your vendors</span></div>
+        <p>They ask how you vet the businesses that can reach your systems or your data &mdash; the same judgement they are making about you. The proof that counts: an inventory of those vendors, signed data-protection or business-associate agreements where they apply, a security review or questionnaire response on file for critical vendors, and breach-notification commitments in the contracts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mistakes">
+  <div class="wrap">
+    <div class="kicker">Red Flags</div>
+    <h2>Five ways firms talk themselves into trouble.</h2>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake one</div><div class="q"><strong>Answering aspirationally.</strong> &ldquo;We are implementing MFA&rdquo; written as &ldquo;yes&rdquo; is a misrepresentation, and it tends to surface &mdash; at renewal, at audit, or after an incident, when the questionnaire comes back out of the file. Answer for the day you sign, not the quarter you hope for.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake two</div><div class="q"><strong>Naming tools you don&rsquo;t run.</strong> Listing a product because it was quoted, trialled, or installed on one laptop invites the follow-up &mdash; <em>show me the coverage report</em> &mdash; and that answer ends the conversation about your credibility, not just about that question.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake three</div><div class="q"><strong>Promising dates you can&rsquo;t keep.</strong> A remediation date on a questionnaire is a commitment the sender may well diarise. Before you write one down, put an owner and a realistic schedule behind it. A missed promised date reads worse than a later, honest one.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake four</div><div class="q"><strong>Sending evidence you don&rsquo;t have.</strong> A screenshot of a settings page that isn&rsquo;t yours, a policy template with the blanks still in it, a report from the wrong period. Thin evidence is worse than none at all, because it tells the reviewer to check everything else twice.</div></div></div>
+    <div class="check-q"><div class="box"></div><div><div class="tag">Mistake five</div><div class="q"><strong>Missing the deadline silently.</strong> Deals rarely die on one weak answer; they die on drift. If you need more time, ask early, say what is being assembled, and offer the sections you have finished. Partial and punctual beats complete and late.</div></div></div>
+  </div>
+</section>
+
+<section class="alt" id="workflow">
+  <div class="wrap">
+    <div class="kicker">The Workflow</div>
+    <h2>A response that fits in days, not weeks.</h2>
+    <p class="lede">For a typical questionnaire, this rhythm works &mdash; and most of the time goes on evidence you already have, once someone goes and gets it.</p>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="h"><span class="badge">1</span><span class="name">Day one &mdash; triage and assign</span></div>
+        <p>Name the owner, confirm the deadline, sort the questions into the eight areas, and list the evidence each section will need. Send your clarification questions to the sender today &mdash; not at the end.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">2</span><span class="name">Days one to two &mdash; assemble what exists</span></div>
+        <p>Collect the documents that already exist: policies, reports, records, agreements. Note the gaps plainly as you find them. A gap found on day two is a work item; the same gap found on deadline day is a crisis.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">3</span><span class="name">Days two to three &mdash; draft, honestly</span></div>
+        <p>Write the answers with the evidence attached. Where the truth is &ldquo;in progress,&rdquo; write it with a date and an owner. Keep the wording factual and short &mdash; reviewers read a great many of these, and clarity is itself a credibility signal.</p>
+      </div>
+      <div class="phase-card">
+        <div class="h"><span class="badge">4</span><span class="name">Day four &mdash; check, send, and file</span></div>
+        <p>Have a second person read the answers against the evidence, tracing every yes back to its document. Then send &mdash; and file the exact response and attachments you sent. The next questionnaire starts from that file, not from memory.</p>
+      </div>
+    </div>
+    <p class="fine">General guidance for planning purposes; it is not legal advice and does not by itself establish compliance with any framework or regulation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Why Clyvara</div>
+    <h2>Depth a generalist can&rsquo;t offer. Access an enterprise firm won&rsquo;t give you.</h2>
+    <div class="why-row">
+      <div class="why-col"><div class="t">Research-Backed</div><div class="d">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail.</div></div>
+      <div class="why-col"><div class="t">Focused</div><div class="d">Clyvara doesn&rsquo;t sell IT support or general consulting. Cybersecurity advisory is the entire practice.</div></div>
+      <div class="why-col"><div class="t">Accessible</div><div class="d">Direct access to a credentialed principal consultant &mdash; not a junior analyst routed through account layers.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold);">Start Here</div>
+    <h2>Know your gaps before the next one lands.</h2>
+    <p class="lede">The free <a href="https://clyvara.io/readiness-self-check">Readiness Self-Check</a> asks the evidence question twelve ways and scores what you could produce today; the full checklist turns it into 35 items to work through. If boxes stay unticked, Clyvara&rsquo;s Risk &amp; Readiness Assessment closes them into a documented risk register and remediation roadmap &mdash; so the next questionnaire is answered from a file, not from memory.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://clyvara.io/readiness-checklist">&#8595; Get the free checklist</a>
+      <a class="btn-secondary" href="https://clyvara.io/#contact">Book a Risk Conversation</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>&copy; 2026 Clyvara LLC · Dallas&ndash;Fort Worth, Texas</div>
+    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a></div>
+  </div>
+</footer>
+</body>
+</html>

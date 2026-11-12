@@ -493,6 +493,8 @@ img,svg{ display:block; max-width:100%; }
 .insight-desc{ font-size:var(--fs-support); line-height:1.6; color:var(--slate); }
 .insight-link{ font-family:var(--mono); font-size:14px; letter-spacing:0.03em; color:var(--ink); border-bottom:1px solid var(--copper); padding-bottom:3px; align-self:flex-start; margin-top:auto; }
 .insight-link.soon{ color:var(--slate); border-bottom:1px dashed var(--line); cursor:default; }
+.start-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+@media (max-width: 1080px){ .start-grid{ grid-template-columns:repeat(2,1fr); } }
 
 /* ============================================================
    CONTACT
@@ -578,7 +580,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 @media(max-width:680px){
   .section{ padding:88px 0; }
   .section.tight{ padding:72px 0; }
-  .services-grid, .diff-grid, .sector-grid, .insight-grid{ grid-template-columns:1fr; }
+  .services-grid, .diff-grid, .sector-grid, .insight-grid, .start-grid{ grid-template-columns:1fr; }
   .shield-row{ grid-template-columns:52px 1fr; gap:14px 18px; }
   .shield-row .shield-name{ grid-column:1 / -1; padding-top:0; margin-top:-4px; }
   /* Pre-existing gap: only shield-name got the full-width override below,
@@ -1028,13 +1030,44 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
         <span class="insight-link soon">Coming soon</span>
       </div>
     </div>
-    <div class="reveal" style="margin-top:28px; border:1px solid var(--line); border-radius:10px; padding:20px 24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
-      <div style="max-width:640px;"><strong>Free checklist:</strong> The Security Questionnaire Readiness Checklist — the 35 pieces of evidence customers, insurers, and funders ask for, on one page.</div>
-      <a href="/readiness-checklist" class="insight-link">Get the free checklist →</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     START HERE
+     ============================================================ -->
+<section id="start-here" class="section bg-white">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Start Here</div>
+      <h2>Start with what you can show.</h2>
+      <p>Free tools and guides from the practice, plus a fixed-fee service for when a deadline is already on your desk.</p>
     </div>
-    <div class="reveal" style="margin-top:14px; border:1px solid var(--line); border-radius:10px; padding:20px 24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
-      <div style="max-width:640px;"><strong>New guide:</strong> Cyber Insurance Evidence — what insurers ask for at application and renewal, and the proof that counts for each control.</div>
-      <a href="/cyber-insurance-evidence" class="insight-link">Read the guide →</a>
+    <div class="start-grid reveal reveal-stagger" style="--i:1">
+      <div class="insight-card" style="--i:0">
+        <div class="insight-tag">Free · Five Minutes</div>
+        <div class="insight-title">The Readiness Self-Check</div>
+        <div class="insight-desc">Twelve evidence questions, scored against what you could hand an auditor, an insurer, or a customer today.</div>
+        <a href="/readiness-self-check" class="insight-link">Take the self-check →</a>
+      </div>
+      <div class="insight-card" style="--i:1">
+        <div class="insight-tag">Guide</div>
+        <div class="insight-title">Answering a Customer's Security Questionnaire</div>
+        <div class="insight-desc">What customers are really testing, the answers that hold up, and the evidence that has to sit behind them.</div>
+        <a href="/security-questionnaire-guide" class="insight-link">Read the guide →</a>
+      </div>
+      <div class="insight-card" style="--i:2">
+        <div class="insight-tag">Service · Fixed $750</div>
+        <div class="insight-title">A Questionnaire Due This Week?</div>
+        <div class="insight-desc">One customer's questionnaire, answered with evidence within three business days of a short triage call. Fixed fee, no hourly meter.</div>
+        <a href="/questionnaire-response" class="insight-link">See how it works →</a>
+      </div>
+      <div class="insight-card" style="--i:3">
+        <div class="insight-tag">Guide</div>
+        <div class="insight-title">Cyber Insurance, Evidenced</div>
+        <div class="insight-desc">The eight areas insurers test at renewal and at claim time, and the proof that survives both.</div>
+        <a href="/cyber-insurance-evidence" class="insight-link">Read the guide →</a>
+      </div>
     </div>
   </div>
 </section>

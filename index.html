@@ -173,8 +173,8 @@ img,svg{ display:block; max-width:100%; }
    of content someone needs to read at that moment. */
 #site-nav.scrolled .nav-brand-caption{ font-size:9.5px; color:var(--slate); }
 
-.nav-links{ display:none; align-items:center; gap:21px; transition:gap 320ms ease; flex-shrink:1; min-width:0; }
-#site-nav.scrolled .nav-links{ gap:18px; }
+.nav-links{ display:none; align-items:center; gap:16px; transition:gap 320ms ease; flex-shrink:1; min-width:0; }
+#site-nav.scrolled .nav-links{ gap:14px; }
 .nav-links a{
   font-family:var(--mono); font-size:var(--fs-nav); letter-spacing:0.02em; text-transform:uppercase; color:var(--paper);
   padding:6px 0; border-bottom:1px solid transparent; transition:color 200ms ease, border-color 200ms ease;
@@ -216,17 +216,16 @@ img,svg{ display:block; max-width:100%; }
 .nav-burger{ display:flex; flex-direction:column; gap:5px; padding:12px; }
 .nav-burger span{ display:block; width:22px; height:1.5px; background:var(--paper); transition:background 200ms ease; }
 #site-nav.scrolled .nav-burger span{ background:var(--ink); }
-@media(min-width:1180px){
+@media(min-width:1400px){
   .nav-links{ display:flex; }
   .nav-cta{ display:inline-flex; }
   .nav-burger{ display:none; }
 }
-/* Breakpoint moved from 920px to 1180px: at the larger nav type sizes this
-   refinement pass introduced (13px links, 13.5px CTA, bigger brand caption),
-   920px no longer left enough room for six nav links + the full-text CTA
-   button without collision — verified by rendering the bar at 920–1160px
-   during QA. Below 1180px the burger menu (unchanged, same six links + same
-   CTA) takes over instead of a cramped, overlapping horizontal bar. */
+/* Breakpoint history: 920px to 1180px at the 13px refinement, then 1180px to
+   1400px on 2026-11-12 when the nav type went to 15px — at laptop widths the
+   six links plus the full-text CTA collided again (CONTACT under the button).
+   Below 1400px the burger menu (unchanged, same six links + same CTA) takes
+   over instead of a cramped, overlapping horizontal bar. */
 
 /* mobile drawer */
 .mobile-drawer{
@@ -239,8 +238,8 @@ img,svg{ display:block; max-width:100%; }
 #site-nav.open .mobile-drawer{ opacity:1; transform:translateY(0); visibility:visible; pointer-events:auto; }
 .mobile-drawer a{ font-family:var(--mono); font-size:14px; letter-spacing:0.04em; color:var(--paper); padding:18px 0; border-bottom:1px solid var(--line-on-ink); text-transform:uppercase; }
 .mobile-drawer .btn{ margin-top:18px; align-self:flex-start; }
-@media(min-width:1180px){ .mobile-drawer{ display:none !important; } }
-@media(max-width:1179px){
+@media(min-width:1400px){ .mobile-drawer{ display:none !important; } }
+@media(max-width:1399px){
   .nav-inner{ height:84px !important; }
   .nav-brand svg{ width:32px !important; height:32px !important; }
   .nav-brand .mark-word{ font-size:19px !important; }

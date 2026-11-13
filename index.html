@@ -291,6 +291,9 @@ img,svg{ display:block; max-width:100%; }
   font-family:var(--mono); font-size:12px; letter-spacing:0.02em; color:var(--muted-on-ink);
   border-top:1px solid var(--line-on-ink); padding-top:22px; max-width:500px; line-height:1.8;
 }
+.hero-latest{ margin-top:16px; font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.05em; text-transform:uppercase; color:var(--muted-on-ink); display:flex; align-items:center; gap:9px; }
+.hero-latest .dot{ width:6px; height:6px; border-radius:50%; background:var(--copper); flex-shrink:0; }
+.hero-latest a{ color:var(--paper); text-decoration:underline; text-underline-offset:3px; }
 .hero-credential b{ color:var(--copper-light); font-weight:500; }
 .hero-credential-role{ color:var(--paper-white); font-weight:500; }
 .hero-credential-creds{ color:var(--muted-on-ink); }
@@ -703,7 +706,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
           <a href="#contact" class="btn btn-primary">Book a Free SHIELD Risk Conversation</a>
           <a href="#shield" class="btn btn-ghost-onink">View the SHIELD Framework</a>
         </div>
-        <div class="hero-credential"><b>Rodger Lutalo</b> — <span class="hero-credential-role">Founder &amp; Principal Cybersecurity Consultant</span> <span class="hero-credential-creds">(DBA, MS Computer Science, PMP)</span>. Doctoral research into cybersecurity awareness and training failures in small and mid-sized enterprises.</div>
+        <div class="hero-credential"><a href="https://www.linkedin.com/in/rodger-lutalo/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline; text-underline-offset:3px;"><b>Rodger Lutalo</b></a> — <span class="hero-credential-role">Founder &amp; Principal Cybersecurity Consultant</span> <span class="hero-credential-creds">(DBA, MS Computer Science, PMP)</span>. Doctoral research into cybersecurity awareness and training failures in small and mid-sized enterprises.</div>
+        <div class="hero-latest"><span class="dot"></span>Latest insight &middot; Nov 12, 2026 &mdash; <a href="https://clyvara.io/wisp-for-tax-firms">Your PTIN Renewal Asks for a Plan</a></div>
       </div>
 
       <div class="case-file reveal" style="--i:1">
@@ -1260,6 +1264,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
         </div>
         <div class="footer-h">Contact</div>
         <div class="footer-cred" style="line-height:1.8;">Info@clyvara.io</div>
+        <div style="margin-top:8px;"><a class="footer-cred" href="https://www.linkedin.com/in/rodger-lutalo/" target="_blank" rel="noopener" style="text-decoration:underline;">LinkedIn</a></div>
       </div>
     </div>
     <div class="footer-bottom">

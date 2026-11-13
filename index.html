@@ -456,6 +456,8 @@ img,svg{ display:block; max-width:100%; }
 /* ============================================================
    SERVICES
    ============================================================ */
+.services-anchor{ margin-top:14px; font-size:16px; color:var(--slate); }
+.services-anchor a{ color:var(--copper); text-decoration:underline; text-underline-offset:3px; }
 .services-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
 .svc-card{ background:var(--paper-white); border:1px solid var(--line); padding:var(--card-pad); display:flex; flex-direction:column; transition:border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease; }
 .svc-card:hover{ border-color:rgba(180,133,74,0.55); transform:translateY(-3px); box-shadow:0 20px 40px rgba(26,27,25,0.08); }
@@ -957,6 +959,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div class="eyebrow">Services</div>
       <h2>Engagements scoped to what your business actually needs.</h2>
       <p>Every service below is delivered under Clyvara's SHIELD Framework — fixed scope, defined deliverables, no open-ended retainers unless you want one.</p>
+      <p class="services-anchor">Fixed fees throughout: defined services <a href="https://clyvara.io/questionnaire-response">start at $750</a>, and every price is agreed in full before work starts. No hourly meter, no blank check.</p>
     </div>
     <div class="services-grid reveal reveal-stagger" style="--i:1">
       <div class="svc-card" style="--i:0">

@@ -291,6 +291,24 @@
     var originalLabel = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending\u2026';
+    function fallback() {
+      // If the scripted submission is blocked (privacy tools, network),
+      // fall back to the form's native submission so the request still
+      // reaches Formspree instead of dead-ending on an error message.
+      btn.textContent = 'One moment\u2026';
+      try {
+        var next = document.createElement('input');
+        next.type = 'hidden';
+        next.name = '_next';
+        next.value = PDF_URL;
+        form.appendChild(next);
+        form.submit();
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+        errorBox.classList.add('show');
+      }
+    }
     fetch(form.action, {
       method: 'POST',
       body: new FormData(form),
@@ -300,15 +318,11 @@
         if (response.ok) {
           window.location.href = PDF_URL;
         } else {
-          return response.json().then(function (data) {
-            throw new Error((data && data.error) || 'Submission was rejected.');
-          });
+          fallback();
         }
       })
       .catch(function () {
-        btn.disabled = false;
-        btn.textContent = originalLabel;
-        errorBox.classList.add('show');
+        fallback();
       });
   });
 })();

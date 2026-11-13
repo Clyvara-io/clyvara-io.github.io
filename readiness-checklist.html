@@ -50,11 +50,11 @@
   nav.site .brand { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; min-width: 0; }
   nav.site .brand span { color: var(--gold); }
   nav.site .links { display: flex; gap: 24px; align-items: center; }
-  nav.site .links a { color: #c3cbdb; font-size: 13.5px; white-space: nowrap; }
+  nav.site .links a { color: #c3cbdb; font-size: 15px; white-space: nowrap; }
   nav.site .links a:hover { color: #fff; }
   nav.site .cta {
     background: var(--gold); color: var(--navy) !important; font-weight: 700;
-    padding: 10px 17px; border-radius: 4px; font-size: 13.5px;
+    padding: 10px 17px; border-radius: 4px; font-size: 15px;
   }
   @media (max-width: 720px) { nav.site .links a:not(.cta) { display: none; } }
 
@@ -183,7 +183,7 @@
 /* ===== Dropdown menus (added 2026-11-12) ===== */
 .dd{position:relative;display:inline-flex;align-items:center}
 .dd-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}
-.dd-caret{font-size:9px;display:inline-block;transition:transform 200ms ease}
+.dd-caret{font-size:10px;display:inline-block;transition:transform 200ms ease}
 .dd:hover .dd-caret,.dd:focus-within .dd-caret,.dd.open .dd-caret{transform:rotate(180deg)}
 .dd-panel{position:absolute;top:calc(100% + 24px);background:#ffffff;border:1px solid #e4ddcb;border-radius:16px;box-shadow:0 30px 60px rgba(11,18,32,.28),0 4px 14px rgba(11,18,32,.08);padding:26px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 180ms ease,transform 180ms ease,visibility 180ms;z-index:400;text-align:left}
 .dd-panel::before{content:"";position:absolute;top:-24px;left:0;right:0;height:24px}

@@ -82,7 +82,7 @@
   --fs-body:      clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem); /* 17px → 19px : primary body copy */
   --fs-support:   clamp(0.9375rem, 0.9125rem + 0.25vw, 1.0625rem); /* 15px → 17px : supporting copy ("Ideal for", card descriptions) */
   --fs-micro:     clamp(0.6875rem, 0.66rem + 0.15vw, 0.8125rem); /* 11px → 13px : micro-labels / metadata / eyebrows */
-  --fs-nav:       13px;                                    /* nav links */
+  --fs-nav:       15px;                                    /* nav links */
   --fs-btn:       13.5px;                                    /* CTA buttons */
   --lh-body: 1.6;
   --lh-support: 1.5;
@@ -645,7 +645,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 /* ===== Dropdown menus (added 2026-11-12) ===== */
 .dd{position:relative;display:inline-flex;align-items:center}
 .dd-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}
-.dd-caret{font-size:9px;display:inline-block;transition:transform 200ms ease}
+.dd-caret{font-size:10px;display:inline-block;transition:transform 200ms ease}
 .dd:hover .dd-caret,.dd:focus-within .dd-caret,.dd.open .dd-caret{transform:rotate(180deg)}
 .dd-panel{position:absolute;top:calc(100% + 30px);background:var(--paper-white);border:1px solid rgba(26,27,25,.10);border-radius:16px;box-shadow:0 30px 60px rgba(26,27,25,.20),0 4px 14px rgba(11,18,32,.08);padding:26px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 180ms ease,transform 180ms ease,visibility 180ms;z-index:400;text-align:left}
 .dd-panel::before{content:"";position:absolute;top:-30px;left:0;right:0;height:30px}

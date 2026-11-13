@@ -650,9 +650,9 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 .dd-panel{position:absolute;top:calc(100% + 30px);background:var(--paper-white);border:1px solid rgba(26,27,25,.10);border-radius:16px;box-shadow:0 30px 60px rgba(26,27,25,.20),0 4px 14px rgba(11,18,32,.08);padding:26px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 180ms ease,transform 180ms ease,visibility 180ms;z-index:400;text-align:left}
 .dd-panel::before{content:"";position:absolute;top:-30px;left:0;right:0;height:30px}
 .dd:hover .dd-panel,.dd:focus-within .dd-panel,.dd.open .dd-panel{opacity:1;visibility:visible;pointer-events:auto}
-.dd-panel--svc{width:660px;max-width:92vw;display:grid;grid-template-columns:1fr 238px;gap:26px;left:50%;transform:translate(-50%,6px)}
+.dd-panel--svc{width:684px;max-width:92vw;display:grid;grid-template-columns:1fr 258px;gap:26px;left:50%;transform:translate(-50%,6px)}
 .dd-panel--res{width:432px;max-width:92vw;left:50%;transform:translate(-50%,6px)}
-.dd-panel a{font-family:var(--body);text-transform:none;letter-spacing:0;opacity:1;white-space:normal;border-bottom:none;text-decoration:none}
+#site-nav .dd-panel a{font-family:var(--body);text-transform:none;letter-spacing:0;opacity:1;white-space:normal;border-bottom:none;text-decoration:none}
 .dd-all{font-family:var(--mono)!important;font-size:11px!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--copper-deep)!important;display:inline-block;margin-bottom:14px}
 .dd-item{display:block;padding:9px 10px;margin:0 -10px;border-radius:10px;color:var(--slate)!important}
 .dd-item:hover{background:var(--paper)}
@@ -662,12 +662,15 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 .dd-feat .tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-deep);background:rgba(180,133,74,.14);padding:4px 9px;border-radius:999px;margin-bottom:12px}
 .dd-feat h4{font-family:var(--display);font-size:19px;font-weight:600;color:var(--ink);margin:0 0 8px;line-height:1.25}
 .dd-feat p{font-size:13px;line-height:1.55;color:var(--slate);margin:0 0 16px}
-.dd-feat a{margin-top:auto;background:var(--copper);color:var(--ink)!important;font-family:var(--mono)!important;font-size:12px!important;letter-spacing:.05em!important;text-transform:uppercase!important;font-weight:600;text-align:center;padding:12px 14px;border-radius:6px;align-self:stretch}
+.dd-feat a{white-space:normal;line-height:1.4;margin-top:auto;background:var(--copper);color:var(--ink)!important;font-family:var(--mono)!important;font-size:12px!important;letter-spacing:.05em!important;text-transform:uppercase!important;font-weight:600;text-align:center;padding:12px 14px;border-radius:6px;align-self:stretch}
 .dd-feat a:hover{background:var(--copper-light)}
 
 #site-nav .dd:hover .dd-panel,#site-nav .dd:focus-within .dd-panel,#site-nav .dd.open .dd-panel{transform:translate(-50%,0)}
 .mobile-drawer .dd-group{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-light);padding:18px 0 2px;border-bottom:1px solid var(--line-on-ink)}
 .mobile-drawer a.sub{padding:11px 0 11px 14px;font-size:12.5px}
+
+#site-nav{z-index:900}
+.dd-panel{isolation:isolate}
 </style>
 </head>
 <body>

@@ -126,9 +126,9 @@
 .dd-panel{position:absolute;top:calc(100% + 24px);background:#ffffff;border:1px solid #e4ddcb;border-radius:16px;box-shadow:0 30px 60px rgba(11,18,32,.28),0 4px 14px rgba(11,18,32,.08);padding:26px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 180ms ease,transform 180ms ease,visibility 180ms;z-index:400;text-align:left}
 .dd-panel::before{content:"";position:absolute;top:-24px;left:0;right:0;height:24px}
 .dd:hover .dd-panel,.dd:focus-within .dd-panel,.dd.open .dd-panel{opacity:1;visibility:visible;pointer-events:auto}
-.dd-panel--svc{width:660px;max-width:92vw;display:grid;grid-template-columns:1fr 238px;gap:26px;right:-120px;transform:translate(0,6px)}
+.dd-panel--svc{width:684px;max-width:92vw;display:grid;grid-template-columns:1fr 258px;gap:26px;right:-120px;transform:translate(0,6px)}
 .dd-panel--res{width:432px;max-width:92vw;right:-40px;transform:translate(0,6px)}
-.dd-panel a{font-family:inherit;text-transform:none;letter-spacing:0;opacity:1;white-space:normal;border-bottom:none;text-decoration:none}
+nav.site .links .dd-panel a{font-family:inherit;text-transform:none;letter-spacing:0;opacity:1;white-space:normal;border-bottom:none;text-decoration:none}
 .dd-all{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace!important;font-size:11px!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#8c6a1d!important;display:inline-block;margin-bottom:14px}
 .dd-item{display:block;padding:9px 10px;margin:0 -10px;border-radius:10px;color:#55617a!important}
 .dd-item:hover{background:#faf6ec}
@@ -138,7 +138,7 @@
 .dd-feat .tag{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8c6a1d;background:rgba(217,164,65,.20);padding:4px 9px;border-radius:999px;margin-bottom:12px}
 .dd-feat h4{font-family:inherit;font-size:19px;font-weight:600;color:#0b1220;margin:0 0 8px;line-height:1.25}
 .dd-feat p{font-size:13px;line-height:1.55;color:#55617a;margin:0 0 16px}
-.dd-feat a{margin-top:auto;background:#d9a441;color:#0b1220!important;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace!important;font-size:12px!important;letter-spacing:.05em!important;text-transform:uppercase!important;font-weight:600;text-align:center;padding:12px 14px;border-radius:6px;align-self:stretch}
+.dd-feat a{white-space:normal;line-height:1.4;margin-top:auto;background:#d9a441;color:#0b1220!important;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace!important;font-size:12px!important;letter-spacing:.05em!important;text-transform:uppercase!important;font-weight:600;text-align:center;padding:12px 14px;border-radius:6px;align-self:stretch}
 .dd-feat a:hover{background:#e7ba58}
 
 nav.site .dd:hover .dd-panel,nav.site .dd:focus-within .dd-panel,nav.site .dd.open .dd-panel{transform:translate(0,0)}
@@ -146,6 +146,9 @@ nav.site .dd-toggle{color:#c3cbdb}
 nav.site .dd-toggle:hover{color:#fff}
 nav.site .dd-caret{color:#d9a441}
 @media (max-width:720px){ nav.site .dd{display:none} }
+
+nav.site{z-index:900}
+.dd-panel{isolation:isolate}
 </style>
 </head>
 <body>

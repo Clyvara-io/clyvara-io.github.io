@@ -613,6 +613,11 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 
 #site-nav .nav-menu-btn, #site-nav .nav-links > a{ white-space:nowrap; }
 #site-nav .nav-links{ gap:20px; }
+/* Header fit fix (2026-11-18): the full nav row (7 items + CTA) overflowed its container at desktop widths and the links ran under the CTA button. Widen the header row, tighten link spacing and type, trim CTA padding. */
+#site-nav .nav-inner{ max-width:1400px; }
+#site-nav .nav-links{ gap:14px; }
+#site-nav .nav-links a, #site-nav .nav-menu-btn{ font-size:14px; }
+#site-nav .nav-cta.btn{ padding-left:20px; padding-right:20px; }
 </style>
 <script type="application/ld+json">
 {

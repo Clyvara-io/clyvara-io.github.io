@@ -420,6 +420,20 @@ footer.site a:hover{ color:var(--copper-light); }
 .ported .result-gate-t{ font-family:var(--display); font-weight:600; font-size:19px; color:var(--ink); margin-bottom:8px; }
 .ported .result-gate-d{ font-size:14.5px; color:var(--slate); line-height:1.6; margin-bottom:16px; max-width:54ch; }
 .ported .gate-success{ margin-top:16px; }
+.ported #result{ display:none; }
+.ported #result.show{ display:block; }
+.ported .result-stage-label{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.14em; text-transform:uppercase; color:var(--copper-deep); font-weight:500; margin-bottom:10px; }
+.ported .result-stage{ font-family:var(--display); font-size:clamp(2.5rem, 2rem + 2.2vw, 3.5rem); font-weight:600; line-height:1.05; letter-spacing:-0.01em; color:var(--ink); }
+.ported .result-scoreline{ font-family:var(--mono); font-size:13px; letter-spacing:0.04em; color:var(--slate); margin-top:14px; }
+.ported .result-scoreline b{ color:var(--copper-deep); font-weight:600; }
+.ported .weak-list{ margin-top:32px; }
+.ported .weak-item{ display:flex; gap:14px; align-items:flex-start; padding:15px 0; border-top:1px solid var(--line); }
+.ported .weak-item .name{ margin-bottom:5px; }
+.ported .weak-item .ask{ font-size:15px; line-height:1.6; color:var(--slate); }
+.ported .breakdown{ margin:20px 0 24px; }
+.ported .breakdown .t{ font-size:1.25rem; margin-bottom:6px; }
+.ported .bd-score{ font-family:var(--mono); font-size:11.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--copper-deep); margin-bottom:5px; }
+.ported .gate-success-note{ font-size:15px; line-height:1.6; color:var(--slate); }
 .gate-error{ display:none; }
 .gate-error.show{ display:block; }
 
@@ -665,36 +679,41 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
 </form>
 <div aria-live="polite" id="result">
 <div class="result-card">
-<div class="result-top">
-<div class="result-score"><span id="result-pct">0%</span><span class="of">Evidence readiness</span></div>
-<div>
-<div class="result-band" id="result-band"></div>
+<div class="result-stage-label">Your readiness stage</div>
+<div class="result-stage" id="result-band"></div>
+<div class="result-scoreline">Evidence readiness score <b><span id="result-pct">0%</span></b> &middot; <span id="result-points">0 of 24 points</span></div>
 <p class="result-text" id="result-text"></p>
-</div>
-</div>
 <div class="weak-list" id="weak-wrap">
 <div class="t">Where the evidence is thinnest</div>
 <div id="weak-items"></div>
 </div>
 <div class="result-gate" id="checklist-gate">
-<div class="result-gate-t">Get the full checklist (PDF)</div>
-<p class="result-gate-d">Enter your email and the download appears right here. Your answers are never sent or stored — they stay in this browser; your email is only for the checklist download.</p>
+<div class="result-gate-t">Get the full breakdown and the checklist (PDF)</div>
+<p class="result-gate-d">Your stage and your thinnest areas are above, free, with nothing to enter. The full breakdown scores all eight areas against your answers, and it comes with the 35-item readiness checklist as a PDF. Enter your email and both appear right here. The form sends your email, your stage, and your score, so any follow-up fits where you stand. Your individual answers are never sent; they stay in this browser.</p>
 <form class="gate-form" id="get-checklist-selfcheck" action="https://formspree.io/f/xppazdko" method="POST">
 <label class="sr-only" for="sc-gate-email">Email address</label>
 <input id="sc-gate-email" type="email" name="email" placeholder="you@yourfirm.com" required>
 <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <input type="hidden" name="_subject" value="New Readiness Checklist download">
+<input type="hidden" name="Self-check stage" id="sc-gate-stage" value="">
+<input type="hidden" name="Self-check score" id="sc-gate-score" value="">
+<input type="hidden" name="Thinnest areas" id="sc-gate-weak" value="">
 <button class="btn-primary" id="sc-gate-btn" type="submit">Get the checklist</button>
 </form>
 <div class="gate-error" id="sc-gate-error">Something went wrong sending that. Please check your connection and try again.</div>
 <div class="gate-success" id="sc-gate-success" hidden>
+<p class="gate-success-note" id="sc-gate-note"></p>
+<div class="breakdown" id="breakdown-wrap">
+<div class="t">Your full breakdown, area by area</div>
+<div id="full-breakdown"></div>
+</div>
 <a class="btn-primary" href="https://clyvara.io/security-questionnaire-readiness-checklist.pdf">↓ Download the full checklist (PDF)</a>
 </div>
 </div>
 <div class="btn-row result-ctas">
 <a class="btn-secondary" href="https://cal.com/clyvara/30min">Book a Risk Conversation</a>
 </div>
-<p class="fine">This self-check is general guidance for planning purposes. It is not an audit, and a score here does not by itself establish compliance with any framework or regulation. Your answers were scored in your browser and were not sent or stored.</p>
+<p class="fine">This self-check is general guidance for planning purposes. It is not an audit, and a score here does not by itself establish compliance with any framework or regulation. Your answers were scored in your browser; they are not sent or stored. If you request the breakdown, the form sends your email, your stage, and your score only.</p>
 <div style="margin-top:14px;"><button class="reset-link" id="reset-btn" type="button">Start over</button></div>
 </div>
 </div>
@@ -752,13 +771,26 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     { name: 'Prepare your people', ask: 'The full checklist asks for: training records, phishing-awareness results, signed acceptable-use acknowledgments, and background checks where a role or contract requires them.' },
     { name: 'Manage your vendors', ask: 'The full checklist asks for: a vendor inventory, signed agreements where they apply, security reviews on file for critical vendors, and breach-notification commitments in contracts.' }
   ];
+  var GAPS = [
+    'Without a current inventory and a map of where data lives, you cannot say what an incident would touch, and nothing built on top of them can be verified by a reviewer.',
+    'Access is where many breaches begin. If MFA coverage and administrator rights cannot be shown, a reviewer treats the front door as unproven.',
+    'Patching and endpoint protection are among the first technical items an insurer checks. Without dated reports, the answer reads as unproven, however good the tools are.',
+    'A backup schedule is a claim; a dated restore test is evidence. Without one, nobody knows whether recovery would work until the day it has to.',
+    'The first hours of an incident are not the time to look up phone numbers. Without a written plan and a first-calls list, a bad day gets slower and more expensive.',
+    'A signed policy and a risk register are how a business shows its security is managed rather than improvised. Without them, every questionnaire answer stands alone with nothing behind it.',
+    'Many incidents start with a person and a message. Without training records and signed acknowledgments, you cannot show your people were prepared, and a reviewer will assume they were not.',
+    'Vendors with access to your systems extend your risk beyond your own walls. Without an inventory and agreements on file, their incident becomes yours, with no paper to lean on.'
+  ];
   var BANDS = [
-    { min: 75, title: 'Evidence in hand',
-      text: 'Most of your evidence is in hand. A customer questionnaire, an insurance renewal, or a funder review would still take work, but you would be assembling documents, not creating them under deadline. The full checklist shows the remaining items worth closing before someone asks.' },
-    { min: 40, title: 'Partly documented',
-      text: 'Some of your evidence is in hand and some is not. On a questionnaire, that reads as risk: the answer may be yes, but the proof is not ready to send. A reviewer gives you days, not weeks — the areas below are where they would press first.' },
-    { min: 0, title: 'Running on answers, not evidence',
-      text: 'Right now your security rests on answers, not evidence. That is not unusual for a business of your size — but it is exactly what a customer, insurer, or funder tests. Start with the areas below: each one is a short list of documents to assemble, not a technology purchase.' }
+    { min: 75, title: 'Governed',
+      text: 'Most of your evidence is in hand, and it is organised well enough to produce on request. A customer questionnaire, an insurance renewal, or a funder review would still take work, but you would be assembling documents, not creating them under deadline. The full breakdown shows the remaining items worth closing before someone asks.',
+      note: 'Your evidence is largely in hand. The breakdown below scores every area in turn, and the checklist turns each remaining item into a tick-box you can close before a renewal or a questionnaire arrives.' },
+    { min: 40, title: 'Developing',
+      text: 'Some of your evidence is in hand and some is not. On a questionnaire, that reads as risk: the answer may be yes, but the proof is not ready to send. Reviewers give days, not weeks. The areas below are where they would press first, and the full breakdown scores every area in turn.',
+      note: 'The breakdown below scores every area in turn. The thinnest areas are the ones a reviewer would press first, so they are the natural place to start.' },
+    { min: 0, title: 'Exposed',
+      text: 'Right now your security rests on answers, not evidence. That is common in businesses of this size, and it is exactly what a customer, an insurer, or a funder tests. Start with the areas below. Each one is a short list of documents to assemble, not a technology purchase.',
+      note: 'The breakdown below scores every area in turn, against the same evidence a reviewer would ask for. Each area is a short list of documents to assemble, and none of them needs a purchase to begin.' }
   ];
   var form = document.getElementById('self-check-form');
   var progress = document.getElementById('quiz-progress');
@@ -809,6 +841,7 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     });
     var pct = Math.round((total / (TOTAL * 2)) * 100);
     document.getElementById('result-pct').textContent = pct + '%';
+    document.getElementById('result-points').textContent = total + ' of ' + (TOTAL * 2) + ' points';
 
     var band = BANDS[BANDS.length - 1];
     for (var i = 0; i < BANDS.length; i++) {
@@ -817,10 +850,15 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     document.getElementById('result-band').textContent = band.title;
     document.getElementById('result-text').textContent = band.text;
 
-    var weak = areaScore
-      .map(function (s, idx) { return { idx: idx, pct: s.max ? (s.got / s.max) : 1 }; })
+    var ranked = areaScore
+      .map(function (s, idx) { return { idx: idx, got: s.got, max: s.max, pct: s.max ? (s.got / s.max) : 1 }; })
       .filter(function (w) { return w.pct < 1; })
-      .sort(function (a, b) { return a.pct - b.pct; });
+      .sort(function (a, b) {
+        if (a.pct !== b.pct) return a.pct - b.pct;
+        if (a.got !== b.got) return a.got - b.got;
+        return a.idx - b.idx;
+      });
+    var weak = ranked.slice(0, 3);
 
     var wrap = document.getElementById('weak-wrap');
     var items = document.getElementById('weak-items');
@@ -829,10 +867,10 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
       wrap.querySelector('.t').textContent = 'No thin areas in this pass';
       var p = document.createElement('p');
       p.className = 'result-text';
-      p.textContent = 'Every area scored full marks on these twelve questions. The full checklist goes deeper — 35 items — and is the version worth re-running each quarter.';
+      p.textContent = 'Every area scored full marks on these twelve questions. The full checklist goes deeper, 35 items, and is the version worth re-running each quarter.';
       items.appendChild(p);
     } else {
-      wrap.querySelector('.t').textContent = 'Where the evidence is thinnest';
+      wrap.querySelector('.t').textContent = weak.length >= 3 ? 'Your three thinnest areas' : 'Where the evidence is thinnest';
       weak.forEach(function (w) {
         var row = document.createElement('div');
         row.className = 'weak-item';
@@ -845,7 +883,7 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
         name.textContent = AREAS[w.idx].name;
         var ask = document.createElement('div');
         ask.className = 'ask';
-        ask.textContent = AREAS[w.idx].ask;
+        ask.textContent = GAPS[w.idx];
         body.appendChild(name);
         body.appendChild(ask);
         row.appendChild(badge);
@@ -854,7 +892,42 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
       });
     }
 
+    document.getElementById('sc-gate-stage').value = band.title;
+    document.getElementById('sc-gate-score').value = pct + '% (' + total + ' of ' + (TOTAL * 2) + ' points)';
+    document.getElementById('sc-gate-weak').value = ranked.length ? ranked.slice(0, 3).map(function (w) { return AREAS[w.idx].name; }).join('; ') : 'None: full marks in every area';
+    document.getElementById('sc-gate-note').textContent = band.note;
+    window.CLYVARA_SELFCHECK = { band: band.title, score: pct };
+
+    var bd = document.getElementById('full-breakdown');
+    bd.innerHTML = '';
+    areaScore.forEach(function (s, idx) {
+      var row = document.createElement('div');
+      row.className = 'weak-item';
+      var badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = String(idx + 1);
+      var body = document.createElement('div');
+      var name = document.createElement('div');
+      name.className = 'name';
+      name.textContent = AREAS[idx].name;
+      var score = document.createElement('div');
+      score.className = 'bd-score';
+      score.textContent = s.got + ' of ' + s.max + ' points';
+      var ask = document.createElement('div');
+      ask.className = 'ask';
+      ask.textContent = AREAS[idx].ask;
+      body.appendChild(name);
+      body.appendChild(score);
+      body.appendChild(ask);
+      row.appendChild(badge);
+      row.appendChild(body);
+      bd.appendChild(row);
+    });
+
     result.classList.add('show');
+    if (typeof gtag === 'function') {
+      gtag('event', 'selfcheck_complete', { band: band.title, score: pct });
+    }
     result.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
@@ -864,6 +937,13 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     progress.textContent = '0 of ' + TOTAL + ' answered';
     hint.classList.remove('show');
     result.classList.remove('show');
+    var gateForm = document.getElementById('get-checklist-selfcheck');
+    var gateSuccess = document.getElementById('sc-gate-success');
+    var gateBtn = document.getElementById('sc-gate-btn');
+    if (gateForm) gateForm.style.display = '';
+    if (gateSuccess) gateSuccess.hidden = true;
+    if (gateBtn) { gateBtn.disabled = false; gateBtn.textContent = 'Get the checklist'; }
+    window.CLYVARA_SELFCHECK = null;
     document.getElementById('self-check').scrollIntoView({ behavior: 'smooth' });
   });
 })();
@@ -890,6 +970,9 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     errorBox.classList.remove('show');
     var honeypot = form.querySelector('input[name="_gotcha"]');
     if (honeypot && honeypot.value) return;
+    if (window.CLYVARA_SELFCHECK && typeof gtag === 'function') {
+      gtag('event', 'selfcheck_gate_submit', { band: window.CLYVARA_SELFCHECK.band, score: window.CLYVARA_SELFCHECK.score });
+    }
     var originalLabel = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending\u2026';

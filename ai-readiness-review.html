@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Shadow-AI Readiness Review | Clyvara</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Every AI tool in use at your organization, sanctioned or not, what data flows into them, and a written, prioritized plan to govern them. Fixed fee $1,500." name="description"/>
+<link href="https://clyvara.io/ai-readiness-review" rel="canonical"/>
+<meta property="og:url" content="https://clyvara.io/ai-readiness-review">
+<meta content="AI & Shadow-AI Readiness Review | Clyvara" property="og:title"/>
+<meta content="Every AI tool in use at your organization, sanctioned or not, what data flows into them, and a written, prioritized plan to govern them. Fixed fee $1,500." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="Rodger Lutalo" name="author"/>
+<meta content="https://clyvara.io/clyvara-og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="AI & Shadow-AI Readiness Review | Clyvara" name="twitter:title"/>
+<meta content="Every AI tool in use at your organization, sanctioned or not, what data flows into them, and a written, prioritized plan to govern them. Fixed fee $1,500." name="twitter:description"/>
+<meta content="https://clyvara.io/clyvara-og-image.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI & Shadow-AI Readiness Review",
+  "provider": { "@type": "ProfessionalService", "name": "Clyvara LLC", "url": "https://clyvara.io" },
+  "description": "An AI and shadow-AI readiness review: an inventory of every AI tool in use, sanctioned or not, a data-flow review, a vendor AI terms check, and a findings note with a prioritized fix list, measured against the NIST AI Risk Management Framework, for a fixed fee.",
+  "areaServed": "US",
+  "offers": { "@type": "Offer", "price": "1500", "priceCurrency": "USD" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,760&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+                                                                  
+
+:root{
+  --ink:#1A1B19;
+  --ink-soft:#242621;
+  --ink-softer:#2E312B;
+  --paper:#F1EFE8;
+  --paper-white:#FBFAF7;
+  --copper:#B4854A;
+  --copper-light:#D8B686;
+  --copper-deep:#8C6537;
+  --slate:#585F5A;
+  --slate-light:#646964;
+  --line: rgba(26,27,25,0.09);
+  --line-on-ink: rgba(241,239,232,0.10);
+  --muted-on-ink: #B4B2A7;
+  --body-on-ink: #CCCABF;
+
+  --display:'Fraunces', serif;
+  --body:'IBM Plex Sans', sans-serif;
+  --mono:'IBM Plex Mono', monospace;
+
+  --maxw: 1220px;
+
+  --fs-h1:        clamp(2.25rem, 1.7rem + 2.6vw, 4rem);
+  --fs-h2:        clamp(2rem, 1.45rem + 2.5vw, 3.625rem);
+  --fs-card-title:clamp(1.4375rem, 1.2rem + 1vw, 1.875rem);
+  --fs-body:      clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem);
+  --fs-support:   clamp(0.9375rem, 0.9125rem + 0.25vw, 1.0625rem);
+  --fs-micro:     clamp(0.6875rem, 0.66rem + 0.15vw, 0.8125rem);
+  --fs-nav:       15px;
+  --fs-btn:       13.5px;
+
+  --space-section: clamp(96px, 60px + 7vw, 152px);
+  --space-head-gap: clamp(22px, 16px + 1.2vw, 32px);
+  --card-pad: clamp(32px, 24px + 1.6vw, 44px);
+
+  --shadow-card: 0 20px 40px rgba(26,27,25,0.08);
+  --shadow-lift: 0 30px 70px rgba(0,0,0,0.40);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+}
+html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); font-family:var(--body); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+h1,h2,h3{ margin:0; font-weight:600; }
+p{ margin:0; }
+a{ color:inherit; text-decoration:none; }
+section{ scroll-margin-top:90px; }
+:focus-visible{ outline:2px solid var(--copper); outline-offset:3px; }
+
+.container{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+.eyebrow{
+  font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--copper-deep); font-weight:500; display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{ content:''; width:18px; height:1px; background:var(--copper-deep); display:inline-block; flex-shrink:0; }
+.eyebrow.on-ink{ color:var(--copper-light); }
+.eyebrow.on-ink::before{ background:var(--copper-light); }
+.eyebrow.center{ justify-content:center; }
+
+.reveal{ transition:opacity 800ms cubic-bezier(.16,.8,.24,1), transform 800ms cubic-bezier(.16,.8,.24,1); }
+html.js .reveal{ opacity:0; transform:translateY(16px); }
+html.js .reveal.is-visible{ opacity:1; transform:none; }
+
+.btn{
+  font-family:var(--mono); font-size:var(--fs-btn); font-weight:500; letter-spacing:0.055em; text-transform:uppercase;
+  padding:16px 28px; display:inline-flex; align-items:center; gap:9px; border:1px solid transparent;
+  transition:background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  line-height:1.3; text-align:center;
+}
+@media(max-width:479px){ .btn{ padding:15px 22px; } }
+.btn-primary{ background:var(--copper); color:var(--ink); }
+.btn-primary:hover{ background:var(--copper-light); transform:translateY(-2px); box-shadow:0 10px 24px rgba(180,133,74,0.28); }
+.btn-ghost-onink{ border-color:rgba(241,239,232,0.32); color:var(--paper); }
+.btn-ghost-onink:hover{ border-color:var(--paper); background:rgba(241,239,232,0.06); }
+.btn-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+
+nav.site{
+  position:sticky; top:0; z-index:300;
+  background:rgba(251,250,247,0.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:0 32px; height:76px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.nav-brand{ display:inline-flex; align-items:center; gap:12px; color:var(--ink); min-width:0; }
+.nav-brand svg{ width:34px; height:34px; flex-shrink:0; display:block; }
+.nav-brand-text{ display:flex; flex-direction:column; gap:3px; min-width:0; }
+.mark-word{ font-family:var(--display); font-size:21px; font-weight:600; letter-spacing:0.06em; line-height:1; white-space:nowrap; }
+.mark-word .b{ font-weight:400; }
+.nav-brand-caption{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.10em; text-transform:uppercase; color:var(--copper-deep); white-space:nowrap; }
+.nav-links{ display:flex; align-items:center; gap:26px; }
+.nav-links a{
+  font-family:var(--mono); font-size:var(--fs-nav); text-transform:uppercase; color:var(--slate);
+  padding:6px 0; border-bottom:1px solid transparent; transition:color 200ms ease, border-color 200ms ease; white-space:nowrap;
+}
+.nav-links a:hover{ color:var(--ink); border-color:var(--copper); }
+.nav-links a.nav-cta{
+  font-size:var(--fs-btn); font-weight:500; letter-spacing:0.055em; color:var(--ink);
+  background:var(--copper); border:1px solid var(--copper); padding:13px 20px;
+}
+.nav-links a.nav-cta:hover{ background:var(--copper-light); border-color:var(--copper-light); transform:translateY(-2px); box-shadow:0 10px 24px rgba(180,133,74,0.28); }
+@media(max-width:900px){ .nav-links a:not(.nav-cta){ display:none; } }
+@media(max-width:560px){ .nav-brand-caption{ display:none; } .mark-word{ font-size:19px; } }
+
+header.hero{
+  background:var(--ink); color:var(--paper); position:relative; overflow:hidden;
+  padding:96px 0 104px;
+}
+header.hero::before{
+  content:''; position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--line-on-ink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-on-ink) 1px, transparent 1px);
+  background-size:68px 68px; opacity:0.72;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 30% 30%, black 40%, transparent 85%);
+          mask-image: radial-gradient(ellipse 90% 70% at 30% 30%, black 40%, transparent 85%);
+}
+.hero-glow{
+  position:absolute; right:-8%; top:6%; width:640px; height:640px; border-radius:50%;
+  background:radial-gradient(circle, rgba(180,133,74,0.16) 0%, transparent 70%); pointer-events:none;
+}
+.hero-grid{
+  position:relative; z-index:2; display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;
+}
+@media(max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
+.hero-h1{
+  font-family:var(--display); font-size:var(--fs-h1); font-weight:600; line-height:1.05;
+  letter-spacing:-0.018em; color:var(--paper-white); max-width:15ch; margin:26px 0 28px;
+}
+.hero-sub{ font-size:var(--fs-body); line-height:1.6; color:var(--body-on-ink); max-width:56ch; margin-bottom:40px; }
+.hero-sub strong{ color:var(--paper-white); font-weight:600; }
+.hero-note{
+  font-family:var(--mono); font-size:12px; letter-spacing:0.02em; color:var(--muted-on-ink);
+  border-top:1px solid var(--line-on-ink); padding-top:22px; margin-top:44px; max-width:520px; line-height:1.8;
+}
+
+.spec-file{ position:relative; }
+@media(max-width:980px){ .spec-file{ max-width:520px; } }
+.spec-tab{
+  position:absolute; top:-16px; left:28px; z-index:3;
+  background:var(--copper); color:var(--ink); font-family:var(--mono); font-size:11px; font-weight:600;
+  letter-spacing:0.09em; text-transform:uppercase; padding:8px 15px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.28);
+}
+.spec-shadow-card{
+  position:absolute; top:20px; right:-16px; width:88%; height:100%;
+  background:var(--ink-softer); border:1px solid var(--line-on-ink); z-index:1;
+}
+.spec-card{
+  background:var(--paper-white); color:var(--ink); border:1px solid rgba(0,0,0,0.06);
+  box-shadow:var(--shadow-lift); position:relative; z-index:2;
+}
+.spec-head{
+  display:flex; align-items:center; justify-content:space-between; gap:12px; padding:19px 24px;
+  border-bottom:1px solid var(--line); font-family:var(--mono); font-size:11px; letter-spacing:0.09em;
+  text-transform:uppercase; color:var(--slate);
+}
+.spec-head .dotmark{ width:6px; height:6px; border-radius:50%; background:var(--copper); display:inline-block; margin-right:8px; }
+.spec-row{
+  display:grid; grid-template-columns:118px 1fr; gap:16px; padding:16px 24px; border-bottom:1px solid var(--line);
+}
+.spec-row:last-of-type{ border-bottom:none; }
+.spec-label{ font-family:var(--mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:var(--copper-deep); padding-top:3px; }
+.spec-value{ font-size:15px; line-height:1.55; color:var(--ink-soft); }
+.spec-value strong{ font-weight:600; color:var(--ink); }
+.spec-foot{
+  padding:17px 24px; font-family:var(--mono); font-size:11px; color:var(--slate); letter-spacing:0.02em; line-height:1.65;
+  border-top:1px solid var(--line);
+}
+.spec-foot b{ color:var(--copper-deep); font-weight:500; }
+
+.section{ padding:var(--space-section) 0; }
+.section.tight{ padding:clamp(76px, 52px + 5vw, 116px) 0; }
+.bg-white{ background:var(--paper-white); }
+.section-head{ max-width:660px; margin-bottom:64px; }
+.section-head h2{ font-family:var(--display); font-size:var(--fs-h2); line-height:1.12; letter-spacing:-0.016em; margin-top:var(--space-head-gap); }
+.section-head .lede{ margin-top:var(--space-head-gap); font-size:var(--fs-body); line-height:1.6; color:var(--slate); max-width:62ch; }
+
+.get-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+@media(max-width:820px){ .get-grid{ grid-template-columns:1fr; } }
+.get-card{
+  background:var(--paper-white); border:1px solid var(--line); padding:var(--card-pad);
+  display:flex; flex-direction:column; transition:border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.get-card:hover{ border-color:rgba(180,133,74,0.55); transform:translateY(-3px); box-shadow:var(--shadow-card); }
+.get-card.wide{ grid-column:1 / -1; }
+.get-top{ display:flex; align-items:center; gap:13px; margin-bottom:16px; }
+.get-box{ width:18px; height:18px; border:2px solid var(--copper-deep); border-radius:3px; flex-shrink:0; }
+.get-tag{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.12em; text-transform:uppercase; color:var(--copper-deep); font-weight:500; }
+.get-body{ font-size:clamp(1rem, 0.95rem + 0.25vw, 1.125rem); line-height:1.65; color:var(--slate); flex:1; }
+.get-body strong{ color:var(--ink); font-weight:600; }
+.get-receive{
+  margin-top:24px; padding-top:18px; border-top:1px solid var(--line);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.get-receive .lbl{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.12em; text-transform:uppercase; color:var(--copper-deep); font-weight:500; }
+.get-receive .arrow{ color:var(--copper-deep); font-size:15px; }
+.get-receive .artifact{ font-family:var(--display); font-size:1.125rem; font-weight:600; color:var(--ink-soft); }
+
+.phase-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+@media(max-width:820px){ .phase-grid{ grid-template-columns:1fr; } }
+.phase-card{
+  background:var(--paper); border:1px solid var(--line); padding:var(--card-pad);
+  transition:border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.phase-card:hover{ border-color:rgba(180,133,74,0.55); transform:translateY(-3px); box-shadow:var(--shadow-card); }
+.phase-code{
+  font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--copper-deep);
+  border:1px solid rgba(180,133,74,0.45); width:46px; height:46px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;
+}
+.phase-name{ font-family:var(--display); font-size:clamp(1.3125rem, 1.2rem + 0.5vw, 1.5625rem); font-weight:600; line-height:1.25; margin-bottom:13px; }
+.phase-card p{ font-size:clamp(1rem, 0.95rem + 0.25vw, 1.125rem); line-height:1.65; color:var(--slate); }
+
+.fee-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+@media(max-width:900px){ .fee-grid{ grid-template-columns:1fr; } }
+.fee-card{ background:var(--paper-white); padding:var(--card-pad); transition:background 200ms ease; }
+.fee-card:hover{ background:#fff; }
+.fee-title{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; margin-bottom:14px; line-height:1.24; }
+.fee-body{ font-size:var(--fs-support); line-height:1.6; color:var(--slate); }
+.fine{ font-size:13.5px; color:var(--slate); margin-top:34px; line-height:1.65; max-width:68ch; }
+
+.proof-card{
+  background:var(--paper-white); border:1px solid var(--line); padding:var(--card-pad);
+  box-shadow:0 24px 50px rgba(26,27,25,0.10); max-width:860px;
+}
+.proof-tag{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-deep); margin-bottom:20px; }
+.proof-title{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; margin-bottom:14px; line-height:1.24; }
+.proof-body{ font-size:var(--fs-body); line-height:1.6; color:var(--slate); max-width:62ch; }
+.proof-cred{
+  margin-top:28px; padding-top:22px; border-top:1px solid var(--line);
+  font-family:var(--mono); font-size:12px; letter-spacing:0.02em; color:var(--slate); line-height:1.8;
+}
+.proof-cred b{ color:var(--ink); font-weight:600; }
+.proof-cred a{ text-decoration:underline; text-underline-offset:3px; }
+
+.final-cta{ background:var(--ink); color:var(--paper); position:relative; overflow:hidden; padding:var(--space-section) 0; text-align:center; }
+.final-cta::before{
+  content:''; position:absolute; inset:0;
+  background-image:linear-gradient(var(--line-on-ink) 1px, transparent 1px), linear-gradient(90deg, var(--line-on-ink) 1px, transparent 1px);
+  background-size:68px 68px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 80%);
+          mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 80%);
+}
+.final-cta .container{ position:relative; z-index:2; }
+.final-cta h2{ font-family:var(--display); font-size:var(--fs-h2); line-height:1.12; letter-spacing:-0.016em; color:var(--paper-white); margin-top:var(--space-head-gap); }
+.final-cta .lede{ margin:var(--space-head-gap) auto 40px; font-size:var(--fs-body); line-height:1.6; color:var(--body-on-ink); max-width:640px; }
+.final-cta .lede a{ color:var(--copper-light); text-decoration:underline; text-underline-offset:3px; }
+.final-cta .btn-row{ justify-content:center; }
+
+footer.site{ background:var(--ink); color:var(--muted-on-ink); border-top:1px solid var(--line-on-ink); padding:28px 0; }
+.footer-inner{
+  max-width:var(--maxw); margin:0 auto; padding:0 32px; display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:10px; font-family:var(--mono); font-size:13px; letter-spacing:0.02em; line-height:1.6;
+}
+footer.site a{ color:var(--muted-on-ink); transition:color 160ms ease; }
+footer.site a:hover{ color:var(--copper-light); }
+
+                                                                            
+.nav-item{ position:relative; }
+.nav-menu-btn{
+  font-family:var(--mono); font-size:var(--fs-nav); text-transform:uppercase; color:var(--slate);
+  background:none; border:none; cursor:pointer; padding:6px 0; border-bottom:1px solid transparent;
+  letter-spacing:inherit; display:inline-flex; align-items:center; gap:6px;
+}
+.nav-menu-btn::after{ content:'\25BE'; font-size:10px; color:var(--copper-deep); }
+.nav-item:hover .nav-menu-btn, .nav-item:focus-within .nav-menu-btn{ color:var(--ink); border-color:var(--copper); }
+.nav-dropdown{
+  position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(4px);
+  min-width:320px; background:var(--paper-white); border:1px solid var(--line);
+  box-shadow:0 24px 50px rgba(26,27,25,0.14); padding:10px; opacity:0; visibility:hidden;
+  transition:opacity 160ms ease, transform 160ms ease, visibility 160ms; z-index:400;
+}
+.nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.nav-dropdown a{
+  display:block !important; font-family:var(--body) !important; font-size:15px !important; text-transform:none !important;
+  color:var(--ink-soft) !important; padding:11px 14px !important; border-bottom:none !important; white-space:normal !important;
+  line-height:1.4;
+}
+.nav-dropdown a:hover{ background:var(--paper); color:var(--ink) !important; }
+.nav-dropdown a .dd-sub{ display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.09em; text-transform:uppercase; color:var(--copper-deep); margin-top:3px; }
+.nav-dropdown .dd-head{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--copper-deep); padding:8px 14px 4px; }
+@media(max-width:900px){ .nav-item{ display:none; } }
+
+                                                                                
+.ported .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+.ported section{ padding:var(--space-section) 0; }
+.ported section.alt{ background:var(--paper-white); }
+.ported h2{ font-family:var(--display); font-size:var(--fs-h2); line-height:1.12; letter-spacing:-0.016em; margin-bottom:26px; max-width:22ch; }
+.ported h3{ font-family:var(--display); font-size:var(--fs-card-title); line-height:1.24; margin-bottom:12px; }
+.ported p{ font-size:var(--fs-body); line-height:1.65; color:var(--slate); margin-bottom:18px; max-width:68ch; }
+.ported p strong, .ported li strong{ color:var(--ink); font-weight:600; }
+.ported ul, .ported ol{ font-size:var(--fs-body); line-height:1.65; color:var(--slate); margin:0 0 18px; padding-left:22px; max-width:68ch; }
+.ported li{ margin-bottom:8px; }
+.ported a:not(.btn-primary):not(.btn-secondary){ color:var(--copper-deep); text-decoration:underline; text-underline-offset:3px; }
+.ported .lede{ font-size:var(--fs-body); line-height:1.6; color:var(--slate); max-width:62ch; }
+.ported .eyebrow, .ported .kicker{ margin-bottom:20px; }
+.ported .kicker{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.16em; text-transform:uppercase; color:var(--copper-deep); font-weight:500; display:flex; align-items:center; gap:10px; }
+.ported .kicker::before{ content:''; width:18px; height:1px; background:var(--copper-deep); flex-shrink:0; }
+.ported .h{ display:flex; align-items:center; gap:13px; margin-bottom:16px; }
+.ported .h .badge{ margin-bottom:0; }
+.ported .badge, .ported .tag, .ported .ins-tag{
+  display:inline-block; font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--copper-deep); font-weight:500; margin-bottom:14px;
+}
+.ported .phase-grid, .ported .insights-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:40px; }
+@media(max-width:820px){ .ported .phase-grid, .ported .insights-grid{ grid-template-columns:1fr; } }
+.ported .phase-card, .ported .ins-card, .ported .box, .ported .q-card, .ported .result-card, .ported .policy-block{
+  background:var(--paper-white); border:1px solid var(--line); padding:var(--card-pad);
+  transition:border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.ported section.alt .phase-card, .ported section.alt .ins-card, .ported section.alt .box{ background:var(--paper); }
+.ported .phase-card:hover, .ported .ins-card:hover, .ported .box:hover{ border-color:rgba(180,133,74,0.55); transform:translateY(-3px); box-shadow:var(--shadow-card); }
+.ported .ins-title{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; line-height:1.24; margin-bottom:12px; }
+.ported .ins-desc{ font-size:var(--fs-support); line-height:1.6; color:var(--slate); }
+.ported .ins-date{ font-family:var(--mono); font-size:11px; letter-spacing:0.06em; color:var(--slate); margin-top:16px; }
+.ported .ins-link{ font-family:var(--mono); font-size:13px; letter-spacing:0.04em; text-transform:uppercase; display:inline-block; margin-top:18px; }
+.ported .num, .ported .phase-code{ font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--copper-deep); border:1px solid rgba(180,133,74,0.45); width:46px; height:46px; display:flex; align-items:center; justify-content:center; margin-bottom:24px; }
+.ported .name, .ported .t{ font-family:var(--display); font-size:clamp(1.3125rem,1.2rem + 0.5vw,1.5625rem); font-weight:600; line-height:1.25; margin-bottom:13px; }
+.ported .d{ font-size:clamp(1rem,0.95rem + 0.25vw,1.125rem); line-height:1.65; color:var(--slate); }
+.ported .why-row{ display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:40px; }
+@media(max-width:820px){ .ported .why-row{ grid-template-columns:1fr; } }
+.ported .why-col{ background:var(--paper-white); border:1px solid var(--line); padding:var(--card-pad); }
+.ported section.alt .why-col{ background:var(--paper); }
+.ported .check-q, .ported .q{ border-bottom:1px solid var(--line); padding:18px 4px; font-size:var(--fs-body); line-height:1.6; color:var(--ink-soft); }
+.ported .check-q strong, .ported .q strong{ color:var(--ink); }
+.ported .btn-primary{
+  font-family:var(--mono); font-size:var(--fs-btn); font-weight:500; letter-spacing:0.055em; text-transform:uppercase;
+  padding:16px 28px; display:inline-flex; align-items:center; gap:9px; background:var(--copper); color:var(--ink) !important;
+  border:1px solid var(--copper); text-decoration:none !important; line-height:1.3;
+  transition:background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+.ported .btn-primary:hover{ background:var(--copper-light); transform:translateY(-2px); box-shadow:0 10px 24px rgba(180,133,74,0.28); }
+.ported .btn-secondary{
+  font-family:var(--mono); font-size:var(--fs-btn); font-weight:500; letter-spacing:0.055em; text-transform:uppercase;
+  padding:16px 28px; display:inline-flex; align-items:center; gap:9px; background:transparent; color:var(--ink) !important;
+  border:1px solid rgba(26,27,25,0.35); text-decoration:none !important; line-height:1.3;
+}
+.ported .btn-secondary:hover{ border-color:var(--ink); }
+.ported .btn-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:28px; }
+.ported form label{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:var(--copper-deep); margin-bottom:8px; }
+.ported form input[type="text"], .ported form input[type="email"], .ported form select, .ported form textarea{
+  width:100%; font-family:var(--body); font-size:16px; color:var(--ink); background:var(--paper-white);
+  border:1px solid rgba(26,27,25,0.22); padding:13px 15px; margin-bottom:18px; border-radius:0;
+}
+.ported form input:focus, .ported form select:focus, .ported form textarea:focus{ outline:2px solid var(--copper); outline-offset:2px; }
+.ported form button[type="submit"], .ported .gate-form button{
+  font-family:var(--mono); font-size:var(--fs-btn); font-weight:500; letter-spacing:0.055em; text-transform:uppercase;
+  padding:16px 28px; background:var(--copper); color:var(--ink); border:1px solid var(--copper); cursor:pointer;
+}
+.ported .gate-note, .ported .gate-error, .ported .fine, .ported .filesize{ font-size:13.5px; color:var(--slate); line-height:1.65; }
+.ported .gate-error{ color:#8C3B2E; }
+.ported .hp{ position:absolute; left:-9999px; }
+.ported table{ width:100%; border-collapse:collapse; margin:24px 0; font-size:var(--fs-support); }
+.ported th{ font-family:var(--mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:var(--copper-deep); text-align:left; padding:12px 14px; border-bottom:2px solid var(--copper); }
+.ported td{ padding:12px 14px; border-bottom:1px solid var(--line); color:var(--ink-soft); line-height:1.55; vertical-align:top; }
+.ported .pipeline{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:40px; }
+@media(max-width:820px){ .ported .pipeline{ grid-template-columns:1fr; } }
+.ported .pipe-cell{ background:var(--ink); color:var(--paper); padding:var(--card-pad); position:relative; overflow:hidden; }
+.ported .pipe-letter{ font-family:var(--display); font-size:3.2rem; font-weight:700; color:var(--copper); line-height:1; display:block; margin-bottom:16px; }
+.ported .pipe-name{ font-family:var(--display); font-size:1.375rem; font-weight:600; color:var(--paper-white); margin-bottom:10px; }
+.ported .pipe-cell .cap, .ported .pipe-cell p{ color:var(--body-on-ink); font-size:var(--fs-support); }
+.ported .stat-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:40px; }
+@media(max-width:820px){ .ported .stat-row{ grid-template-columns:1fr; } }
+.ported .stat{ background:var(--paper-white); padding:var(--card-pad); }
+.ported .stat .h{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; margin-bottom:10px; }
+.ported .opts{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.ported .opts button, .ported .opts label{ font-family:var(--mono); font-size:13px; letter-spacing:0.03em; padding:11px 18px; border:1px solid rgba(26,27,25,0.3); background:var(--paper-white); color:var(--ink); cursor:pointer; }
+.ported .quiz-progress{ font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--copper-deep); text-transform:uppercase; margin-bottom:20px; }
+.ported .result-band{ margin-top:40px; }
+.ported .result-score{ font-family:var(--display); font-size:var(--fs-h2); font-weight:600; }
+.ported .cta{ margin-top:28px; }
+.ported .src{ font-size:13px; color:var(--slate); }
+.hero-single{ max-width:820px; }
+.focal-list{ list-style:none; margin:0; padding:0; }
+.focal-list li{ padding:13px 24px; border-bottom:1px solid var(--line); font-size:15px; line-height:1.5; color:var(--ink-soft); display:flex; gap:12px; align-items:baseline; }
+.focal-list li:last-child{ border-bottom:none; }
+.focal-list .fl-n{ font-family:var(--mono); font-size:11px; color:var(--copper-deep); letter-spacing:0.08em; flex-shrink:0; }
+.hero-form{ margin-top:34px; max-width:520px; }
+.hero-form label{ color:var(--copper-light) !important; }
+.hero-form .gate-note{ color:var(--muted-on-ink) !important; }
+.hero-form .gate-error{ color:#E8A090 !important; }
+.receive-line{ margin-top:22px; padding-top:16px; border-top:1px solid var(--line); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.receive-line .lbl{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.12em; text-transform:uppercase; color:var(--copper-deep); font-weight:500; }
+.receive-line .arrow{ color:var(--copper-deep); }
+.receive-line .artifact{ font-family:var(--display); font-size:1.0625rem; font-weight:600; color:var(--ink-soft); }
+
+.nav-burger{ display:none; flex-direction:column; gap:5px; padding:12px; margin-left:8px; background:none; border:none; cursor:pointer; }
+.nav-burger span{ display:block; width:22px; height:1.5px; background:var(--ink); }
+.mobile-drawer{ position:absolute; top:100%; left:0; right:0; z-index:290; background:var(--paper-white); border-bottom:1px solid var(--line); box-shadow:0 24px 40px rgba(26,27,25,0.12); padding:10px 32px 26px; display:flex; flex-direction:column; opacity:0; visibility:hidden; transform:translateY(-6px); pointer-events:none; transition:opacity 200ms ease, transform 200ms ease, visibility 200ms; }
+nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; pointer-events:auto; }
+.mobile-drawer a{ font-family:var(--mono); font-size:14px; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); padding:14px 0; border-bottom:1px solid var(--line); }
+.mobile-drawer .dd-head{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--copper-deep); padding:16px 0 2px; }
+.nav-item.open .nav-dropdown{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+@media(max-width:900px){ .nav-burger{ display:flex; } }
+@media(min-width:901px){ .mobile-drawer{ display:none; } }
+</style>
+                             
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SRY0L92FTX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SRY0L92FTX');
+</script>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<nav class="site">
+  <div class="nav-inner">
+    <a class="nav-brand" href="https://clyvara.io" aria-label="Clyvara home">
+      <svg viewBox="0 0 599.29 547.41" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="currentColor" d="M278.97,395.34c-19.15,0-42.37,1.35-60.56-0.26c-48.14-4.28-90.59-21.89-123.13-58.83c-61.12-69.39-47.32-175.46,29.57-226.86c41.41-27.68,87.75-37.24,137.04-34.44c31.29,1.78,68.53,9.85,98.05,20.24l3.16,84c-0.95-2.41-1.97-4.8-2.85-7.24c-9.87-27.4-25.26-51.04-48.82-68.52c-36.96-27.41-77.65-28.86-119.56-14.49c-37.01,12.69-61.82,39.22-75.19,75.2c-23.87,64.22-16.08,125.6,26.97,179.39c15.43,19.28,34.05,33.24,57.18,40.71c22.75,7.34,50.4,7.57,74.44,4.24L278.97,395.34z"/>
+        <path fill="#B4854A" d="M367.22,437.55l-98.03-165.58h-52.35c2.18,0.03,4.62,3.28,8.37,9.29c4.52,7.25,10.14,17.45,18.27,30.96c11.47,19.07,25.43,42.98,39.66,66.63c33.18,55.16,65.04,111.05,65.04,111.05l193.55-326.81h-12.69L367.22,437.55z"/>
+      </svg>
+      <span class="nav-brand-text">
+        <span class="mark-word">CLY<span class="b">VARA</span></span>
+        <span class="nav-brand-caption">Cyber Risk &amp; Compliance Advisory</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+      <div class="nav-item">
+        <button class="nav-menu-btn" aria-haspopup="true">Services</button>
+        <div class="nav-dropdown" role="menu">
+          <div class="dd-head">Services</div>
+          <a href="https://clyvara.io/#services">Risk &amp; Readiness Assessment</a>
+          <a href="https://clyvara.io/#services">SHIELD Governance Accelerator</a>
+          <a href="https://clyvara.io/#services">SHIELD Incident Readiness</a>
+          <a href="https://clyvara.io/#services">Fractional CISO / SHIELD Defend Retainer</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-menu-btn" aria-haspopup="true">Fixed-Fee Services</button>
+        <div class="nav-dropdown" role="menu">
+          <div class="dd-head">Fixed-Fee Services</div>
+          <a href="https://clyvara.io/ai-readiness-review">Questionnaire Response<span class="dd-sub">Fixed $750</span></a>
+          <a href="https://clyvara.io/wisp-for-tax-firms">WISP for Tax Firms<span class="dd-sub">Fixed $1,250</span></a>
+          <a href="https://clyvara.io/tabletop-exercise">Ransomware Tabletop Exercise<span class="dd-sub">Fixed $1,250</span></a>
+          <a href="https://clyvara.io/texas-sb2610-safe-harbor">Texas SB 2610 Safe-Harbor</a>
+    <a href="https://clyvara.io/ai-readiness-review">AI &amp; Shadow-AI Readiness Review</a>
+          <a href="https://clyvara.io/ai-readiness-review">AI &amp; Shadow-AI Readiness Review<span class="dd-sub">Fixed $1,500</span></a>
+        </div>
+      </div>
+      <a href="https://clyvara.io/insights">Insights</a>
+      <a class="nav-cta" href="https://cal.com/clyvara/30min">Book a Risk Conversation</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="https://clyvara.io/#shield">SHIELD Framework</a>
+    <div class="dd-head">Services</div>
+    <a href="https://clyvara.io/#services">Risk &amp; Readiness Assessment</a>
+    <a href="https://clyvara.io/#services">SHIELD Governance Accelerator</a>
+    <a href="https://clyvara.io/#services">SHIELD Incident Readiness</a>
+    <a href="https://clyvara.io/#services">Fractional CISO / SHIELD Defend Retainer</a>
+    <div class="dd-head">Fixed-Fee Services</div>
+    <a href="https://clyvara.io/ai-readiness-review">Questionnaire Response</a>
+    <a href="https://clyvara.io/wisp-for-tax-firms">WISP for Tax Firms</a>
+    <a href="https://clyvara.io/tabletop-exercise">Ransomware Tabletop Exercise</a>
+    <a href="https://clyvara.io/texas-sb2610-safe-harbor">Texas SB 2610 Safe-Harbor</a>
+    <a href="https://clyvara.io/insights">Insights</a>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-grid"><div>
+        <div class="eyebrow on-ink">Service \u00b7 AI Governance</div>
+        <h1 class="hero-h1">Your people are already using AI. Know where, and govern it.</h1>
+        <p class="hero-sub">Some of the AI tools in use at your organization were approved. Some were not, and nobody has a full list. This review finds every AI tool in use, sanctioned or not, maps what data flows into them, and gives you a written, prioritized plan to govern them, before a client, an insurer, or a regulator asks the question first. One fixed fee: <strong>$1,500</strong>.</p>
+        <div class="btn-row">
+<a class="btn btn-primary" href="https://cal.com/clyvara/30min">Book a Free SHIELD Risk Conversation</a>
+<a class="btn btn-ghost-onink" href="#what-it-covers">See what the review covers</a>
+</div>
+        <p class="hero-note">For small and mid-sized organizations whose staff already rely on AI tools, approved or otherwise. The aim is governed use, not a ban list.</p>
+      </div>
+      <div class="spec-file" aria-label="AI and Shadow-AI Readiness Review at a glance">
+        <div class="spec-tab">At a Glance</div>
+        <div class="spec-shadow-card"></div>
+        <div class="spec-card">
+          <div class="spec-head"><span><span class="dotmark"></span>AI &amp; Shadow-AI Readiness Review</span><span>Fixed-Fee Service</span></div>
+          <div class="spec-row"><div class="spec-label">The fee</div><div class="spec-value"><strong>$1,500</strong> &mdash; one fixed fee, payable when work starts, by electronic invoice.</div></div>
+<div class="spec-row"><div class="spec-label">You receive</div><div class="spec-value">A <strong>findings note</strong> with the risks ranked, and a <strong>prioritized fix list</strong> your team can act on, with or without Clyvara.</div></div>
+<div class="spec-row"><div class="spec-label">Timeline</div><div class="spec-value">Delivered <strong>within 10 business days</strong> of the intake call.</div></div>
+<div class="spec-row"><div class="spec-label">First step</div><div class="spec-value">A free SHIELD Risk Conversation, then a short intake call to scope the tool landscape.</div></div>
+          <div class="spec-foot">Led and delivered personally by <b>Clyvara&rsquo;s principal consultant</b>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ported">
+<section id="the-problem">
+<div class="wrap">
+<div class="kicker">The Problem</div>
+<h2>Ungoverned AI is already inside the business.</h2>
+<p class="lede">None of this requires a breach. It accumulates quietly, one helpful tool at a time, until somebody with standing asks how AI is governed here and there is no answer on file:</p>
+<div class="check-q"><div class="box"></div><div><div class="q"><strong>Private data into consumer tools.</strong> Staff paste client and patient information into consumer AI tools with no agreement governing what happens to it.</div></div></div>
+<div class="check-q"><div class="box"></div><div><div class="q"><strong>Permissions nobody reviewed.</strong> Approved tools get connected to email, documents, and records with access nobody checked.</div></div></div>
+<div class="check-q"><div class="box"></div><div><div class="q"><strong>Vendor terms that changed silently.</strong> Vendors add AI features to software you already run, and the data terms change without anyone reading them.</div></div></div>
+<div class="check-q"><div class="box"></div><div><div class="q"><strong>No answer on file.</strong> A cyber insurance application or a client questionnaire asks how you govern AI, and the honest answer is that nobody knows.</div></div></div>
+</div>
+</section>
+<section class="alt" id="what-it-covers">
+<div class="wrap">
+<div class="kicker">What the Review Covers</div>
+<h2>Five pieces, one written record.</h2>
+<div class="check-q"><div class="box"></div><div><div class="tag">One</div><div class="q"><strong>The AI tool inventory.</strong> Every AI tool in use across the organization, including unsanctioned shadow AI adopted by individual staff, catalogued by who uses it and for what.<div class="receive-line"><span class="lbl">You receive</span><span class="arrow">&rarr;</span><span class="artifact">The AI tool inventory</span></div></div></div></div>
+<div class="check-q"><div class="box"></div><div><div class="tag">Two</div><div class="q"><strong>The data-flow review.</strong> What information goes into those tools: client data, patient data, financial records, credentials, internal documents, and where that information can end up under each tool&rsquo;s terms.<div class="receive-line"><span class="lbl">You receive</span><span class="arrow">&rarr;</span><span class="artifact">The data-flow review</span></div></div></div></div>
+<div class="check-q"><div class="box"></div><div><div class="tag">Three</div><div class="q"><strong>The vendor AI terms check.</strong> The data-use, retention, and training terms of the tools that matter, read and summarized in plain language.<div class="receive-line"><span class="lbl">You receive</span><span class="arrow">&rarr;</span><span class="artifact">The vendor terms summary</span></div></div></div></div>
+<div class="check-q"><div class="box"></div><div><div class="tag">Four</div><div class="q"><strong>The policy and control gaps.</strong> Your current acceptable-use, access, and review practices measured against the NIST AI Risk Management Framework&rsquo;s govern, map, measure, and manage functions.<div class="receive-line"><span class="lbl">You receive</span><span class="arrow">&rarr;</span><span class="artifact">The gap assessment</span></div></div></div></div>
+<div class="check-q"><div class="box"></div><div><div class="tag">Five</div><div class="q"><strong>The findings note and fix list.</strong> The risks ranked in writing, and a prioritized fix list your team can act on, with or without Clyvara.<div class="receive-line"><span class="lbl">You receive</span><span class="arrow">&rarr;</span><span class="artifact">The findings note and fix list</span></div></div></div></div>
+</div>
+</section>
+<section id="how-it-works">
+<div class="wrap">
+<div class="kicker">How It Works</div>
+<h2>Ten business days, start to findings.</h2>
+<div class="phase-grid">
+<div class="phase-card">
+<div class="h"><span class="badge">1</span><span class="name">The intake call</span></div>
+<p>A short call to scope the tool landscape and name the people to speak with. If the review is not the right starting point for your organization, you will hear that on this call, before any fee.</p>
+</div>
+<div class="phase-card">
+<div class="h"><span class="badge">2</span><span class="name">Inventory and review</span></div>
+<p>The inventory and review work follows, working from your tool list, the vendor terms, and brief staff conversations. Nothing is installed, nothing is monitored, and no tool is taken away mid-review.</p>
+</div>
+<div class="phase-card">
+<div class="h"><span class="badge">3</span><span class="name">Findings and fixes</span></div>
+<p>Within 10 business days of the intake call, the findings note and the prioritized fix list arrive, walked through on a closing call so you can explain every line in your own words.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="alt" id="the-fee">
+<div class="wrap">
+<div class="kicker">The Fee</div>
+<h2>Fixed at $1,500. No hourly billing, no scope creep.</h2>
+<p class="lede">One organization, one fixed fee of $1,500 for the review: the inventory, the data-flow review, the vendor terms check, the gap assessment, and the findings note with its fix list. If the review surfaces a larger problem, it is named in the findings note and scoped separately only at your request.</p>
+<div class="why-row">
+<div class="why-col"><div class="t">What it is</div><div class="d">A readiness review of how AI is actually used and governed in your organization, delivered personally by Clyvara&rsquo;s principal consultant, measured against the NIST AI Risk Management Framework.</div></div>
+<div class="why-col"><div class="t">What it is not</div><div class="d">Not a legal opinion, and not a certification of compliance with any AI law. Texas&rsquo;s AI statute (TRAIGA) binds state agencies; most small organizations face their AI duties through client contracts, insurers, and sector regulators instead, and the review is framed on those. Not an AI product, a monitoring platform, or a penetration test.</div></div>
+<div class="why-col"><div class="t">Who it fits</div><div class="d">Small and mid-sized organizations, healthcare practices, and professional-services firms whose people already use AI tools day to day, and who would rather govern that use deliberately than discover it in a questionnaire.</div></div>
+</div>
+<p class="fine">Payment is by electronic invoice, payable when work starts. What you share stays with Clyvara: your tool list, documents, and staff conversations are held confidentially and shared only with you.</p>
+</div>
+</section>
+</div>
+<section class="section tight bg-white">
+  <div class="container">
+    <div class="eyebrow reveal" style="margin-bottom:34px;">The Foundation</div>
+    <div class="proof-card reveal">
+      <div class="proof-tag">Research-Backed</div>
+      <div class="proof-title">Doctoral research foundation</div>
+      <p class="proof-body">The methodology behind every engagement is grounded in original doctoral research into how security awareness and training affect SME performance &mdash; not a repackaged vendor checklist.</p>
+      <div class="proof-cred"><a href="https://www.linkedin.com/in/rodger-lutalo/" target="_blank" rel="noopener"><b>Rodger Lutalo</b></a> &mdash; Founder &amp; Principal Cybersecurity Consultant (DBA, MS in Computer Science & Information Systems, PMP). Doctoral research into cybersecurity awareness and training in small and mid-sized enterprises.</div>
+    </div>
+  </div>
+</section>
+<div class="final-cta">
+  <div class="container">
+    <div class="eyebrow on-ink center">Start Here</div>
+    <h2>Find out what is already in use, before someone asks.</h2>
+    <p class="lede">A free SHIELD Risk Conversation shows you where the review fits. You leave with the three risks we would fix first, in writing, whether or not we work together.</p>
+    <div class="btn-row">
+<a class="btn btn-primary" href="https://cal.com/clyvara/30min">Book a Free SHIELD Risk Conversation</a>
+<a class="btn btn-ghost-onink" href="#what-it-covers">See what the review covers</a>
+</div>
+  </div>
+</div>
+<footer class="site">
+  <div class="footer-inner">
+    <div>&copy; 2026 Clyvara LLC &middot; Dallas&ndash;Fort Worth, Texas</div>
+    <div><a href="https://clyvara.io">clyvara.io</a> &nbsp;&middot;&nbsp; <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> &nbsp;&middot;&nbsp; <a href="https://clyvara.io/faq">FAQ</a> &nbsp;&middot;&nbsp; <a href="https://clyvara.io/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/rodger-lutalo/" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('is-visible'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<script>
+(function(){
+  var nav = document.querySelector('nav.site');
+  var burger = document.getElementById('navBurger');
+  var items = document.querySelectorAll('.nav-item');
+  function closeDrawer(){ if (nav) nav.classList.remove('open'); if (burger) burger.setAttribute('aria-expanded','false'); }
+  function closeDropdowns(){
+    items.forEach(function(item){ item.classList.remove('open'); var b = item.querySelector('.nav-menu-btn'); if (b) b.setAttribute('aria-expanded','false'); });
+  }
+  if (nav && burger) {
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.mobile-drawer a').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+  }
+  items.forEach(function(item){
+    var btn = item.querySelector('.nav-menu-btn');
+    if (!btn) return;
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !item.classList.contains('open');
+      closeDropdowns();
+      if (willOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    items.forEach(function(item){ if (!item.contains(e.target)) { item.classList.remove('open'); var b = item.querySelector('.nav-menu-btn'); if (b) b.setAttribute('aria-expanded','false'); } });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    closeDropdowns();
+    closeDrawer();
+  });
+})();
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 <link href="https://clyvara.io/readiness-self-check" rel="canonical"/>
 <meta property="og:url" content="https://clyvara.io/readiness-self-check">
 <meta content="Security Readiness Self-Check | Clyvara" property="og:title"/>
-<meta content="Could you produce the evidence within one business day? Twelve questions drawn from the readiness checklist, scored instantly, in your browser." property="og:description"/>
+<meta content="Could you prove your security to an insurer or a client by tomorrow? Find out where your evidence stands with 12 questions, scored instantly in your browser." property="og:description"/>
 <meta content="article" property="og:type"/>
 <meta content="Rodger Lutalo" name="author"/>
 <meta content="https://clyvara.io/clyvara-og-image.png" property="og:image"/>
@@ -446,6 +446,24 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
 .nav-item.open .nav-dropdown{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
 @media(max-width:900px){ .nav-burger{ display:flex; } }
 @media(min-width:901px){ .mobile-drawer{ display:none; } }
+
+.hero-benefits{ font-size:15px; line-height:1.65; color:var(--body-on-ink); max-width:56ch; margin:-28px 0 40px; }
+.ported .qualifiers{ margin-bottom:6px; }
+.ported .qualifiers-t{ font-family:var(--display); font-weight:600; font-size:16px; color:var(--ink); margin-bottom:12px; }
+.ported .next-step{ margin:24px 0; padding:20px 22px; border:1px solid var(--copper); background:var(--paper-white); }
+.ported .next-step .t{ font-family:var(--display); font-size:1.25rem; font-weight:600; color:var(--ink); margin-bottom:8px; }
+.ported .next-step-d{ font-size:15px; line-height:1.6; color:var(--slate); margin-bottom:16px; }
+.ported .report{ margin:24px 0; padding-top:20px; border-top:1px solid var(--line); }
+.ported .report .t{ font-family:var(--display); font-size:1.25rem; font-weight:600; color:var(--ink); margin-bottom:6px; }
+.ported .report-meta{ font-family:var(--mono); font-size:12px; letter-spacing:0.04em; text-transform:uppercase; color:var(--copper-deep); margin-bottom:8px; }
+.ported .report-fix-t{ font-family:var(--display); font-size:1.1rem; font-weight:600; color:var(--ink); margin:18px 0 4px; }
+.ported .weak-item .phase{ font-family:var(--mono); font-size:11.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--copper-deep); margin-bottom:5px; }
+@media print{
+  body *{ visibility:hidden; }
+  #shield-report, #shield-report *{ visibility:visible; }
+  #shield-report{ position:absolute; left:0; top:0; width:100%; margin:0; padding:0; border-top:none; }
+  #shield-report .print-btn{ display:none !important; }
+}
 </style>
                              
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRY0L92FTX"></script>
@@ -534,8 +552,9 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
   <div class="container">
     <div class="hero-grid"><div>
         <div class="eyebrow on-ink">Free Self-Check · Questionnaire Readiness</div>
-        <h1 class="hero-h1">Twelve questions. One honest score.</h1>
-        <p class="hero-sub">Customers, cyber insurers, and funders don’t just ask what you do — they ask you to show it. This self-check asks their question twelve ways: could you produce the evidence within one business day? Answer honestly and see where your evidence stands, and which areas a reviewer would press first. Your answers stay in this browser — nothing is sent or stored.</p>
+        <h1 class="hero-h1">Could you prove your security to an insurer or a client by tomorrow?</h1>
+        <p class="hero-sub">Answer 12 questions and find out where your evidence stands.</p>
+        <p class="hero-benefits">This self-check measures your access controls, your backup and recovery readiness, and your security paperwork, and names the gaps an insurer or a client would find first.</p>
         <div class="btn-row">
 <a class="btn btn-primary" href="#self-check">Start the self-check</a>
 <a class="btn btn-ghost-onink" href="https://clyvara.io/readiness-checklist">Get the full checklist instead</a>
@@ -689,8 +708,37 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
 </div>
 <div class="result-gate" id="checklist-gate">
 <div class="result-gate-t">Get the full breakdown and the checklist (PDF)</div>
-<p class="result-gate-d">Your stage and your thinnest areas are above, free, with nothing to enter. The full breakdown scores all eight areas against your answers, and it comes with the 35-item readiness checklist as a PDF. Enter your email and both appear right here. The form sends your email, your stage, and your score, so any follow-up fits where you stand. Your individual answers are never sent; they stay in this browser.</p>
+<p class="result-gate-d">Your stage and your thinnest areas are above, free, with nothing to enter. The full breakdown scores all eight areas against your answers, and it comes with the 35-item readiness checklist as a PDF. Enter your email and both appear right here, along with a short report you can print or save. Three optional questions below help any follow-up fit your organization. If you answer them, the form sends those answers along with your email, your stage, and your score. Your answers to the 12 scored questions are never sent; they stay in this browser.</p>
 <form class="gate-form" id="get-checklist-selfcheck" action="https://formspree.io/f/xppazdko" method="POST">
+<div class="qualifiers">
+<div class="qualifiers-t">Make the follow-up fit (optional)</div>
+<label for="sc-q-staff">How many people work in your organization?</label>
+<select id="sc-q-staff">
+<option value="">Select, if you like</option>
+<option value="1–19">1–19</option>
+<option value="20–50">20–50</option>
+<option value="51–200">51–200</option>
+<option value="200+">200+</option>
+</select>
+<label for="sc-q-orgtype">What kind of organization is it?</label>
+<select id="sc-q-orgtype">
+<option value="">Select, if you like</option>
+<option>Healthcare practice</option>
+<option>Tax or accounting firm</option>
+<option>Law firm</option>
+<option>Other professional services</option>
+<option>Other business</option>
+</select>
+<label for="sc-q-prompt">What prompted this check?</label>
+<select id="sc-q-prompt">
+<option value="">Select, if you like</option>
+<option>A cyber insurance renewal</option>
+<option>A client’s security questionnaire</option>
+<option>HIPAA or FTC rules</option>
+<option>Texas SB 2610 safe harbor</option>
+<option>Just want to know where we stand</option>
+</select>
+</div>
 <label class="sr-only" for="sc-gate-email">Email address</label>
 <input id="sc-gate-email" type="email" name="email" placeholder="you@yourfirm.com" required>
 <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -698,6 +746,9 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
 <input type="hidden" name="Self-check stage" id="sc-gate-stage" value="">
 <input type="hidden" name="Self-check score" id="sc-gate-score" value="">
 <input type="hidden" name="Thinnest areas" id="sc-gate-weak" value="">
+<input type="hidden" name="Staff band" id="sc-gate-staff" value="">
+<input type="hidden" name="Organization type" id="sc-gate-orgtype" value="">
+<input type="hidden" name="Prompted by" id="sc-gate-prompted" value="">
 <button class="btn-primary" id="sc-gate-btn" type="submit">Get the checklist</button>
 </form>
 <div class="gate-error" id="sc-gate-error">Something went wrong sending that. Please check your connection and try again.</div>
@@ -707,13 +758,26 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
 <div class="t">Your full breakdown, area by area</div>
 <div id="full-breakdown"></div>
 </div>
+<div class="report" id="shield-report">
+<div class="t">Your SHIELD Readiness Report</div>
+<p class="report-meta" id="report-meta"></p>
+<div id="report-areas"></div>
+<div class="report-fix-t">Fix first</div>
+<div id="report-fix"></div>
+<button class="btn-secondary print-btn" id="print-report-btn" type="button">Print or save your report (PDF)</button>
+</div>
+<div class="next-step" id="next-step" hidden>
+<div class="t">Your fitting next step</div>
+<p class="next-step-d" id="next-step-text"></p>
+<a class="btn-secondary" id="next-step-link" href="#">Next step</a>
+</div>
 <a class="btn-primary" href="https://clyvara.io/security-questionnaire-readiness-checklist.pdf">↓ Download the full checklist (PDF)</a>
 </div>
 </div>
 <div class="btn-row result-ctas">
 <a class="btn-secondary" href="https://cal.com/clyvara/30min">Book a Risk Conversation</a>
 </div>
-<p class="fine">This self-check is general guidance for planning purposes. It is not an audit, and a score here does not by itself establish compliance with any framework or regulation. Your answers were scored in your browser; they are not sent or stored. If you request the breakdown, the form sends your email, your stage, and your score only.</p>
+<p class="fine">This self-check is general guidance for planning purposes. It is not an audit, and a score here does not by itself establish compliance with any framework or regulation. Your answers to the 12 scored questions were scored in your browser; they are not sent or stored. If you request the breakdown, the form sends your email, your stage, and your score, plus your answers to the three optional questions if you gave them.</p>
 <div style="margin-top:14px;"><button class="reset-link" id="reset-btn" type="button">Start over</button></div>
 </div>
 </div>
@@ -781,6 +845,7 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     'Many incidents start with a person and a message. Without training records and signed acknowledgments, you cannot show your people were prepared, and a reviewer will assume they were not.',
     'Vendors with access to your systems extend your risk beyond your own walls. Without an inventory and agreements on file, their incident becomes yours, with no paper to lean on.'
   ];
+  var PHASES = ['Survey', 'Harden', 'Harden', 'Defend', 'Defend', 'Ledger', 'Instruct', 'Enforce'];
   var BANDS = [
     { min: 75, title: 'Governed',
       text: 'Most of your evidence is in hand, and it is organised well enough to produce on request. A customer questionnaire, an insurance renewal, or a funder review would still take work, but you would be assembling documents, not creating them under deadline. The full breakdown shows the remaining items worth closing before someone asks.',
@@ -924,12 +989,75 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
       bd.appendChild(row);
     });
 
+    var ra = document.getElementById('report-areas');
+    ra.innerHTML = '';
+    areaScore.forEach(function (s, idx) {
+      var row = document.createElement('div');
+      row.className = 'weak-item';
+      var badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = String(idx + 1);
+      var body = document.createElement('div');
+      var name = document.createElement('div');
+      name.className = 'name';
+      name.textContent = AREAS[idx].name;
+      var score = document.createElement('div');
+      score.className = 'bd-score';
+      score.textContent = s.got + ' of ' + s.max + ' points';
+      var ask = document.createElement('div');
+      ask.className = 'ask';
+      ask.textContent = AREAS[idx].ask;
+      body.appendChild(name);
+      body.appendChild(score);
+      body.appendChild(ask);
+      row.appendChild(badge);
+      row.appendChild(body);
+      ra.appendChild(row);
+    });
+    var dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('report-meta').textContent = band.title + ' \u00b7 Evidence readiness score ' + pct + '% (' + total + ' of ' + (TOTAL * 2) + ' points) \u00b7 ' + dateStr;
+    var rf = document.getElementById('report-fix');
+    rf.innerHTML = '';
+    if (!weak.length) {
+      var fp = document.createElement('p');
+      fp.className = 'result-text';
+      fp.textContent = 'Every area scored full marks on these twelve questions. The full checklist goes deeper, 35 items, and is the version worth re-running each quarter.';
+      rf.appendChild(fp);
+    } else {
+      weak.forEach(function (w) {
+        var row = document.createElement('div');
+        row.className = 'weak-item';
+        var badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = String(w.idx + 1);
+        var body = document.createElement('div');
+        var name = document.createElement('div');
+        name.className = 'name';
+        name.textContent = AREAS[w.idx].name;
+        var phase = document.createElement('div');
+        phase.className = 'phase';
+        phase.textContent = 'SHIELD phase: ' + PHASES[w.idx];
+        var ask = document.createElement('div');
+        ask.className = 'ask';
+        ask.textContent = AREAS[w.idx].ask;
+        body.appendChild(name);
+        body.appendChild(phase);
+        body.appendChild(ask);
+        row.appendChild(badge);
+        row.appendChild(body);
+        rf.appendChild(row);
+      });
+    }
+
     result.classList.add('show');
     if (typeof gtag === 'function') {
       gtag('event', 'selfcheck_complete', { band: band.title, score: pct });
     }
     result.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+
+  var printBtn = document.getElementById('print-report-btn');
+  if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
 
   document.getElementById('reset-btn').addEventListener('click', function () {
     form.reset();
@@ -943,6 +1071,10 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     if (gateForm) gateForm.style.display = '';
     if (gateSuccess) gateSuccess.hidden = true;
     if (gateBtn) { gateBtn.disabled = false; gateBtn.textContent = 'Get the checklist'; }
+    ['sc-q-staff', 'sc-q-orgtype', 'sc-q-prompt'].forEach(function (id) { var s = document.getElementById(id); if (s) s.value = ''; });
+    ['sc-gate-staff', 'sc-gate-orgtype', 'sc-gate-prompted'].forEach(function (id) { var h = document.getElementById(id); if (h) h.value = ''; });
+    var nsCard = document.getElementById('next-step');
+    if (nsCard) nsCard.hidden = true;
     window.CLYVARA_SELFCHECK = null;
     document.getElementById('self-check').scrollIntoView({ behavior: 'smooth' });
   });
@@ -965,13 +1097,57 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
   var errorBox = document.getElementById('sc-gate-error');
   var successBox = document.getElementById('sc-gate-success');
   if (!form) return;
+  function pickRoute(org, prompted, band) {
+    if (prompted === 'A client\u2019s security questionnaire') {
+      return { url: 'https://clyvara.io/questionnaire-response', label: 'Answer the questionnaire with evidence',
+        text: 'A client questionnaire is a deadline with questions attached. This fixed-fee service builds your answers from evidence you can stand behind, so the reply you send is the one you can defend later.' };
+    }
+    if (org === 'Tax or accounting firm') {
+      return { url: 'https://clyvara.io/wisp-for-tax-firms', label: 'See the WISP for tax firms',
+        text: 'Tax and accounting firms work under the FTC Safeguards Rule, which calls for a written information security program. This page sets out what that program needs and how Clyvara builds it with you.' };
+    }
+    if (org === 'Healthcare practice') {
+      return { url: 'https://clyvara.io/tabletop-exercise', label: 'See the ransomware tabletop exercise',
+        text: 'For a healthcare practice, the practical test is a bad morning: a ransomware note and a waiting room full of patients. This half-day exercise walks your team through that morning and leaves a findings note you can act on.' };
+    }
+    if (prompted === 'A cyber insurance renewal') {
+      return { url: 'https://clyvara.io/cyber-insurance-evidence', label: 'See cyber insurance, evidenced',
+        text: 'A renewal goes better when the evidence is assembled before the broker asks. This guide shows what insurers look for and how to have it ready in time.' };
+    }
+    if (prompted === 'Texas SB 2610 safe harbor') {
+      return { url: 'https://clyvara.io/texas-sb2610-safe-harbor', label: 'See the SB 2610 safe-harbor page',
+        text: 'Texas SB 2610 offers a safe harbor to businesses that run a recognized cybersecurity program. This page explains, in plain terms, what putting that program in place takes.' };
+    }
+    if (band === 'Governed') {
+      return { url: 'https://clyvara.io/cyber-insurance-evidence', label: 'See cyber insurance, evidenced',
+        text: 'Your evidence is largely in hand. The work now is keeping it current, so a renewal or a questionnaire becomes an assembly job rather than a scramble. This guide shows what staying ready looks like.' };
+    }
+    return { url: 'https://cal.com/clyvara/30min', label: 'Book a Risk Conversation',
+      text: 'A free 30-minute conversation about where your evidence stands. You leave with the three risks we would fix first, in writing, whether or not we work together.' };
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     errorBox.classList.remove('show');
     var honeypot = form.querySelector('input[name="_gotcha"]');
     if (honeypot && honeypot.value) return;
+    var staffSel = document.getElementById('sc-q-staff');
+    var orgSel = document.getElementById('sc-q-orgtype');
+    var promptSel = document.getElementById('sc-q-prompt');
+    var staffVal = staffSel ? staffSel.value : '';
+    var orgVal = orgSel ? orgSel.value : '';
+    var promptVal = promptSel ? promptSel.value : '';
+    var staffField = document.getElementById('sc-gate-staff');
+    var orgField = document.getElementById('sc-gate-orgtype');
+    var promptField = document.getElementById('sc-gate-prompted');
+    if (staffField) staffField.value = staffVal;
+    if (orgField) orgField.value = orgVal;
+    if (promptField) promptField.value = promptVal;
     if (window.CLYVARA_SELFCHECK && typeof gtag === 'function') {
-      gtag('event', 'selfcheck_gate_submit', { band: window.CLYVARA_SELFCHECK.band, score: window.CLYVARA_SELFCHECK.score });
+      var gateParams = { band: window.CLYVARA_SELFCHECK.band, score: window.CLYVARA_SELFCHECK.score };
+      if (staffVal) gateParams.staff_band = staffVal;
+      if (promptVal) gateParams.prompted_by = promptVal;
+      gtag('event', 'selfcheck_gate_submit', gateParams);
     }
     var originalLabel = btn.textContent;
     btn.disabled = true;
@@ -985,6 +1161,15 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
         if (response.ok) {
           form.style.display = 'none';
           if (successBox) successBox.hidden = false;
+          var route = pickRoute(orgVal, promptVal, window.CLYVARA_SELFCHECK ? window.CLYVARA_SELFCHECK.band : '');
+          var ns = document.getElementById('next-step');
+          if (route && ns) {
+            document.getElementById('next-step-text').textContent = route.text;
+            var nsLink = document.getElementById('next-step-link');
+            nsLink.href = route.url;
+            nsLink.textContent = route.label;
+            ns.hidden = false;
+          }
         } else {
           throw new Error('Submission was rejected.');
         }

@@ -7,12 +7,10 @@
 <meta name="description" content="Helping small businesses identify cyber risks, strengthen security, and protect what they've built.">
 <link rel="canonical" href="https://clyvara.io/">
 
-<!-- Favicon -->
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<!-- Open Graph / LinkedIn / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://clyvara.io/">
 <meta property="og:title" content="Clyvara | Helping Small Businesses Reduce Cyber Risk">
@@ -22,7 +20,6 @@
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Clyvara">
 
-<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Clyvara | Helping Small Businesses Reduce Cyber Risk">
 <meta name="twitter:description" content="Helping small businesses identify cyber risks, strengthen security, and protect what they've built.">
@@ -32,9 +29,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,760&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
-/* ============================================================
-   TOKENS
-   ============================================================ */
+         
+                                                                  
 :root{
   --ink:#1A1B19;
   --ink-soft:#242621;
@@ -46,8 +42,8 @@
   --copper-deep:#8C6537;
   --slate:#585F5A;
   --slate-light:#646964;
-  --line: rgba(26,27,25,0.09);       /* -25% vs previous 0.12 — dividers organize, don't compete */
-  --line-on-ink: rgba(241,239,232,0.10); /* -23% vs previous 0.13 */
+  --line: rgba(26,27,25,0.09);                                                                     
+  --line-on-ink: rgba(241,239,232,0.10);                            
   --rag-red:#B5493B;
   --rag-amber:#C68A3D;
   --rag-green:#5C7A5F;
@@ -58,42 +54,37 @@
 
   --maxw: 1220px;
 
-  /* ---- consolidated "muted" text colors ----
-     Previously six near-duplicate one-off grays (#7D7B71, #8D8B80, #96948A,
-     #B0AEA3, #BEBCB1, #C6C4B9 …) were scattered through the sheet for
-     secondary/metadata text on the dark (ink) background. Reduced to two
-     deliberate steps so metadata reads as one consistent level, not six
-     slightly-different ones: */
-  --muted-on-ink: #B4B2A7;   /* metadata / labels / sources on ink — was #7D7B71 / #8D8B80 / #96948A / #B0AEA3 */
-  --body-on-ink: #CCCABF;    /* body copy / descriptions on ink — was #BEBCB1 / #C6C4B9 */
+                                                                            
 
-  /* ============================================================
-     TYPE SCALE — fluid clamp() tokens, mobile → large desktop.
-     Ranges follow the refinement spec; see REPORT for the exact
-     px value each token resolves to at common breakpoints.
-     ============================================================ */
-  --fs-hero:      clamp(2.75rem, 2rem + 3.5vw, 5rem);        /* 44px → 80px : homepage hero display headline */
-  --fs-h1:        clamp(2.25rem, 1.7rem + 2.6vw, 4rem);      /* 36px → 64px : primary page H1 */
-  --fs-h2:        clamp(2rem, 1.45rem + 2.5vw, 3.625rem);    /* 32px → 58px : major section H2 (shared by all section-head + About/Contact headlines) */
-  --fs-card-title:clamp(1.4375rem, 1.2rem + 1vw, 1.875rem);  /* 23px → 30px : card / service / content-block titles */
-  --fs-phase-name:clamp(1.0625rem, 0.9rem + 0.65vw, 1.375rem); /* 17px → 22px : SHIELD phase names */
-  --fs-phase-letter: clamp(2.125rem, 1.4rem + 3vw, 3.5rem);  /* 34px → 56px : SHIELD decorative initials */
-  --fs-stat-num:  clamp(2.75rem, 1.6rem + 5.2vw, 4.75rem);   /* 44px → 76px : statistics */
-  --fs-body:      clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem); /* 17px → 19px : primary body copy */
-  --fs-support:   clamp(0.9375rem, 0.9125rem + 0.25vw, 1.0625rem); /* 15px → 17px : supporting copy ("Ideal for", card descriptions) */
-  --fs-micro:     clamp(0.6875rem, 0.66rem + 0.15vw, 0.8125rem); /* 11px → 13px : micro-labels / metadata / eyebrows */
-  --fs-nav:       15px;                                    /* nav links */
-  --fs-btn:       13.5px;                                    /* CTA buttons */
+                                                                        
+                                
+  --muted-on-ink: #B4B2A7;                                                                                       
+  --body-on-ink: #CCCABF;                                                                 
+
+                                                               
+
+                                                                    
+  --fs-hero:      clamp(2.75rem, 2rem + 3.5vw, 5rem);                                                          
+  --fs-h1:        clamp(2.25rem, 1.7rem + 2.6vw, 4rem);                                         
+  --fs-h2:        clamp(2rem, 1.45rem + 2.5vw, 3.625rem);                                                                                               
+  --fs-card-title:clamp(1.4375rem, 1.2rem + 1vw, 1.875rem);                                                           
+  --fs-phase-name:clamp(1.0625rem, 0.9rem + 0.65vw, 1.375rem);                                       
+  --fs-phase-letter: clamp(2.125rem, 1.4rem + 3vw, 3.5rem);                                                
+  --fs-stat-num:  clamp(2.75rem, 1.6rem + 5.2vw, 4.75rem);                                 
+  --fs-body:      clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem);                                      
+  --fs-support:   clamp(0.9375rem, 0.9125rem + 0.25vw, 1.0625rem);                                                                     
+  --fs-micro:     clamp(0.6875rem, 0.66rem + 0.15vw, 0.8125rem);                                                       
+  --fs-nav:       15px;                                                   
+  --fs-btn:       13.5px;                                                     
   --lh-body: 1.6;
   --lh-support: 1.5;
 
-  /* ---- spacing tokens ---- */
-  --space-section: clamp(96px, 60px + 7vw, 152px);   /* major section vertical padding */
+  --space-section: clamp(96px, 60px + 7vw, 152px);                                       
   --space-section-tight: clamp(76px, 52px + 5vw, 116px);
-  --space-head-gap: clamp(22px, 16px + 1.2vw, 32px); /* heading -> supporting paragraph */
-  --space-body-gap: clamp(28px, 20px + 2vw, 44px);   /* supporting paragraph -> CTA/content */
-  --space-para: clamp(20px, 16px + 0.8vw, 26px);     /* paragraph -> paragraph */
-  --card-pad: clamp(32px, 24px + 1.6vw, 44px);       /* card internal padding */
+  --space-head-gap: clamp(22px, 16px + 1.2vw, 32px);                                      
+  --space-body-gap: clamp(28px, 20px + 2vw, 44px);                                            
+  --space-para: clamp(20px, 16px + 0.8vw, 26px);                                 
+  --card-pad: clamp(32px, 24px + 1.6vw, 44px);                                  
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -121,21 +112,20 @@ img,svg{ display:block; max-width:100%; }
 .eyebrow.on-ink{ color:var(--copper-light); }
 .eyebrow.on-ink::before{ background:var(--copper-light); }
 
-.reveal{ opacity:0; transform:translateY(16px); transition:opacity 800ms cubic-bezier(.16,.8,.24,1), transform 800ms cubic-bezier(.16,.8,.24,1); }
-.reveal.is-visible{ opacity:1; transform:translateY(0); }
+.reveal{ transition:opacity 800ms cubic-bezier(.16,.8,.24,1), transform 800ms cubic-bezier(.16,.8,.24,1); }
+html.js .reveal{ opacity:0; transform:translateY(16px); }
+html.js .reveal.is-visible{ opacity:1; transform:translateY(0); }
 .reveal-stagger > * { transition-delay:calc(var(--i,0) * 90ms); }
 
-/* ============================================================
-   LOGO MARK  (inline, reusable)
-   ============================================================ */
+                                
+                                                                  
 .mark{ display:inline-flex; align-items:center; gap:12px; }
 .mark svg{ display:block; flex-shrink:0; }
 .mark-word{ font-family:var(--display); font-weight:600; letter-spacing:0.01em; }
 .mark-word .b{ font-weight:400; }
 
-/* ============================================================
-   NAV
-   ============================================================ */
+      
+                                                                  
 #site-nav{
   position:fixed; top:0; left:0; right:0; z-index:300;
   background:rgba(241,239,232,0); border-bottom:1px solid transparent;
@@ -166,11 +156,9 @@ img,svg{ display:block; max-width:100%; }
   color:var(--copper-light); opacity:1; max-height:18px; transform:scale(1); transform-origin:left center;
   transition:opacity 320ms ease, max-height 320ms ease, transform 320ms ease, color 320ms ease, font-size 320ms ease;
 }
-/* Scrolled state stays just under the 11px micro-label floor deliberately:
-   at this point it's sharing a 76px-tall bar with the shrunk logo mark and
-   the nav links, and treating it as a fully independent label there would
-   crowd the bar; it is nav-brand-caption's own reduced state, not a piece
-   of content someone needs to read at that moment. */
+
+                                                                          
+
 #site-nav.scrolled .nav-brand-caption{ font-size:9.5px; color:var(--slate); }
 
 .nav-links{ display:none; align-items:center; gap:12px; transition:gap 320ms ease; flex-shrink:1; min-width:0; }
@@ -190,11 +178,9 @@ img,svg{ display:block; max-width:100%; }
   transition:background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
   line-height:1.3; text-align:center;
 }
-/* No white-space:nowrap here (deliberately, unlike the nav links above):
-   the longest CTA labels ("Download the Free SHIELD Framework Guide") are
-   real, unshortenable content — at the larger 13.5px CTA size this refinement
-   introduced, forcing them onto one line would overflow a narrow mobile
-   viewport instead of wrapping to a second line inside the button. */
+
+                                                                              
+
 @media(max-width:479px){ .btn{ padding:15px 22px; } }
 .btn-primary{ background:var(--copper); color:var(--ink); }
 .btn-primary:hover{ background:var(--copper-light); transform:translateY(-2px); box-shadow:0 10px 24px rgba(180,133,74,0.28); }
@@ -221,13 +207,10 @@ img,svg{ display:block; max-width:100%; }
   .nav-cta{ display:inline-flex; }
   .nav-burger{ display:none; }
 }
-/* Breakpoint history: 920px to 1180px at the 13px refinement, then 1180px to
-   1400px on 2026-11-12 when the nav type went to 15px — at laptop widths the
-   six links plus the full-text CTA collided again (CONTACT under the button).
-   Below 1400px the burger menu (unchanged, same six links + same CTA) takes
-   over instead of a cramped, overlapping horizontal bar. */
 
-/* mobile drawer */
+                                                                              
+
+                   
 .mobile-drawer{
   position:fixed; inset:0 0 auto 0; top:84px; z-index:250; background:var(--ink);
   padding:8px 32px 32px; display:flex; flex-direction:column; gap:2px;
@@ -247,9 +230,8 @@ img,svg{ display:block; max-width:100%; }
   #hero{ padding-top:126px; }
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
+       
+                                                                  
 #hero{
   background:var(--ink); color:var(--paper); position:relative; overflow:hidden;
   padding:186px 0 0;
@@ -259,7 +241,7 @@ img,svg{ display:block; max-width:100%; }
   background-image:
     linear-gradient(var(--line-on-ink) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-on-ink) 1px, transparent 1px);
-  background-size:68px 68px; opacity:0.72; /* was full-strength; grid now reads after the headline, not before it */
+  background-size:68px 68px; opacity:0.72;                                                                          
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 30% 30%, black 40%, transparent 85%);
           mask-image: radial-gradient(ellipse 90% 70% at 30% 30%, black 40%, transparent 85%);
 }
@@ -298,7 +280,6 @@ img,svg{ display:block; max-width:100%; }
 .hero-credential-role{ color:var(--paper-white); font-weight:500; }
 .hero-credential-creds{ color:var(--muted-on-ink); }
 
-/* ---- signature element: animated case file / risk register ---- */
 .case-file{ position:relative; }
 .case-file-tab{
   position:absolute; top:-16px; left:28px; z-index:3;
@@ -351,18 +332,16 @@ img,svg{ display:block; max-width:100%; }
   background:var(--ink-softer); border:1px solid var(--line-on-ink); z-index:1;
 }
 
-/* ============================================================
-   TICKER / STANDARDS STRIP
-   ============================================================ */
+                           
+                                                                  
 #standards{ background:var(--ink-soft); padding:28px 0; position:relative; z-index:2; }
 .standards-inner{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0 40px; row-gap:14px; }
 .standards-label{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.17em; text-transform:uppercase; color:var(--muted-on-ink); }
 .standards-item{ font-family:var(--mono); font-size:13px; letter-spacing:0.07em; color:#D6D4C8; }
 .standards-sep{ width:1px; height:14px; background:var(--line-on-ink); }
 
-/* ============================================================
-   GENERIC SECTION
-   ============================================================ */
+                  
+                                                                  
 .section{ padding:var(--space-section) 0; }
 .section.tight{ padding:var(--space-section-tight) 0; }
 .section-head{ max-width:660px; margin-bottom:64px; }
@@ -371,9 +350,8 @@ img,svg{ display:block; max-width:100%; }
 .bg-white{ background:var(--paper-white); }
 .section-foot-line{ margin-top:52px; padding-top:28px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
 
-/* ============================================================
-   ABOUT / FOUNDER'S EDGE
-   ============================================================ */
+                         
+                                                                  
 .about-grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:80px; align-items:start; }
 .about-body p{ font-size:var(--fs-body); line-height:1.6; color:var(--slate); margin-bottom:var(--space-para); max-width:62ch; }
 .about-body p.lede{ font-size:clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem); line-height:1.4; color:var(--ink); font-family:var(--display); font-weight:500; margin-bottom:26px; }
@@ -387,9 +365,8 @@ img,svg{ display:block; max-width:100%; }
 .cred-title{ font-family:var(--display); font-size:clamp(1.5rem, 1.4rem + 0.4vw, 1.75rem); font-weight:600; margin-bottom:10px; line-height:1.2; }
 .cred-desc{ font-size:var(--fs-support); line-height:var(--lh-support); color:var(--slate); }
 
-/* ============================================================
-   STAT BAND  (sourced, real figures — no fabricated traction)
-   ============================================================ */
+                                                              
+                                                                  
 #stats{ background:var(--ink); color:var(--paper-white); padding:104px 0; position:relative; overflow:hidden; }
 #stats::before{
   content:''; position:absolute; inset:0;
@@ -401,14 +378,12 @@ img,svg{ display:block; max-width:100%; }
 .stat-label{ font-family:var(--body); font-size:var(--fs-support); color:var(--body-on-ink); margin-top:20px; line-height:1.5; max-width:32ch; }
 .stat-source{ font-family:var(--mono); font-size:var(--fs-micro); color:var(--muted-on-ink); margin-top:16px; letter-spacing:0.04em; }
 
-/* ============================================================
-   DIFFERENTIATION
-   ============================================================ */
+                  
+                                                                  
 .diff-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:8px; }
 
-/* ============================================================
-   CLIENT JOURNEY
-   ============================================================ */
+                 
+                                                                  
 .journey-strip{ display:flex; align-items:stretch; gap:0; margin-top:8px; }
 .journey-step{ flex:1; display:flex; flex-direction:column; gap:12px; padding:4px 10px; }
 .journey-num{ font-family:var(--mono); font-size:13px; color:var(--copper-deep); letter-spacing:0.05em; }
@@ -425,9 +400,8 @@ img,svg{ display:block; max-width:100%; }
 .diff-title{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; margin-bottom:14px; line-height:1.24; }
 .diff-body{ font-size:var(--fs-support); line-height:1.6; color:var(--slate); }
 
-/* ============================================================
-   SHIELD FRAMEWORK
-   ============================================================ */
+                   
+                                                                  
 #shield{ background:var(--ink); color:var(--paper); position:relative; overflow:hidden; }
 #shield::after{
   content:''; position:absolute; right:-10%; bottom:-20%; width:520px; height:520px; border-radius:50%;
@@ -453,9 +427,8 @@ img,svg{ display:block; max-width:100%; }
 .shield-cta{ position:relative; z-index:2; margin-top:52px; display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
 .shield-cta-note{ font-family:var(--mono); font-size:12px; color:var(--muted-on-ink); }
 
-/* ============================================================
-   SERVICES
-   ============================================================ */
+           
+                                                                  
 .services-anchor{ margin-top:14px; font-size:16px; color:var(--slate); }
 .services-anchor a{ color:var(--copper-deep); text-decoration:underline; text-underline-offset:3px; }
 .services-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
@@ -475,11 +448,12 @@ img,svg{ display:block; max-width:100%; }
 .svc-card.flagship .svc-title{ color:var(--paper-white); }
 .svc-card.flagship .svc-desc{ color:var(--body-on-ink); }
 .svc-card.flagship .svc-ideal{ color:var(--muted-on-ink); border-color:var(--line-on-ink); }
+.svc-card.flagship .fee-basis{ color:var(--copper-light); }
+.svc-card.flagship .svc-fit{ color:var(--copper-light); }
 .svc-card.flagship:hover{ border-color:var(--copper); }
 
-/* ============================================================
-   SECTORS
-   ============================================================ */
+          
+                                                                  
 .sector-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
 .sector-cell{ background:var(--paper-white); padding:38px 32px; transition:background 200ms ease; display:flex; flex-direction:column; gap:12px; }
 .sector-cell:hover{ background:#fff; }
@@ -487,9 +461,8 @@ img,svg{ display:block; max-width:100%; }
 .sector-name{ font-family:var(--display); font-size:clamp(1.375rem, 1.3rem + 0.33vw, 1.594rem); font-weight:600; }
 .sector-desc{ font-size:var(--fs-support); line-height:1.55; color:var(--slate); }
 
-/* ============================================================
-   INSIGHTS
-   ============================================================ */
+           
+                                                                  
 .insight-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
 .insight-card{ display:flex; flex-direction:column; gap:18px; }
 .insight-tag{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-deep); }
@@ -497,12 +470,11 @@ img,svg{ display:block; max-width:100%; }
 .insight-desc{ font-size:var(--fs-support); line-height:1.6; color:var(--slate); }
 .insight-link{ font-family:var(--mono); font-size:14px; letter-spacing:0.03em; color:var(--ink); border-bottom:1px solid var(--copper); padding-bottom:3px; align-self:flex-start; margin-top:auto; }
 .insight-link.soon{ color:var(--slate); border-bottom:1px dashed var(--line); cursor:default; }
-.start-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+.start-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
 @media (max-width: 1080px){ .start-grid{ grid-template-columns:repeat(2,1fr); } }
 
-/* ============================================================
-   CONTACT
-   ============================================================ */
+          
+                                                                  
 #contact{ background:var(--ink); color:var(--paper); position:relative; overflow:hidden; }
 #contact::before{
   content:''; position:absolute; inset:0;
@@ -526,9 +498,8 @@ img,svg{ display:block; max-width:100%; }
   width:100%; border:1px solid rgba(26,27,25,0.18); background:var(--paper-white); padding:15px 16px; font-family:var(--body); font-size:16px; color:var(--ink);
   transition:border-color 160ms ease;
 }
-/* font-size is 16px (not the ~14.5px used elsewhere on the page) specifically
-   because iOS Safari auto-zooms the viewport when focusing a text input
-   sized below 16px — a real mobile-usability defect, not a stylistic choice. */
+
+                                                                                
 .form-row input:focus, .form-row select:focus, .form-row textarea:focus{ outline:none; border-color:var(--copper); box-shadow:0 0 0 3px rgba(180,133,74,0.18); }
 .form-row input[aria-invalid="true"], .form-row select[aria-invalid="true"], .form-row textarea[aria-invalid="true"]{ border-color:var(--rag-red); }
 .form-row textarea{ resize:vertical; min-height:110px; }
@@ -551,11 +522,10 @@ img,svg{ display:block; max-width:100%; }
 .form-error a{ text-decoration:underline; }
 .form-submit[disabled]{ opacity:0.6; cursor:not-allowed; transform:none !important; box-shadow:none !important; }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+         
+                                                                  
 footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
-.footer-grid{ display:grid; grid-template-columns:1.4fr 0.8fr 0.9fr 1fr; gap:52px; padding-bottom:60px; border-bottom:1px solid var(--line-on-ink); }
+.footer-grid{ display:grid; grid-template-columns:1.25fr 0.6fr 1fr 1fr 0.95fr; gap:44px; padding-bottom:60px; border-bottom:1px solid var(--line-on-ink); }
 .footer-brand .mark{ margin-bottom:22px; }
 .footer-brand .mark-word{ color:var(--paper-white); font-size:20px; }
 .footer-desc{ font-size:16px; line-height:1.7; color:#A19E92; max-width:290px; }
@@ -569,9 +539,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   font-family:var(--mono); font-size:13px; color:var(--muted-on-ink); letter-spacing:0.02em;
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+             
+                                                                  
 @media(max-width:980px){
   .hero-grid{ grid-template-columns:1fr; }
   .case-file{ max-width:480px; }
@@ -587,21 +556,70 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   .services-grid, .diff-grid, .sector-grid, .insight-grid, .start-grid{ grid-template-columns:1fr; }
   .shield-row{ grid-template-columns:52px 1fr; gap:14px 18px; }
   .shield-row .shield-name{ grid-column:1 / -1; padding-top:0; margin-top:-4px; }
-  /* Pre-existing gap: only shield-name got the full-width override below,
-     so shield-desc was left confined to the 1fr column next to the 52px
-     letter — at this width that's barely 200px, wrapping every description
-     to one or two words per line. Giving it the same full-width treatment
-     fixes that regardless of screen size. */
+
+                                                                           
+
   .shield-row .shield-desc{ grid-column:1 / -1; padding-top:2px; }
   .form-two{ grid-template-columns:1fr; }
   .footer-grid{ grid-template-columns:1fr; }
-  /* hero-h1 relies on --fs-hero's own clamp() floor (44px, within the
-     40–48px mobile target) — no separate override needed here, and the
-     previous clamp(32px,9vw,44px) is removed because its 32px floor sat
-     below the mobile hero minimum. */
+
+                                                                        
+                                      
   .contact-form{ padding:32px 26px; }
 }
 
+                                                                
+.nav-item{ position:relative; display:inline-flex; }
+.nav-menu-btn{ font:inherit; font-family:var(--mono); font-size:var(--fs-nav); text-transform:uppercase; letter-spacing:0.02em; background:none; border:none; cursor:pointer; padding:6px 0; color:inherit; display:inline-flex; align-items:center; gap:6px; border-bottom:1px solid transparent; }
+.nav-menu-btn::after{ content:'\25BE'; font-size:10px; color:var(--copper-deep); }
+#site-nav:not(.scrolled) .nav-menu-btn{ color:var(--paper); }
+#site-nav.scrolled .nav-menu-btn{ color:var(--slate); }
+.nav-item:hover .nav-menu-btn, .nav-item:focus-within .nav-menu-btn{ border-color:var(--copper); }
+.nav-dropdown{ position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(4px); min-width:330px; background:var(--paper-white); border:1px solid var(--line); box-shadow:0 24px 50px rgba(26,27,25,0.16); padding:10px; opacity:0; visibility:hidden; transition:opacity 160ms ease, transform 160ms ease, visibility 160ms; z-index:400; text-align:left; }
+.nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.nav-dropdown a{ display:block !important; font-family:var(--body) !important; font-size:15px !important; text-transform:none !important; letter-spacing:0 !important; color:var(--ink-soft) !important; padding:11px 14px !important; border-bottom:none !important; white-space:normal !important; line-height:1.4; opacity:1 !important; }
+.nav-dropdown a:hover{ background:var(--paper); color:var(--ink) !important; }
+.nav-dropdown a .dd-sub{ display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.09em; text-transform:uppercase; color:var(--copper-deep); margin-top:3px; }
+.nav-dropdown .dd-head{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--copper-deep); padding:8px 14px 4px; }
+.mobile-drawer .dd-head{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--copper-deep); padding:14px 0 4px; }
+.fee-basis{ font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-deep); margin:0 0 12px; }
+.svc-fit{ font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-deep); margin-top:14px; }
+.scenario-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+@media(max-width:820px){ .scenario-grid{ grid-template-columns:1fr; } }
+.scenario-card{ background:var(--paper-white); border:1px solid var(--line); padding:var(--card-pad); transition:border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease; display:block; }
+.scenario-card:hover{ border-color:rgba(180,133,74,0.55); transform:translateY(-3px); box-shadow:var(--shadow-card); }
+.scenario-q{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; line-height:1.28; color:var(--ink); margin-bottom:12px; }
+.scenario-link{ font-family:var(--mono); font-size:13px; letter-spacing:0.04em; text-transform:uppercase; color:var(--copper-deep); }
+.bounds-card{ background:var(--ink); color:var(--paper); padding:var(--card-pad); margin-top:56px; position:relative; overflow:hidden; }
+.bounds-card h3{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; color:var(--paper-white); margin-bottom:20px; }
+.bounds-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 34px; }
+@media(max-width:820px){ .bounds-grid{ grid-template-columns:1fr; } }
+.bounds-item{ font-size:var(--fs-support); line-height:1.6; color:var(--body-on-ink); padding-left:22px; position:relative; }
+.bounds-item::before{ content:'\2014'; position:absolute; left:0; color:var(--copper-light); }
+.bounds-item strong{ color:var(--paper-white); font-weight:600; }
+.stage-table{ width:100%; border-collapse:collapse; margin-top:56px; background:var(--paper-white); border:1px solid var(--line); }
+.stage-table th{ font-family:var(--mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:var(--copper-deep); text-align:left; padding:16px 22px; border-bottom:2px solid var(--copper); }
+.stage-table td{ padding:18px 22px; border-bottom:1px solid var(--line); font-size:var(--fs-support); line-height:1.55; color:var(--ink-soft); vertical-align:top; }
+.stage-table tr:last-child td{ border-bottom:none; }
+.stage-table td.st-name{ font-family:var(--display); font-weight:600; font-size:1.125rem; color:var(--ink); white-space:nowrap; }
+@media(max-width:600px){ .stage-table td.st-name{ white-space:normal; } }
+.founder-block{ display:grid; grid-template-columns:300px 1fr; gap:48px; align-items:center; background:var(--paper-white); border:1px solid var(--line); box-shadow:0 24px 50px rgba(26,27,25,0.10); padding:var(--card-pad); }
+@media(max-width:820px){ .founder-block{ grid-template-columns:1fr; } }
+.founder-block img{ width:100%; height:auto; display:block; }
+.founder-name{ font-family:var(--display); font-size:var(--fs-card-title); font-weight:600; margin-bottom:8px; }
+.founder-title{ font-size:var(--fs-body); color:var(--ink-soft); margin-bottom:6px; }
+.founder-creds{ font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em; color:var(--copper-deep); margin-bottom:18px; }
+.founder-research{ font-size:var(--fs-body); line-height:1.6; color:var(--slate); max-width:56ch; }
+
+#site-nav .nav-item.open .nav-dropdown{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+
+#site-nav .nav-menu-btn, #site-nav .nav-links > a{ white-space:nowrap; }
+#site-nav .nav-links{ gap:20px; }
+/* Header fit fix (2026-11-18): the full nav row (7 items + CTA) overflowed its container at desktop widths and the links ran under the CTA button. Widen the header row, tighten link spacing and type, trim CTA padding. */
+#site-nav .nav-inner{ max-width:1400px; }
+#site-nav .nav-links{ gap:14px; }
+#site-nav .nav-links a, #site-nav .nav-menu-btn{ font-size:14px; }
+#site-nav .nav-cta.btn{ padding-left:20px; padding-right:20px; }
 </style>
 <script type="application/ld+json">
 {
@@ -615,14 +633,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   "description": "Helping small businesses identify cyber risks, strengthen security, and protect what they've built.",
   "founder": {
     "@type": "Person",
-    "@id": "https://rodger-lutalo.com/#rodger-lutalo",
     "name": "Rodger Lutalo",
-    "url": "https://rodger-lutalo.com/",
-    "jobTitle": "Founder & Principal Cybersecurity Consultant",
-    "sameAs": [
-      "https://www.linkedin.com/in/rodger-lutalo/",
-      "https://medium.com/@rodger.lutalo"
-    ]
+    "jobTitle": "Founder & Principal Cybersecurity Consultant"
   },
   "address": {
     "@type": "PostalAddress",
@@ -643,20 +655,20 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   ]
 }
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC555D8ERL"></script>
+                             
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SRY0L92FTX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-VC555D8ERL');
+  gtag('config', 'G-SRY0L92FTX');
 </script>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<!-- ============================================================
-     NAV
-     ============================================================ -->
+        
+                                                                     
 <nav id="site-nav">
   <div class="nav-inner">
     <a href="#top" class="nav-brand mark" aria-label="Clyvara home">
@@ -672,9 +684,40 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#shield">SHIELD Framework</a>
-      <a href="#services">Services</a>
+      <div class="nav-item">
+        <button class="nav-menu-btn" aria-haspopup="true">Services</button>
+        <div class="nav-dropdown" role="menu">
+          <div class="dd-head">Services</div>
+          <a href="#services">Risk &amp; Readiness Assessment</a>
+          <a href="#services">SHIELD Governance Accelerator</a>
+          <a href="#services">SHIELD Incident Readiness</a>
+          <a href="#services">Fractional CISO / SHIELD Defend Retainer</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-menu-btn" aria-haspopup="true">Fixed-Fee Services</button>
+        <div class="nav-dropdown" role="menu">
+          <div class="dd-head">Fixed-Fee Services</div>
+          <a href="/questionnaire-response">Questionnaire Response<span class="dd-sub">Fixed $750</span></a>
+          <a href="/wisp-for-tax-firms">WISP for Tax Firms<span class="dd-sub">Fixed $1,250</span></a>
+          <a href="/tabletop-exercise">Ransomware Tabletop Exercise<span class="dd-sub">Fixed $1,250</span></a>
+          <a href="/texas-sb2610-safe-harbor">Texas SB 2610 Safe-Harbor</a>
+          <a href="/ai-readiness-review">AI &amp; Shadow-AI Readiness Review<span class="dd-sub">Fixed $1,500</span></a>
+        </div>
+      </div>
       <a href="#sectors">Sectors</a>
-      <a href="#insights">Insights</a>
+      <div class="nav-item">
+        <button class="nav-menu-btn" aria-haspopup="true">Insights</button>
+        <div class="nav-dropdown" role="menu">
+          <div class="dd-head">Insights</div>
+          <a href="/completed-not-ready">Completed Is Not the Same as Ready<span class="dd-sub">Essay · Nov 21, 2026</span></a>
+          <a href="/cyber-insurance-evidence">Cyber Insurance, Evidenced<span class="dd-sub">Guide</span></a>
+          <a href="/security-questionnaire-guide">Answering a Customer's Security Questionnaire<span class="dd-sub">Guide</span></a>
+          <a href="/shield-framework-guide">Inside the SHIELD Framework<span class="dd-sub">Guide</span></a>
+          <a href="/readiness-self-check">The Readiness Self-Check<span class="dd-sub">Tool</span></a>
+          <a href="/insights">All Insights</a>
+        </div>
+      </div>
       <a href="#contact">Contact</a>
     </div>
     <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
@@ -687,9 +730,25 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   <div class="mobile-drawer">
     <a href="#about">About</a>
     <a href="#shield">SHIELD Framework</a>
-    <a href="#services">Services</a>
+    <div class="dd-head">Services</div>
+    <a href="#services">Risk &amp; Readiness Assessment</a>
+    <a href="#services">SHIELD Governance Accelerator</a>
+    <a href="#services">SHIELD Incident Readiness</a>
+    <a href="#services">Fractional CISO / SHIELD Defend Retainer</a>
+    <div class="dd-head">Fixed-Fee Services</div>
+    <a href="/questionnaire-response">Questionnaire Response</a>
+    <a href="/wisp-for-tax-firms">WISP for Tax Firms</a>
+    <a href="/tabletop-exercise">Ransomware Tabletop Exercise</a>
+    <a href="/texas-sb2610-safe-harbor">Texas SB 2610 Safe-Harbor</a>
+    <a href="/ai-readiness-review">AI &amp; Shadow-AI Readiness Review</a>
     <a href="#sectors">Sectors</a>
-    <a href="#insights">Insights</a>
+    <div class="dd-head">Insights</div>
+    <a href="/completed-not-ready">Completed Is Not the Same as Ready</a>
+    <a href="/cyber-insurance-evidence">Cyber Insurance, Evidenced</a>
+    <a href="/security-questionnaire-guide">Answering a Customer's Security Questionnaire</a>
+    <a href="/shield-framework-guide">Inside the SHIELD Framework</a>
+    <a href="/readiness-self-check">The Readiness Self-Check</a>
+    <a href="/insights">All Insights</a>
     <a href="#contact">Contact</a>
     <a href="https://cal.com/clyvara/30min" class="btn btn-primary">Book a Risk Conversation</a>
   </div>
@@ -697,9 +756,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 
 <div id="top"></div>
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
+         
+                                                                     
 <section id="hero">
   <div class="hero-glow"></div>
   <div class="container">
@@ -707,15 +765,14 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div>
         <div class="hero-index"><span class="dot"></span>CLYVARA / FILE — 2026 / DALLAS–FORT WORTH</div>
         <div class="eyebrow on-ink">Cyber Risk &amp; Compliance Advisory</div>
-        <p class="hero-stakes">On average, cyber incidents cost a firm with fewer than 250 staff about $52,000 a year.</p>
         <h1 class="hero-h1">Protect what you have built.</h1>
         <p class="hero-sub">Clyvara brings research-driven rigor, disciplined project delivery, and fractional CISO access to small and mid-sized businesses across Dallas–Fort Worth — the depth of a security team, without the headcount.</p>
         <div class="hero-ctas">
           <a href="https://cal.com/clyvara/30min" class="btn btn-primary">Book a Free SHIELD Risk Conversation</a>
           <a href="#shield" class="btn btn-ghost-onink">View the SHIELD Framework</a>
         </div>
-        <div class="hero-credential"><a href="https://www.linkedin.com/in/rodger-lutalo/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline; text-underline-offset:3px;"><b>Rodger Lutalo</b></a> — <span class="hero-credential-role">Founder &amp; Principal Cybersecurity Consultant</span> <span class="hero-credential-creds">(DBA, MS Computer Science, PMP)</span>. Doctoral research into cybersecurity awareness and training failures in small and mid-sized enterprises.</div>
-        <div class="hero-latest"><span class="dot"></span>Latest insight &middot; Nov 13, 2026 &mdash; <a href="https://clyvara.io/tabletop-exercise">Ransomware Tabletop Exercise for Healthcare Practices</a></div>
+        <div class="hero-credential"><a href="https://www.linkedin.com/in/rodger-lutalo/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline; text-underline-offset:3px;"><b>Rodger Lutalo</b></a> — <span class="hero-credential-role">Founder &amp; Principal Cybersecurity Consultant</span> <span class="hero-credential-creds">(DBA, MS in Computer Science & Information Systems, PMP)</span>. Doctoral research into cybersecurity awareness and training in small and mid-sized enterprises.</div>
+        <div class="hero-latest"><span class="dot"></span>Latest insight &middot; Nov 21, 2026 &mdash; <a href="https://clyvara.io/completed-not-ready">Completed Is Not the Same as Ready</a></div>
       </div>
 
       <div class="case-file reveal" style="--i:1">
@@ -739,9 +796,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     STANDARDS STRIP
-     ============================================================ -->
+                    
+                                                                     
 <div id="standards">
   <div class="container standards-inner">
     <span class="standards-label">Frameworks we work within</span>
@@ -760,21 +816,20 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </div>
 
-<!-- ============================================================
-     ABOUT / FOUNDER'S EDGE
-     ============================================================ -->
+                           
+                                                                     
 <section id="about" class="section bg-white">
   <div class="container">
     <div class="about-grid">
       <div class="reveal">
         <div class="eyebrow">About Clyvara</div>
-        <h2 style="font-family:var(--display); font-size:var(--fs-h2); line-height:1.12; margin-top:var(--space-head-gap); letter-spacing:-0.016em;">A single-specialty firm, built on research most consultancies never do.</h2>
+        <h2 style="font-family:var(--display); font-size:var(--fs-h2); line-height:1.12; margin-top:var(--space-head-gap); letter-spacing:-0.016em;">A single-specialty firm, built on doctoral research into how security awareness and training affect SME performance.</h2>
         <div class="about-body" style="margin-top:var(--space-body-gap);">
-          <p class="lede">Clyvara exists because SMB cybersecurity failures are rarely a technology problem — they're a training and governance problem.</p>
-          <p>That's the conclusion of the doctoral research this firm is built on. Rather than selling another tool or another audit, Clyvara delivers the discipline of an enterprise security program — scoped, priced, and paced for a business that has 20 to 200 employees, not 20,000.</p>
+          <p class="lede">Clyvara exists because of what doctoral research into security awareness and training in small businesses found: training programs fall short on customization, implementation, and evaluation — and leave a false sense of security behind.</p>
+          <p>Rather than selling another tool or another audit, Clyvara delivers the discipline of an enterprise security program — scoped, priced, and paced for a business that has 20 to 200 employees, not 20,000.</p>
           <p>Clyvara stays deliberately narrow. No general technology advisory. No digital transformation consulting. Every dollar of effort goes deeper into cybersecurity — new frameworks, new sectors, new delivery models — never wider into adjacent, more commoditized markets.</p>
         </div>
-        <div class="about-founder">Founder-led · Manager-managed LLC · Dallas–Fort Worth, Texas</div>
+        <div class="about-founder">Founder-led · Dallas–Fort Worth, Texas</div>
       </div>
 
       <div class="reveal" style="--i:1">
@@ -782,14 +837,14 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
           <div class="cred-item">
             <div class="cred-mark">DBA</div>
             <div>
-              <div class="cred-title">Doctorate in Business Administration</div>
-              <div class="cred-desc">Original doctoral research project examining cybersecurity awareness and training failures in small and mid-sized enterprises — the research foundation behind Clyvara's entire methodology.</div>
+              <div class="cred-title">Doctorate in Business Administration in Information Systems</div>
+              <div class="cred-desc">Original doctoral research examining how cybersecurity awareness and training affect performance in small and mid-sized enterprises — the research foundation behind Clyvara's methodology.</div>
             </div>
           </div>
           <div class="cred-item">
             <div class="cred-mark">MS</div>
             <div>
-              <div class="cred-title">MS, Computer Science</div>
+              <div class="cred-title">MS in Computer Science & Information Systems</div>
               <div class="cred-desc">Graduate study spanning cybersecurity, networking, software engineering, cloud computing, information systems, and business analytics.</div>
             </div>
           </div>
@@ -806,16 +861,15 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     STATS
-     ============================================================ -->
+          
+                                                                     
 <section id="stats">
   <div class="container">
     <div class="stats-grid">
       <div class="reveal" style="--i:0">
-        <div class="stat-num">4×</div>
-        <div class="stat-label">as many breach victims are small businesses as large organizations.</div>
-        <div class="stat-source">Source: Verizon DBIR 2025</div>
+        <div class="stat-num">96%</div>
+        <div class="stat-label">of ransomware victims, where size was known, were small and mid-sized businesses.</div>
+        <div class="stat-source">Source: Verizon DBIR 2026</div>
       </div>
       <div class="reveal" style="--i:1">
         <div class="stat-num">62%</div>
@@ -824,16 +878,15 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       </div>
       <div class="reveal" style="--i:2">
         <div class="stat-num">$52K</div>
-        <div class="stat-label">is the average yearly cost of cyber incidents for a business with fewer than 250 staff.</div>
+        <div class="stat-label">is the average yearly cost of cyber incidents for a business with fewer than 250 staff, across the ten countries surveyed.</div>
         <div class="stat-source">Source: Hiscox Cyber Readiness Report 2026</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     DIFFERENTIATION
-     ============================================================ -->
+                    
+                                                                     
 <section class="section bg-white">
   <div class="container">
     <div class="section-head reveal">
@@ -845,7 +898,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div class="diff-card" style="--i:0">
         <div class="diff-tag">Research-Backed</div>
         <div class="diff-title">Doctoral research foundation</div>
-        <div class="diff-body">The methodology behind every engagement is grounded in original doctoral research into why SMB cybersecurity programs actually fail — not a repackaged vendor checklist.</div>
+        <div class="diff-body">The methodology behind every engagement is grounded in original doctoral research into how security awareness and training affect SME performance — not a repackaged vendor checklist.</div>
       </div>
       <div class="diff-card" style="--i:1">
         <div class="diff-tag">Focused</div>
@@ -861,15 +914,14 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     SHIELD FRAMEWORK
-     ============================================================ -->
+                     
+                                                                     
 <section id="shield" class="section">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow on-ink">Methodology</div>
       <h2>Clyvara's SHIELD Framework</h2>
-      <p>A six-phase programme that takes a business from unknown exposure to a managed, monitored security posture — each phase with a defined outcome and a deliverable you keep. SHIELD is Clyvara's client-facing framework: the structure every engagement follows, in plain view, so you always know what happens next and why.</p>
+      <p>A six-phase program that takes a business from unknown exposure to a managed, monitored security posture — each phase with a defined outcome and a deliverable you keep.</p>
     </div>
 
     <div class="shield-rows reveal">
@@ -881,7 +933,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div class="shield-row">
         <div class="shield-letter">H</div>
         <div class="shield-name">Harden</div>
-        <div class="shield-desc">Remediation of the highest-priority findings first — technical controls, access management, and configuration fixes sequenced by actual risk reduction.</div>
+        <div class="shield-desc">The highest-priority findings addressed first, sequenced by actual risk reduction. Your IT provider makes the technical changes; Clyvara directs the order and verifies the result.</div>
       </div>
       <div class="shield-row">
         <div class="shield-letter">I</div>
@@ -891,7 +943,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div class="shield-row">
         <div class="shield-letter">E</div>
         <div class="shield-name">Enforce</div>
-        <div class="shield-desc">Incident response planning — a documented plan, defined roles, and a practiced response, so the business knows exactly what to do when something happens, not just when it should have.</div>
+        <div class="shield-desc">Policies and controls put into force — applied, acknowledged by the team, and checked on a cadence, so the program on paper is the program in practice, with exceptions recorded and time-boxed rather than ignored.</div>
       </div>
       <div class="shield-row">
         <div class="shield-letter">L</div>
@@ -913,9 +965,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     CLIENT JOURNEY
-     ============================================================ -->
+                   
+                                                                     
 <section class="section tight bg-white">
   <div class="container">
     <div class="section-head reveal">
@@ -925,30 +976,37 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     <div class="journey-strip reveal">
       <div class="journey-step">
         <div class="journey-num">01</div>
-        <div class="journey-title">Book a Conversation</div>
-        <div class="journey-desc">A free, 30-minute SHIELD Risk Conversation — no obligation, no sales script.</div>
+        <div class="journey-title">Take the Self-Check</div>
+        <div class="journey-desc">Twelve evidence questions, about three minutes. You get a readiness stage, Exposed, Developing, or Governed, and your three thinnest areas, free.</div>
+        <a href="/readiness-self-check" class="insight-link">Take the self-check →</a>
       </div>
       <div class="journey-arrow">→</div>
       <div class="journey-step">
         <div class="journey-num">02</div>
+        <div class="journey-title">Book a Conversation</div>
+        <div class="journey-desc">A free, 30-minute SHIELD Risk Conversation. You leave with the three risks we would fix first, in writing, whether or not we work together.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-num">03</div>
         <div class="journey-title">SHIELD Survey</div>
         <div class="journey-desc">A full risk assessment, delivered as a prioritized, RAG-rated risk register.</div>
       </div>
       <div class="journey-arrow">→</div>
       <div class="journey-step">
-        <div class="journey-num">03</div>
+        <div class="journey-num">04</div>
         <div class="journey-title">Prioritized Roadmap</div>
         <div class="journey-desc">A clear, sequenced plan — what to fix first, and what it will cost.</div>
       </div>
       <div class="journey-arrow">→</div>
       <div class="journey-step">
-        <div class="journey-num">04</div>
+        <div class="journey-num">05</div>
         <div class="journey-title">Implementation</div>
         <div class="journey-desc">Hardening, governance, and training rolled out against the plan.</div>
       </div>
       <div class="journey-arrow">→</div>
       <div class="journey-step">
-        <div class="journey-num">05</div>
+        <div class="journey-num">06</div>
         <div class="journey-title">Ongoing Oversight</div>
         <div class="journey-desc">Standing fractional CISO support through the SHIELD Defend Retainer.</div>
       </div>
@@ -956,54 +1014,76 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     SERVICES
-     ============================================================ -->
+             
+                                                                     
 <section id="services" class="section bg-white">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Services</div>
       <h2>Engagements scoped to what your business actually needs.</h2>
-      <p>Every service below is delivered under Clyvara's SHIELD Framework — fixed scope, defined deliverables, no open-ended retainers unless you want one.</p>
-      <p class="services-anchor">Fixed fees throughout: defined services <a href="https://clyvara.io/questionnaire-response">start at $750</a>, and every price is agreed in full before work starts. No hourly meter, no blank check.</p>
+      <p>Every service below is delivered under Clyvara's SHIELD Framework — fixed scope, defined deliverables, and an optional monthly retainer if you want one.</p>
+      <p class="services-anchor">Fixed-fee projects, plus an optional monthly retainer: defined services <a href="https://clyvara.io/questionnaire-response">start at $750</a>, and every price is agreed in full before work starts. No hourly meter, no blank check.</p>
     </div>
     <div class="services-grid reveal reveal-stagger" style="--i:1">
       <div class="svc-card" style="--i:0">
         <div class="svc-code">01</div>
         <div class="svc-label">Assess</div>
-        <div class="svc-title">Risk &amp; Readiness Assessment</div>
+<div class="svc-title">Risk &amp; Readiness Assessment</div>
+        <div class="fee-basis">Fixed fee &middot; agreed before work starts</div>
         <div class="svc-desc">A full survey of your technical, procedural, and human-layer risk — delivered as a prioritized, RAG-rated risk register you can act on immediately.</div>
         <div class="svc-ideal">Ideal for: businesses that have never had a formal assessment, or need one for a client or insurer.</div>
+        <div class="svc-fit">Fit &middot; First assessment</div>
       </div>
       <div class="svc-card" style="--i:1">
         <div class="svc-code">02</div>
         <div class="svc-label">Advise</div>
         <div class="svc-title">SHIELD Governance Accelerator</div>
+        <div class="fee-basis">Fixed fee &middot; agreed before work starts</div>
         <div class="svc-desc">Policy frameworks, documentation, and governance structures aligned to NIST CSF, ISO/IEC 27001, SOC 2, HIPAA, CIS Controls v8, or NIST SP 800-171 — built for what your contracts actually require.</div>
         <div class="svc-ideal">Ideal for: businesses facing a compliance deadline, insurer questionnaire, or client due-diligence request.</div>
+        <div class="svc-fit">Fit &middot; Compliance deadline</div>
       </div>
       <div class="svc-card" style="--i:2">
         <div class="svc-code">03</div>
         <div class="svc-label">Advise</div>
         <div class="svc-title">SHIELD Incident Readiness</div>
+        <div class="fee-basis">Fixed fee &middot; agreed before work starts</div>
         <div class="svc-desc">Tabletop exercises, response playbooks, and readiness assessments — so the first time you test your plan isn't during a real incident.</div>
         <div class="svc-ideal">Ideal for: businesses with no documented response plan, or one that hasn't been tested in over a year.</div>
+        <div class="svc-fit">Fit &middot; Untested plan</div>
         <a href="/tabletop-exercise" class="insight-link">See the Ransomware Tabletop Exercise →</a>
       </div>
       <div class="svc-card flagship" style="--i:3">
         <div class="svc-code">04</div>
         <div class="svc-label">Lead</div>
         <div class="svc-title">Fractional CISO / SHIELD Defend Retainer</div>
+        <div class="fee-basis">Monthly retainer &middot; from $1,500/mo for organizations up to 50 staff</div>
         <div class="svc-desc">Ongoing strategic and operational security leadership — board-ready reporting, vendor oversight, and a direct line to a credentialed principal consultant.</div>
         <div class="svc-ideal">Ideal for: businesses that need standing security leadership without a full-time executive hire.</div>
+        <div class="svc-fit">Fit &middot; Standing leadership</div>
+      </div>
+    </div>
+    <table class="stage-table reveal">
+      <tr><th>Where you are</th><th>Start with</th></tr>
+      <tr><td>First assessment &mdash; never had a formal assessment, or need one for a client or insurer</td><td class="st-name">Risk &amp; Readiness Assessment</td></tr>
+      <tr><td>Compliance deadline &mdash; a deadline, insurer questionnaire, or client due-diligence request</td><td class="st-name">SHIELD Governance Accelerator</td></tr>
+      <tr><td>Untested plan &mdash; no documented response plan, or one that has not been tested in over a year</td><td class="st-name">SHIELD Incident Readiness</td></tr>
+      <tr><td>Standing leadership &mdash; ongoing leadership from a credentialed principal, without a full-time executive hire</td><td class="st-name">Fractional CISO / SHIELD Defend Retainer</td></tr>
+    </table>
+    <div class="bounds-card reveal">
+      <h3>What Clyvara does not do</h3>
+      <div class="bounds-grid">
+        <div class="bounds-item"><strong>Not penetration testing.</strong> Clyvara assesses risk and readiness; it does not attack, scan, or technically audit your systems.</div>
+        <div class="bounds-item"><strong>Not legal advice.</strong> Clyvara is not a law firm; legal determinations belong to your counsel.</div>
+        <div class="bounds-item"><strong>Not IT implementation</strong> &mdash; Clyvara is a governance advisory, and where the work calls for tools or configuration, your IT provider does that work.</div>
+        <div class="bounds-item"><strong>No certification, no guarantee.</strong> Clyvara does not certify compliance, and cannot guarantee any regulator&rsquo;s, insurer&rsquo;s, customer&rsquo;s, or court&rsquo;s decision.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     SECTORS
-     ============================================================ -->
+            
+                                                                     
 <section id="sectors" class="section">
   <div class="container">
     <div class="section-head reveal">
@@ -1013,7 +1093,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     <div class="sector-grid reveal">
       <div class="sector-cell"><div class="sector-num">01</div><div class="sector-name">Healthcare</div><div class="sector-desc">HIPAA-aligned risk management for practices and providers handling protected health information.</div></div>
       <div class="sector-cell"><div class="sector-num">02</div><div class="sector-name">Professional Services</div><div class="sector-desc">Client-data protection and confidentiality controls for firms whose reputation is the product.</div></div>
-      <div class="sector-cell"><div class="sector-num">03</div><div class="sector-name">Real Estate</div><div class="sector-desc">Wire-fraud prevention and transaction-security controls for brokerages and title operations.</div></div>
+      <div class="sector-cell"><div class="sector-num">03</div><div class="sector-name">Accounting & Tax Firms</div><div class="sector-desc">FTC Safeguards Rule compliance and the written information security program (WISP) tax firms need for PTIN renewal.</div></div>
       <div class="sector-cell"><div class="sector-num">04</div><div class="sector-name">Logistics</div><div class="sector-desc">Operational continuity and vendor-risk management for supply chains that can't afford downtime.</div></div>
       <div class="sector-cell"><div class="sector-num">05</div><div class="sector-name">Financial Services</div><div class="sector-desc">Regulatory-aligned controls for firms managing sensitive financial data and client assets.</div></div>
       <div class="sector-cell"><div class="sector-num">06</div><div class="sector-name">Nonprofits</div><div class="sector-desc">Right-sized security programs that protect donor data without enterprise-level budgets.</div></div>
@@ -1021,9 +1101,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     INSIGHTS
-     ============================================================ -->
+             
+                                                                     
 <section id="insights" class="section bg-white">
   <div class="container">
     <div class="section-head reveal">
@@ -1047,6 +1126,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div class="insight-card" style="--i:2">
         <div class="insight-tag">Guide</div>
         <div class="insight-title">Cyber Insurance, Evidenced</div>
+        <div class="fee-basis">Free</div>
         <div class="insight-desc">The eight areas insurers test at renewal and at claim time, and the proof that survives both.</div>
         <a href="/cyber-insurance-evidence" class="insight-link">Read the guide →</a>
       </div>
@@ -1057,9 +1137,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     START HERE
-     ============================================================ -->
+               
+                                                                     
 <section id="start-here" class="section bg-white">
   <div class="container">
     <div class="section-head reveal">
@@ -1069,7 +1148,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     </div>
     <div class="start-grid reveal reveal-stagger" style="--i:1">
       <div class="insight-card" style="--i:0">
-        <div class="insight-tag">Free · Five Minutes</div>
+        <div class="insight-tag">Free · About Three Minutes</div>
         <div class="insight-title">The Readiness Self-Check</div>
         <div class="insight-desc">Twelve evidence questions, scored against what you could hand an auditor, an insurer, or a customer today.</div>
         <a href="/readiness-self-check" class="insight-link">Take the self-check →</a>
@@ -1077,30 +1156,35 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div class="insight-card" style="--i:1">
         <div class="insight-tag">Guide</div>
         <div class="insight-title">Answering a Customer's Security Questionnaire</div>
+        <div class="fee-basis">Free</div>
         <div class="insight-desc">What customers are really testing, the answers that hold up, and the evidence that has to sit behind them.</div>
         <a href="/security-questionnaire-guide" class="insight-link">Read the guide →</a>
       </div>
       <div class="insight-card" style="--i:2">
         <div class="insight-tag">Service · Fixed $750</div>
         <div class="insight-title">A Questionnaire Due This Week?</div>
-        <div class="insight-desc">One customer's questionnaire, answered with evidence within three business days of a short triage call. Fixed fee, no hourly meter.</div>
+        <div class="fee-basis">Fixed $750</div>
+        <div class="insight-desc">One customer's questionnaire, completed and evidence-backed within three business days of a short triage call. Fixed fee, no hourly meter.</div>
         <a href="/questionnaire-response" class="insight-link">See how it works →</a>
       </div>
       <div class="insight-card" style="--i:3">
         <div class="insight-tag">Service · Healthcare</div>
         <div class="insight-title">A Ransomware Morning, Rehearsed</div>
+        <div class="fee-basis">Fixed $1,250</div>
         <div class="insight-desc">A half-day tabletop exercise fitted to your practice, ending in a written findings note and the first fixes assigned to owners and dates.</div>
         <a href="/tabletop-exercise" class="insight-link">See the tabletop exercise →</a>
       </div>
       <div class="insight-card" style="--i:4">
         <div class="insight-tag">Service · Tax Firms</div>
         <div class="insight-title">Your PTIN Renewal Asks for a Plan</div>
+        <div class="fee-basis">Fixed $1,250</div>
         <div class="insight-desc">At PTIN renewal, every paid preparer acknowledges the legal duty to create and maintain a written information security plan. Clyvara writes yours with you, tailored to your firm, within 10 business days.</div>
         <a href="/wisp-for-tax-firms" class="insight-link">See the WISP service →</a>
       </div>
       <div class="insight-card" style="--i:5">
         <div class="insight-tag">Service · Texas</div>
         <div class="insight-title">Texas Business? Your Breach Defense Is a Program</div>
+        <div class="fee-basis">Fixed fee &middot; agreed before work starts</div>
         <div class="insight-desc">Texas SB 2610 gives businesses under 250 employees an affirmative defense against punitive damages when a qualifying cybersecurity program is implemented and maintained. Clyvara builds the program and the evidence binder behind it.</div>
         <a href="/texas-sb2610-safe-harbor" class="insight-link">See the safe-harbor package →</a>
       </div>
@@ -1108,16 +1192,34 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     CONTACT
-     ============================================================ -->
+                                                                 
+
+                                                                 
+
+<section id="founder" class="section bg-white">
+  <div class="container">
+    <div class="founder-block reveal">
+      <img src="founder-headshot.jpg" alt="Rodger Lutalo, Founder &amp; Principal Cybersecurity Consultant, Clyvara">
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px;">The Founder</div>
+        <div class="founder-name">Rodger Lutalo</div>
+        <div class="founder-title">Founder &amp; Principal Cybersecurity Consultant</div>
+        <div class="founder-creds">DBA, MS in Computer Science & Information Systems, PMP</div>
+        <p class="founder-research">Doctoral research into cybersecurity awareness and training in small and mid-sized enterprises.</p>
+        <p class="founder-research" style="margin-top:10px;">He writes about what that research means in practice on <a href="https://medium.com/@rodger.lutalo" target="_blank" rel="noopener" style="color:var(--copper-deep); text-decoration:underline; text-underline-offset:3px;">Medium</a>.</p>
+        <p style="margin-top:26px;"><a href="https://cal.com/clyvara/30min" class="btn btn-primary">Book a Risk Conversation</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="section">
   <div class="container">
     <div class="contact-grid">
       <div class="reveal">
         <div class="eyebrow on-ink">Start a Conversation</div>
         <h2 style="font-family:var(--display); color:var(--paper-white); font-size:var(--fs-h2); line-height:1.12; margin-top:var(--space-head-gap); letter-spacing:-0.016em;">Book a free SHIELD Risk Conversation.</h2>
-        <p style="margin-top:var(--space-head-gap); font-size:var(--fs-body); line-height:1.6; color:var(--body-on-ink); max-width:46ch;">30 minutes, no obligation. We'll talk through where your business actually stands — and whether Clyvara is the right fit before anyone signs anything.</p>
+        <p style="margin-top:var(--space-head-gap); font-size:var(--fs-body); line-height:1.6; color:var(--body-on-ink); max-width:46ch;">30 minutes, no obligation. I'll talk through where your business actually stands — and whether Clyvara is the right fit before anyone signs anything.</p>
         <p style="margin-top:26px;"><a href="https://cal.com/clyvara/30min" class="btn btn-primary">Book directly on my calendar</a></p>
 
         <div class="contact-detail">
@@ -1137,7 +1239,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       </div>
 
       <div class="reveal" style="--i:1">
-        <form class="contact-form" id="contactForm" novalidate>
+        <form class="contact-form" id="contactForm" novalidate action="https://formspree.io/f/xppazdko" method="POST">
           <div class="form-two">
             <div class="form-row">
               <label for="fname">Name</label>
@@ -1145,13 +1247,11 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
             </div>
             <div class="form-row">
               <label for="femail">Email</label>
-              <!-- name="email" (lowercase, exact) is deliberate, not a
-                   stylistic inconsistency with the other fields below: this
-                   is the literal field name Formspree's autoresponder
-                   plugin requires in order to know who to send the
-                   acknowledgement email to (see 09_Internal_Operations
-                   contact-form architecture doc). Renaming this would
-                   silently break the auto-responder. -->
+
+                                                                      
+
+                                                                      
+                                                         
               <input type="email" id="femail" name="email" autocomplete="email" maxlength="320" required>
             </div>
           </div>
@@ -1161,13 +1261,11 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
           </div>
           <div class="form-row">
             <label for="fsector">Sector</label>
-            <!-- No option was previously marked selected, so an unopened
-                 dropdown silently submitted "Healthcare" for every visitor
-                 who never touched it - a real data-quality bug (every
-                 unspecified sector was miscounted as Healthcare). The
-                 explicit empty default below closes that; it also makes the
-                 field genuinely optional rather than accidentally always
-                 answered. -->
+
+                                                                      
+
+                                                                         
+                              
             <select id="fsector" name="Sector">
               <option value="" selected disabled>Select a sector (optional)</option>
               <option>Healthcare</option>
@@ -1183,28 +1281,24 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
             <label for="fmessage">What's going on?</label>
             <textarea id="fmessage" name="Message" placeholder="A sentence or two is plenty." maxlength="5000"></textarea>
           </div>
-          <!-- Honeypot spam trap: real visitors never see or fill this field.
-               Left unstyled-hidden (display:none) per the target provider's
-               documented bot-catching convention. Any submission with this
-               field populated is silently discarded client-side. -->
+
+                                                                           
+                                                                     
           <div class="form-row" style="display:none;" aria-hidden="true">
             <label for="f_gotcha">Leave this field empty</label>
             <input type="text" id="f_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
           </div>
           <button type="submit" class="btn btn-primary form-submit" id="formSubmitBtn">Request a Risk Conversation</button>
           <p class="form-note">No spam, no vendor pitch. Just a reply from Rodger, within one business day.</p>
-          <!-- role="alert" + aria-live="assertive": announced immediately to
-               screen reader users the moment an error appears, without
-               requiring focus to already be inside this region. tabindex="-1"
-               lets JS move keyboard focus here on error, so sighted keyboard
-               users don't lose their place after the form is done submitting. -->
+
+                                                                              
+
           <div class="form-error hidden" id="formError" role="alert" aria-live="assertive" tabindex="-1">
-            <p id="formErrorText">Something went wrong sending your request. Please try again, or email <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> directly and we'll follow up within one business day.</p>
+            <p id="formErrorText">Something went wrong sending your request. Please try again, or email <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> directly and I'll follow up within one business day.</p>
           </div>
         </form>
-        <!-- role="status" + aria-live="polite": announced without
-             interrupting anything else the screen reader is doing (unlike
-             the error region above, which is intentionally more urgent). -->
+
+                                                                             
         <div class="contact-form form-success hidden" id="formSuccess" role="status" aria-live="polite" tabindex="-1">
           <div class="form-success-icon" aria-hidden="true">
             <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -1227,9 +1321,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+           
+                                                                     
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1260,17 +1353,26 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <div>
         <div class="footer-h">Services</div>
         <div class="footer-links">
-          <a href="#services">Risk Assessment</a>
-          <a href="#services">Compliance &amp; Governance</a>
-          <a href="#services">Incident Response Readiness</a>
-          <a href="#services">SHIELD Defend Retainer</a>
+          <a href="#services">Risk &amp; Readiness Assessment</a>
+          <a href="#services">SHIELD Governance Accelerator</a>
+          <a href="#services">SHIELD Incident Readiness</a>
+          <a href="#services">Fractional CISO / SHIELD Defend Retainer</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Fixed-Fee Services</div>
+        <div class="footer-links">
+          <a href="https://clyvara.io/questionnaire-response">Questionnaire Response</a>
+          <a href="https://clyvara.io/wisp-for-tax-firms">WISP for Tax Firms</a>
+          <a href="https://clyvara.io/tabletop-exercise">Ransomware Tabletop Exercise</a>
+          <a href="https://clyvara.io/texas-sb2610-safe-harbor">Texas SB 2610 Safe-Harbor</a>
         </div>
       </div>
       <div>
         <div class="footer-h">Credentials</div>
         <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:22px;">
           <span class="footer-cred">DBA</span>
-          <span class="footer-cred">MS, Computer Science</span>
+          <span class="footer-cred">MS in Computer Science & Information Systems</span>
           <span class="footer-cred">PMP</span>
         </div>
         <div class="footer-h">Contact</div>
@@ -1279,20 +1381,19 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Clyvara LLC · All rights reserved · <a href="https://clyvara.io/privacy-policy" style="color:var(--muted-on-ink); text-decoration:underline;">Privacy Policy</a></span>
+      <span>© 2026 Clyvara LLC · All rights reserved · <a href="https://clyvara.io/faq" style="color:var(--muted-on-ink); text-decoration:underline;">FAQ</a> · <a href="https://clyvara.io/privacy-policy" style="color:var(--muted-on-ink); text-decoration:underline;">Privacy Policy</a></span>
       <span>Dallas–Fort Worth, Texas</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // Nav scroll state
+                     
   const nav = document.getElementById('site-nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  // Mobile nav toggle
   const burger = document.getElementById('burgerBtn');
   burger.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
@@ -1302,7 +1403,6 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     a.addEventListener('click', () => nav.classList.remove('open'));
   });
 
-  // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -1318,48 +1418,34 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  // Contact form
-  //
-  // HISTORY:
-  // - v2.0.3 / v2.1.0 (Findings C-1, F-02; FE-1): a client-side mailto: link
-  //   was used as a documented interim fix, dependent on the visitor's own
-  //   mail client and account.
-  // - Aug 5 2026 production incident: a live submission produced no email,
-  //   because mailto: delegates sending to the visitor's own device — not
-  //   anything Clyvara controls. No mailto: logic remains anywhere in this
-  //   handler; the only mailto: links left on the page are plain-text
-  //   fallback contact links shown to a visitor if a submission fails.
-  // - Production Incident Resolution (Aug 5 2026): wired to Clyvara's
-  //   verified, live Formspree endpoint and confirmed end-to-end against a
-  //   real inbox. A more resilient architecture (Netlify Function ->
-  //   persistent storage -> email provider) was fully built and unit-tested
-  //   as part of the same investigation and lives at /netlify/functions/ +
-  //   /admin/, documented as a future enhancement rather than deployed
-  //   (see /netlify/FUTURE_ENHANCEMENT.md and 09_Internal_Operations).
-  // - Production Hardening v1.1 (this revision, Aug 5 2026): the pipeline
-  //   itself was already working; this pass polishes it for a professional
-  //   client-facing operation without adding architecture. Field `name`
-  //   attributes were changed from internal shorthand (fname, femail, ...)
-  //   to human-readable labels, since Formspree's default notification
-  //   email lists fields exactly as their `name` attribute reads — this is
-  //   what makes the notification readable without a custom email
-  //   template. `femail`'s name specifically became the literal string
-  //   "email" (not "Email") because that exact, lowercase field name is
-  //   Formspree's documented requirement for its auto-responder plugin to
-  //   know which address to reply to. Hidden operational metadata
-  //   (timestamp, page URL, browser, source, environment) was added so
-  //   Clyvara has troubleshooting context without cluttering what a human
-  //   reads first. The Sector dropdown's missing default was also fixed —
-  //   it previously had no selected option, so an unopened dropdown
-  //   silently submitted "Healthcare" for every visitor who never touched
-  //   it, corrupting sector data on a fraction of submissions.
-  //
-  // This handler: submits directly to Formspree over HTTPS, shows the
-  // success message only once Formspree's API confirms acceptance (HTTP
-  // 200 with no `errors` array — see
-  // https://help.formspree.io/hc/en-us/articles/360013470814), shows a
-  // specific, honest error otherwise, and never claims success it can't
-  // back up.
+    
+
+                                                                           
+
+                                                                          
+
+                                                                       
+
+                                                                     
+
+                                                                       
+
+                                                                           
+
+                                                                       
+
+                                                                       
+
+                                                                  
+
+                                                                          
+
+                                                               
+
+                                                                        
+
+                                                                        
+             
   (function(){
     var FORM_ENDPOINT = 'https://formspree.io/f/xppazdko';
 
@@ -1370,10 +1456,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     var errorText = document.getElementById('formErrorText');
     var fieldIds = ['fname', 'femail', 'fcompany', 'fsector', 'fmessage'];
 
-    // Maps Formspree's field-name-keyed error responses (they key errors by
-    // the `name` attribute actually submitted, e.g. "email", "Company")
-    // back to this page's stable DOM ids, so the right input gets
-    // aria-invalid regardless of what human-readable name Formspree sees.
+                                                                        
+
     var FIELD_NAME_TO_ID = { Name: 'fname', email: 'femail', Company: 'fcompany', Sector: 'fsector', Message: 'fmessage' };
 
     function genRequestId(){
@@ -1382,9 +1466,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
     }
 
     function maskEmail(value){
-      // Same masking convention used in the (currently inactive) Netlify
-      // backend's logger — kept consistent so a future migration to that
-      // architecture doesn't need to redesign what "safe to log" means.
+
+                                                                        
       if (!value || value.indexOf('@') === -1) return '(invalid)';
       var parts = value.split('@');
       var user = parts[0];
@@ -1392,15 +1475,12 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       return maskedUser + '@' + parts[1];
     }
 
-    // Operational logging (client-side only — there is no server in this
-    // architecture; Formspree's own dashboard is the second, authoritative
-    // record). Each of the request's named stages gets its own explicit
-    // status value so the sequence is traceable by requestId alone:
-    // 'validated' -> 'submitted' -> 'accepted' | 'rejected' | 'network_error'.
-    // Email addresses are masked and message content is never logged, only
-    // whether one was provided — deliberately avoiding unnecessary personal
-    // information in a log stream that has broader read access (anyone with
-    // browser dev tools open) than the actual submission record does.
+                                                                           
+
+                                                                               
+
+                                                                            
+                                                                      
     function logSubmission(status, requestId, detail){
       var entry = {
         event: 'contact_form_submission',
@@ -1409,8 +1489,6 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
         status: status,
         detail: detail || null
       };
-      if (status === 'rejected' || status === 'network_error') { console.error('[ContactForm]', entry); }
-      else { console.log('[ContactForm]', entry); }
     }
 
     function clearFieldErrors(){
@@ -1420,13 +1498,11 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       });
     }
 
-    // aria-invalid + moving focus into the message region is what makes
-    // this "accessible" rather than just visible: a screen reader announces
-    // role="alert"/aria-live regions on their own, but moving focus there
-    // too means a keyboard user's next Tab press continues naturally from
-    // the message instead of from wherever they were before submitting.
+                                                                            
+
+                                                                        
     function showError(message, invalidFieldIds){
-      errorText.innerHTML = message;
+      errorText.textContent = message;
       errorPanel.classList.remove('hidden');
       clearFieldErrors();
       (invalidFieldIds || []).forEach(function(id){
@@ -1456,7 +1532,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       var email = document.getElementById('femail').value.trim();
       var message = document.getElementById('fmessage').value.trim();
       var company = document.getElementById('fcompany').value.trim();
-      var sector = document.getElementById('fsector').value; // '' if the visitor left the new default option selected
+      var sector = document.getElementById('fsector').value;                                                          
       var honeypot = document.getElementById('f_gotcha');
       var requestId = genRequestId();
 
@@ -1464,13 +1540,15 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
         showError('Please fill in your name and email so we can get back to you.', [!name ? 'fname' : null, !email ? 'femail' : null].filter(Boolean));
         return;
       }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('Please check your email address — it does not look complete.', ['femail']);
+        return;
+      }
       logSubmission('validated', requestId, { hasEmail: true, hasName: true, hasCompany: !!company, hasSector: !!sector, hasMessage: !!message });
 
-      // Client-side honeypot short-circuit: if the trap field has a value,
-      // a bot filled it in (real visitors never see it — see the CSS/markup
-      // above). Skip the network call entirely rather than spending a
-      // Formspree submission on a bot, but still show the same success UI a
-      // human would see, so a bot gets no signal it was caught.
+                                                                            
+
+                                                                
       if (honeypot && honeypot.value) {
         logSubmission('rejected', requestId, 'honeypot triggered client-side — likely bot, submission dropped before network request');
         showSuccess();
@@ -1485,12 +1563,10 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 
       var formData = new FormData(form);
 
-      // Formspree "special fields": _subject sets the notification email's
-      // subject line, _replyto sets Reply-To to the visitor's own address
-      // (both verified against a real inbox — see the incident resolution
-      // report). Subject format redesigned for inbox triage: leads with the
-      // two things Rodger needs at a glance (who/what sector) rather than a
-      // generic line.
+                                                                          
+
+                                                                            
+                      
       var subjectParts = ['New SHIELD Risk Conversation Request'];
       if (company) subjectParts.push(company);
       else if (name) subjectParts.push(name);
@@ -1498,13 +1574,10 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       formData.set('_subject', subjectParts.join(' | '));
       formData.set('_replyto', email);
 
-      // requestId is the permanent identifier for this inquiry — the same
-      // value appears in this console log, in the Formspree submission
-      // record (and thus the notification email), and is the join key for
-      // any future CRM or admin-dashboard integration (see the Reliability
-      // Enhancement / future-architecture documentation). Everything below
-      // it is operational metadata: useful for troubleshooting, not shown
-      // to Rodger as part of the "message" a lead actually wrote.
+                                                                       
+
+                                                                           
+
       formData.set('requestId', requestId);
       formData.set('meta_timestampUTC', new Date().toISOString());
       formData.set('meta_website', 'clyvara.io');
@@ -1516,10 +1589,8 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 
       logSubmission('submitted', requestId, { httpEndpoint: 'formspree', hasMessage: !!message, email: maskEmail(email) });
 
-      // Deliberately no 'Content-Type' header: letting the browser set the
-      // multipart/form-data boundary itself is required for a FormData body
-      // to be parsed correctly by Formspree (or any server) — setting it
-      // manually is a common source of silently-broken submissions.
+                                                                            
+
       fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
@@ -1547,15 +1618,14 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
           return;
         }
 
-        // Any other non-OK response (rate limiting, form disabled, an
-        // outage on Formspree's side, etc.) — the one honest "we could not
-        // confirm this was received" case. Never claim success here.
+                                                                           
+                                                                     
         logSubmission('rejected', requestId, { httpStatus: response.status, reason: 'formspree_error' });
-        showError('Your request could not be sent right now (error ' + response.status + '). Please try again, or email <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> directly and we\'ll follow up within one business day.');
+        showError('Your request could not be sent right now (error ' + response.status + '). Please try again, or email Info@clyvara.io directly and I\'ll follow up within one business day.');
       })
       .catch(function(err){
         logSubmission('network_error', requestId, { reason: 'network error: ' + (err && err.message ? err.message : String(err)) });
-        showError('We couldn\'t reach our server — please check your connection and try again, or email <a href="mailto:Info@clyvara.io">Info@clyvara.io</a> directly.');
+        showError('We couldn\'t reach our server — please check your connection and try again, or email Info@clyvara.io directly.');
       })
       .finally(function(){
         submitBtn.disabled = false;
@@ -1566,5 +1636,42 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   })();
 </script>
 
+<script>
+(function(){
+  var nav = document.getElementById('site-nav');
+  var burger = document.getElementById('burgerBtn');
+  var items = document.querySelectorAll('#site-nav .nav-item');
+  function closeDrawer(){ if (nav) nav.classList.remove('open'); if (burger) burger.setAttribute('aria-expanded','false'); }
+  function closeDropdowns(){
+    items.forEach(function(item){ item.classList.remove('open'); var b = item.querySelector('.nav-menu-btn'); if (b) b.setAttribute('aria-expanded','false'); });
+  }
+  if (nav && burger) {
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.mobile-drawer a').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+  }
+  items.forEach(function(item){
+    var btn = item.querySelector('.nav-menu-btn');
+    if (!btn) return;
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !item.classList.contains('open');
+      closeDropdowns();
+      if (willOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    items.forEach(function(item){ if (!item.contains(e.target)) { item.classList.remove('open'); var b = item.querySelector('.nav-menu-btn'); if (b) b.setAttribute('aria-expanded','false'); } });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    closeDropdowns();
+    closeDrawer();
+  });
+})();
+</script>
 </body>
 </html>

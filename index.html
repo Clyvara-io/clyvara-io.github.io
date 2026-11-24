@@ -661,8 +661,19 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-SRY0L92FTX');
+  (function () {
+    var cfg = { content_group: 'home' };
+    try {
+      var q = location.search;
+      if (/[?&]internal=1\b/.test(q)) localStorage.setItem('clyvara_internal', '1');
+      if (/[?&]internal=0\b/.test(q)) localStorage.removeItem('clyvara_internal');
+      if (localStorage.getItem('clyvara_internal') === '1') cfg.traffic_type = 'internal';
+      if (/[?&]ga_debug=1\b/.test(q)) cfg.debug_mode = true;
+    } catch (e) {}
+    gtag('config', 'G-SRY0L92FTX', cfg);
+  })();
 </script>
+<script src="/clyvara-analytics.js" defer></script>
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -1091,9 +1102,9 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
       <h2>Depth in the industries where risk is highest and margin for error is lowest.</h2>
     </div>
     <div class="sector-grid reveal">
-      <div class="sector-cell"><div class="sector-num">01</div><div class="sector-name">Healthcare</div><div class="sector-desc">HIPAA-aligned risk management for practices and providers handling protected health information.</div></div>
+      <a class="sector-cell" href="https://clyvara.io/tabletop-exercise" style="text-decoration:none;color:inherit"><div class="sector-num">01</div><div class="sector-name">Healthcare</div><div class="sector-desc">HIPAA-aligned risk management for practices and providers handling protected health information.</div></a>
       <div class="sector-cell"><div class="sector-num">02</div><div class="sector-name">Professional Services</div><div class="sector-desc">Client-data protection and confidentiality controls for firms whose reputation is the product.</div></div>
-      <div class="sector-cell"><div class="sector-num">03</div><div class="sector-name">Accounting & Tax Firms</div><div class="sector-desc">FTC Safeguards Rule compliance and the written information security program (WISP) tax firms need for PTIN renewal.</div></div>
+      <a class="sector-cell" href="https://clyvara.io/wisp-for-tax-firms" style="text-decoration:none;color:inherit"><div class="sector-num">03</div><div class="sector-name">Accounting & Tax Firms</div><div class="sector-desc">FTC Safeguards Rule compliance and the written information security program (WISP) tax firms need for PTIN renewal.</div></a>
       <div class="sector-cell"><div class="sector-num">04</div><div class="sector-name">Logistics</div><div class="sector-desc">Operational continuity and vendor-risk management for supply chains that can't afford downtime.</div></div>
       <div class="sector-cell"><div class="sector-num">05</div><div class="sector-name">Financial Services</div><div class="sector-desc">Regulatory-aligned controls for firms managing sensitive financial data and client assets.</div></div>
       <div class="sector-cell"><div class="sector-num">06</div><div class="sector-name">Nonprofits</div><div class="sector-desc">Right-sized security programs that protect donor data without enterprise-level budgets.</div></div>
@@ -1270,7 +1281,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
               <option value="" selected disabled>Select a sector (optional)</option>
               <option>Healthcare</option>
               <option>Professional Services</option>
-              <option>Real Estate</option>
+              <option>Accounting &amp; Tax</option>
               <option>Logistics</option>
               <option>Financial Services</option>
               <option>Nonprofit</option>
@@ -1366,6 +1377,7 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
           <a href="https://clyvara.io/wisp-for-tax-firms">WISP for Tax Firms</a>
           <a href="https://clyvara.io/tabletop-exercise">Ransomware Tabletop Exercise</a>
           <a href="https://clyvara.io/texas-sb2610-safe-harbor">Texas SB 2610 Safe-Harbor</a>
+          <a href="https://clyvara.io/ai-readiness-review">AI &amp; Shadow-AI Readiness Review</a>
         </div>
       </div>
       <div>
@@ -1604,6 +1616,13 @@ footer{ background:var(--ink); color:var(--muted-on-ink); padding:96px 0 0; }
 
         if (response.ok && (!data || !data.errors)) {
           logSubmission('accepted', requestId, { httpStatus: response.status });
+          if (typeof gtag === 'function') {
+            var sectorEl = document.getElementById('fsector');
+            gtag('event', 'generate_lead', {
+              form_id: 'contact',
+              sector: (sectorEl && sectorEl.value) ? sectorEl.value : 'not_given'
+            });
+          }
           showSuccess();
           return;
         }

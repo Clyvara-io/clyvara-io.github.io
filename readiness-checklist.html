@@ -435,8 +435,19 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-SRY0L92FTX');
+  (function () {
+    var cfg = { content_group: 'resource' };
+    try {
+      var q = location.search;
+      if (/[?&]internal=1\b/.test(q)) localStorage.setItem('clyvara_internal', '1');
+      if (/[?&]internal=0\b/.test(q)) localStorage.removeItem('clyvara_internal');
+      if (localStorage.getItem('clyvara_internal') === '1') cfg.traffic_type = 'internal';
+      if (/[?&]ga_debug=1\b/.test(q)) cfg.debug_mode = true;
+    } catch (e) {}
+    gtag('config', 'G-SRY0L92FTX', cfg);
+  })();
 </script>
+<script src="/clyvara-analytics.js" defer></script>
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -638,6 +649,9 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
         if (response.ok) {
           form.style.display = 'none';
           if (successBox) successBox.hidden = false;
+          if (typeof gtag === 'function') {
+            gtag('event', 'resource_request', { resource_name: 'readiness_checklist' });
+          }
         } else {
           throw new Error('Submission was rejected.');
         }

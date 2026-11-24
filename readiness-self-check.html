@@ -471,8 +471,19 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-SRY0L92FTX');
+  (function () {
+    var cfg = { content_group: 'tool' };
+    try {
+      var q = location.search;
+      if (/[?&]internal=1\b/.test(q)) localStorage.setItem('clyvara_internal', '1');
+      if (/[?&]internal=0\b/.test(q)) localStorage.removeItem('clyvara_internal');
+      if (localStorage.getItem('clyvara_internal') === '1') cfg.traffic_type = 'internal';
+      if (/[?&]ga_debug=1\b/.test(q)) cfg.debug_mode = true;
+    } catch (e) {}
+    gtag('config', 'G-SRY0L92FTX', cfg);
+  })();
 </script>
+<script src="/clyvara-analytics.js" defer></script>
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -1143,12 +1154,6 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
     if (staffField) staffField.value = staffVal;
     if (orgField) orgField.value = orgVal;
     if (promptField) promptField.value = promptVal;
-    if (window.CLYVARA_SELFCHECK && typeof gtag === 'function') {
-      var gateParams = { band: window.CLYVARA_SELFCHECK.band, score: window.CLYVARA_SELFCHECK.score };
-      if (staffVal) gateParams.staff_band = staffVal;
-      if (promptVal) gateParams.prompted_by = promptVal;
-      gtag('event', 'selfcheck_gate_submit', gateParams);
-    }
     var originalLabel = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending\u2026';
@@ -1161,6 +1166,16 @@ nav.site.open .mobile-drawer{ opacity:1; visibility:visible; transform:none; poi
         if (response.ok) {
           form.style.display = 'none';
           if (successBox) successBox.hidden = false;
+          if (window.CLYVARA_SELFCHECK && typeof gtag === 'function') {
+            var gateParams = {
+              band: window.CLYVARA_SELFCHECK.band,
+              score: window.CLYVARA_SELFCHECK.score
+            };
+            if (staffVal) gateParams.staff_band = staffVal;
+            if (orgVal) gateParams.org_type = orgVal;
+            if (promptVal) gateParams.prompted_by = promptVal;
+            gtag('event', 'selfcheck_gate_submit', gateParams);
+          }
           var route = pickRoute(orgVal, promptVal, window.CLYVARA_SELFCHECK ? window.CLYVARA_SELFCHECK.band : '');
           var ns = document.getElementById('next-step');
           if (route && ns) {
